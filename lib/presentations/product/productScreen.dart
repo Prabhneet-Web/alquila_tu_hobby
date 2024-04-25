@@ -631,18 +631,18 @@ class productScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color: LightTheme.bluetext,
                               ),
+                              padding:
+                                  scale.getPadding(horizontal: 7, vertical: 9),
                               height: scale.getScaledHeight(35),
-                              width: scale.getScaledWidth(130),
-                              child: Center(
-                                child: Text(
-                                  "Write a review",
-                                  style: AppStyle.txtNunitobold14White.copyWith(
-                                      decoration: TextDecoration.underline,
-                                      decorationColor: LightTheme.white,
-                                      fontSize: 10),
-                                  textScaleFactor:
-                                      ScaleSize.textScaleFactor(context),
-                                ),
+                              // width: scale.getScaledWidth(140),
+                              child: Text(
+                                "Write a review",
+                                style: AppStyle.txtNunitobold14White.copyWith(
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: LightTheme.white,
+                                    fontSize: 10),
+                                textScaleFactor:
+                                    ScaleSize.textScaleFactor(context),
                               ),
                             ),
                           ],
