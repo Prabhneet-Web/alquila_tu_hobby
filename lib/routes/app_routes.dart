@@ -1,3 +1,5 @@
+import 'package:alquila_tu_hobby/presentations/admin/adminBinding.dart';
+import 'package:alquila_tu_hobby/presentations/admin/adminScreen.dart';
 import 'package:alquila_tu_hobby/presentations/create_new_account/bindings/create_new_account_controller_bindings.dart';
 import 'package:alquila_tu_hobby/presentations/create_new_account/screens/create_new_account.dart';
 import 'package:alquila_tu_hobby/presentations/dashboard/dashboardscreen.dart';
@@ -11,6 +13,7 @@ class AppRoutes {
   static const String createNewAccount = '/createNewAccount';
   static const String dashboard = '/dashboard';
   static const String product = '/product';
+  static const String adminDashboard = '/adminDashboard';
 
   static List<GetPage> pages = [
     GetPage(
@@ -32,6 +35,11 @@ class AppRoutes {
       name: product,
       page: () => productScreen(),
       //bindings: [CreateNewAccountControllerBinding()],
+    ),
+    GetPage(
+      name: product,
+      page: () => adminScreen(),
+      bindings: [adminBinding()],
     ),
   ];
 }

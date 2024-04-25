@@ -2,6 +2,7 @@ import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/image_constants/image_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
+import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -84,21 +85,26 @@ class Appbar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Container(
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.person,
-                              color: LightTheme.white,
-                            ),
-                            SizedBox(
-                              width: scale.getScaledWidth(10),
-                            ),
-                            Text(
-                              "Profile",
-                              style: AppStyle.txtNunitobold14White,
-                            )
-                          ],
+                      InkWell(
+                        onTap: () {
+                          Get.to(AppRoutes.adminDashboard);
+                        },
+                        child: Container(
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.person,
+                                color: LightTheme.white,
+                              ),
+                              SizedBox(
+                                width: scale.getScaledWidth(10),
+                              ),
+                              Text(
+                                "Profile",
+                                style: AppStyle.txtNunitobold14White,
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
