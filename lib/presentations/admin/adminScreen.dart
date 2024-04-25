@@ -25,7 +25,7 @@ class adminScreen extends GetView<adminContrroller> {
             children: [
               if (controller.showDrawer.value)
                 Container(
-                  padding: scale.getPadding(top: 10, left: 20),
+                  padding: scale.getPadding(top: 10, right: 10),
                   color: LightTheme.white,
                   width: scale.getScaledWidth(250),
                   height: scale.fh,
@@ -48,20 +48,66 @@ class adminScreen extends GetView<adminContrroller> {
                         onTap: () {
                           controller.mainIndx.value = 2;
                         },
-                        child: Container(
-                          child: Row(
+                        child: Obx(
+                          () => Row(
                             children: [
-                              Icon(Icons.favorite_border),
+                              Container(
+                                width: scale.getScaledWidth(8),
+                                height: scale.getScaledHeight(50),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(
+                                            scale.getScaledFont(15)),
+                                        bottomRight: Radius.circular(
+                                            scale.getScaledFont(15))),
+                                    color: controller.mainIndx.value == 2
+                                        ? LightTheme.yellowBG
+                                        : Colors.transparent),
+                              ),
                               SizedBox(
                                 width: scale.getScaledWidth(15),
                               ),
-                              Text(
-                                "User",
-                                style: AppStyle.txtNunitoRegular12.copyWith(
-                                    color: LightTheme.darkBlack,
-                                    fontSize: scale.getScaledFont(12)),
-                                textScaleFactor:
-                                    ScaleSize.textScaleFactor(context),
+                              Expanded(
+                                child: Container(
+                                  height: scale.getScaledHeight(50),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(
+                                              scale.getScaledFont(15))),
+                                      color: controller.mainIndx.value == 2
+                                          ? LightTheme.yellowBG
+                                          : Colors.transparent),
+                                  child: Padding(
+                                    padding: scale.getPadding(all: 10),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.favorite_border,
+                                            color:
+                                                controller.mainIndx.value == 2
+                                                    ? LightTheme.white
+                                                    : LightTheme.darkBlack),
+                                        SizedBox(
+                                          width: scale.getScaledWidth(15),
+                                        ),
+                                        Text(
+                                          "User",
+                                          style: AppStyle.txtNunitoRegular12
+                                              .copyWith(
+                                                  color: controller
+                                                              .mainIndx.value ==
+                                                          2
+                                                      ? LightTheme.white
+                                                      : LightTheme.darkBlack,
+                                                  fontSize:
+                                                      scale.getScaledFont(12)),
+                                          textScaleFactor:
+                                              ScaleSize.textScaleFactor(
+                                                  context),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -74,20 +120,66 @@ class adminScreen extends GetView<adminContrroller> {
                         onTap: () {
                           controller.mainIndx.value = 3;
                         },
-                        child: Container(
-                          child: Row(
+                        child: Obx(
+                          () => Row(
                             children: [
-                              Icon(Icons.category),
+                              Container(
+                                width: scale.getScaledWidth(8),
+                                height: scale.getScaledHeight(50),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(
+                                            scale.getScaledFont(15)),
+                                        bottomRight: Radius.circular(
+                                            scale.getScaledFont(15))),
+                                    color: controller.mainIndx.value == 2
+                                        ? LightTheme.yellowBG
+                                        : Colors.transparent),
+                              ),
                               SizedBox(
                                 width: scale.getScaledWidth(15),
                               ),
-                              Text(
-                                "Categories",
-                                style: AppStyle.txtNunitoRegular12.copyWith(
-                                    color: LightTheme.darkBlack,
-                                    fontSize: scale.getScaledFont(12)),
-                                textScaleFactor:
-                                    ScaleSize.textScaleFactor(context),
+                              Expanded(
+                                child: Container(
+                                  height: scale.getScaledHeight(50),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(
+                                              scale.getScaledFont(15))),
+                                      color: controller.mainIndx.value == 3
+                                          ? LightTheme.yellowBG
+                                          : Colors.transparent),
+                                  child: Padding(
+                                    padding: scale.getPadding(all: 10),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.category,
+                                            color:
+                                                controller.mainIndx.value == 3
+                                                    ? LightTheme.white
+                                                    : LightTheme.darkBlack),
+                                        SizedBox(
+                                          width: scale.getScaledWidth(15),
+                                        ),
+                                        Text(
+                                          "Categories",
+                                          style: AppStyle.txtNunitoRegular12
+                                              .copyWith(
+                                                  color: controller
+                                                              .mainIndx.value ==
+                                                          3
+                                                      ? LightTheme.white
+                                                      : LightTheme.darkBlack,
+                                                  fontSize:
+                                                      scale.getScaledFont(12)),
+                                          textScaleFactor:
+                                              ScaleSize.textScaleFactor(
+                                                  context),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
