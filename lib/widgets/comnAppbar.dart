@@ -40,18 +40,24 @@ class Appbar extends StatelessWidget {
                       color: LightTheme.white,
                       borderRadius: BorderRadius.all(
                           Radius.circular(scale.getScaledHeight(10)))),
-                  margin: scale.getMargin(vertical: 20),
+                  margin: scale.getMargin(vertical: 15),
                   child: Row(
                     children: [
                       SizedBox(
                         width: scale.getScaledWidth(10),
                       ),
-                      const Expanded(
+                      Expanded(
                           flex: 8,
-                          child: TextField(
-                            decoration: InputDecoration(
-                                hintText: "What are you looking for?",
-                                border: InputBorder.none),
+                          child: Center(
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.zero,
+                                  hintStyle: TextStyle(
+                                      color: LightTheme.bluetext,
+                                      fontSize: scale.getScaledFont(14)),
+                                  hintText: "What are you looking for?",
+                                  border: InputBorder.none),
+                            ),
                           )),
                       Expanded(
                           flex: 3,
@@ -102,7 +108,7 @@ class Appbar extends StatelessWidget {
                         child: Row(
                           children: [
                             Icon(
-                              Icons.person,
+                              Icons.favorite_border_outlined,
                               color: LightTheme.white,
                             ),
                             SizedBox(
@@ -122,7 +128,7 @@ class Appbar extends StatelessWidget {
                         child: Row(
                           children: [
                             Icon(
-                              Icons.person,
+                              Icons.chat,
                               color: LightTheme.white,
                             ),
                             SizedBox(
@@ -142,7 +148,7 @@ class Appbar extends StatelessWidget {
                         child: Row(
                           children: [
                             Icon(
-                              Icons.person,
+                              Icons.shopping_cart,
                               color: LightTheme.white,
                             ),
                             SizedBox(

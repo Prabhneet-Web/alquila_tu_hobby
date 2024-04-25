@@ -651,103 +651,108 @@ class dashBoardscreen extends StatelessWidget {
                         ),
                         itemBuilder: (BuildContext context, int index) {
                           return GridTile(
-                            child: Container(
-                              padding: scale.getPadding(all: 10),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(color: LightTheme.borderColor),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(
-                                          scale.getScaledHeight(17)))),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  index % 2 == 0
-                                      ? Image(
-                                          image: AssetImage(
-                                              "assets/images/sh1.png"))
-                                      : Image(
-                                          image: AssetImage(
-                                              "assets/images/sh2.png")),
-                                  Expanded(
-                                    child: Padding(
-                                      padding:
-                                          scale.getPadding(top: 20, bottom: 10),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          index % 2 == 0
-                                              ? Text(
-                                                  "Hoka Sneakers",
-                                                  style: TextStyle(
-                                                      color:
-                                                          LightTheme.bluetext,
-                                                      fontSize: scale
-                                                          .getScaledFont(9)),
-                                                  textScaleFactor:
-                                                      ScaleSize.textScaleFactor(
-                                                          context),
-                                                )
-                                              : Text(
-                                                  "Blue Shoes",
-                                                  style: TextStyle(
-                                                      color:
-                                                          LightTheme.bluetext,
-                                                      fontSize: scale
-                                                          .getScaledFont(9)),
-                                                  textScaleFactor:
-                                                      ScaleSize.textScaleFactor(
-                                                          context),
-                                                ),
-                                          Expanded(
-                                            child: Row(
-                                              children: [
-                                                Text(
-                                                  "&11 /",
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: scale
-                                                          .getScaledFont(9)),
-                                                  textScaleFactor:
-                                                      ScaleSize.textScaleFactor(
-                                                          context),
-                                                ),
-                                                Text(
-                                                  " Per day",
-                                                  style: TextStyle(
-                                                      color:
-                                                          LightTheme.greytext,
-                                                      fontSize: scale
-                                                          .getScaledFont(8)),
-                                                  textScaleFactor:
-                                                      ScaleSize.textScaleFactor(
-                                                          context),
-                                                )
-                                              ],
+                            child: InkWell(
+                              onTap: () {
+                                Get.toNamed(AppRoutes.product);
+                              },
+                              child: Container(
+                                padding: scale.getPadding(all: 10),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: LightTheme.borderColor),
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(
+                                            scale.getScaledHeight(17)))),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    index % 2 == 0
+                                        ? Image(
+                                            image: AssetImage(
+                                                "assets/images/sh1.png"))
+                                        : Image(
+                                            image: AssetImage(
+                                                "assets/images/sh2.png")),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: scale.getPadding(
+                                            top: 20, bottom: 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            index % 2 == 0
+                                                ? Text(
+                                                    "Hoka Sneakers",
+                                                    style: TextStyle(
+                                                        color:
+                                                            LightTheme.bluetext,
+                                                        fontSize: scale
+                                                            .getScaledFont(9)),
+                                                    textScaleFactor: ScaleSize
+                                                        .textScaleFactor(
+                                                            context),
+                                                  )
+                                                : Text(
+                                                    "Blue Shoes",
+                                                    style: TextStyle(
+                                                        color:
+                                                            LightTheme.bluetext,
+                                                        fontSize: scale
+                                                            .getScaledFont(9)),
+                                                    textScaleFactor: ScaleSize
+                                                        .textScaleFactor(
+                                                            context),
+                                                  ),
+                                            Expanded(
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    "&11 /",
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: scale
+                                                            .getScaledFont(9)),
+                                                    textScaleFactor: ScaleSize
+                                                        .textScaleFactor(
+                                                            context),
+                                                  ),
+                                                  Text(
+                                                    " Per day",
+                                                    style: TextStyle(
+                                                        color:
+                                                            LightTheme.greytext,
+                                                        fontSize: scale
+                                                            .getScaledFont(8)),
+                                                    textScaleFactor: ScaleSize
+                                                        .textScaleFactor(
+                                                            context),
+                                                  )
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                          Row(
-                                            children: [
-                                              for (int i = 0; i < 5; i++)
-                                                Container(
-                                                  height: 20,
-                                                  width: 20,
-                                                  decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: AssetImage(
-                                                              "assets/logos/fav.png"))),
-                                                )
-                                            ],
-                                          )
-                                        ],
+                                            Row(
+                                              children: [
+                                                for (int i = 0; i < 5; i++)
+                                                  Container(
+                                                    height: 20,
+                                                    width: 20,
+                                                    decoration: BoxDecoration(
+                                                        image: DecorationImage(
+                                                            image: AssetImage(
+                                                                "assets/logos/fav.png"))),
+                                                  )
+                                              ],
+                                            )
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           );

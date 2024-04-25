@@ -132,7 +132,7 @@ class adminScreen extends GetView<adminContrroller> {
                                             scale.getScaledFont(15)),
                                         bottomRight: Radius.circular(
                                             scale.getScaledFont(15))),
-                                    color: controller.mainIndx.value == 2
+                                    color: controller.mainIndx.value == 3
                                         ? LightTheme.yellowBG
                                         : Colors.transparent),
                               ),

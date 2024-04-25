@@ -1,7 +1,4 @@
 import 'package:alquila_tu_hobby/core/utils/initial_bindings/initial_bindings.dart';
-import 'package:alquila_tu_hobby/presentations/admin/adminScreen.dart';
-import 'package:alquila_tu_hobby/presentations/dashboard/dashboardscreen.dart';
-import 'package:alquila_tu_hobby/presentations/product/productScreen.dart';
 import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,9 +16,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: Get.key,
       debugShowCheckedModeBanner: false,
       title: 'alquila tu hobby',
-      home: adminScreen(),
-
-      ///initialRoute: AppRoutes.login,
+      initialRoute: AppRoutes.login,
       defaultTransition: Transition.native,
       getPages: AppRoutes.pages,
       initialBinding: InitialBindings(),

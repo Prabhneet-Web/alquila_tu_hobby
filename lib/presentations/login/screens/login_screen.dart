@@ -93,13 +93,23 @@ class Login extends GetView<LoginController> {
                         ],
                       ),
                       SizedBox(height: scale.getScaledHeight(40)),
-                      Container(
-                        height: scale.getScaledHeight(46),
-                        width: scale.getScaledWidth(300),
-                        decoration: BoxDecoration(
-                            color: LightTheme.yellowBG,
-                            borderRadius: BorderRadius.circular(8)),
-                        child: Center(child: Text("Sign in", style: AppStyle.txtNunitoRegular14White,),),
+                      InkWell(
+                        onTap: () {
+                          Get.offAllNamed(AppRoutes.dashboard);
+                        },
+                        child: Container(
+                          height: scale.getScaledHeight(46),
+                          width: scale.getScaledWidth(300),
+                          decoration: BoxDecoration(
+                              color: LightTheme.yellowBG,
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Center(
+                            child: Text(
+                              "Sign in",
+                              style: AppStyle.txtNunitoRegular14White,
+                            ),
+                          ),
+                        ),
                       ),
                       SizedBox(height: scale.getScaledHeight(16)),
                       Row(
@@ -113,7 +123,8 @@ class Login extends GetView<LoginController> {
                               Get.toNamed(AppRoutes.createNewAccount);
                             },
                             child: Text("Create Account",
-                                style: AppStyle.txtNunitoRegular12UnderlinedBlue),
+                                style:
+                                    AppStyle.txtNunitoRegular12UnderlinedBlue),
                           ),
                         ],
                       )
