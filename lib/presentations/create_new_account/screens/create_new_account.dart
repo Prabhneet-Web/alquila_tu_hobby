@@ -2,7 +2,7 @@ import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/image_constants/image_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
-import 'package:alquila_tu_hobby/presentations/login/controller/login_controller.dart';
+import 'package:alquila_tu_hobby/presentations/create_new_account/controller/create_new_account_controller.dart';
 import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:alquila_tu_hobby/widgets/check_box.dart';
 import 'package:alquila_tu_hobby/widgets/custom_text_formfield.dart';
@@ -10,8 +10,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Login extends GetView<LoginController> {
-  const Login({super.key});
+class CreateNewAccount extends GetView<CreateNewAccountController> {
+  const CreateNewAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class Login extends GetView<LoginController> {
             color: LightTheme.yellowBG,
             child: Center(
               child: Container(
-                height: scale.getScaledHeight(560),
+                height: scale.getScaledHeight(630),
                 width: scale.getScaledWidth(440),
                 decoration: BoxDecoration(
                     color: LightTheme.white,
@@ -49,10 +49,10 @@ class Login extends GetView<LoginController> {
                   padding: scale.getPadding(all: 34),
                   child: Column(
                     children: [
-                      SizedBox(height: scale.getScaledHeight(40)),
-                      Text("Login to Account", style: AppStyle.txtNunitoBold20),
                       SizedBox(height: scale.getScaledHeight(10)),
-                      Text("Please enter your email and password to continue",
+                      Text("Create an Account", style: AppStyle.txtNunitoBold20),
+                      SizedBox(height: scale.getScaledHeight(10)),
+                      Text("Create a account to continue",
                           style: AppStyle.txtNunitoRegular12),
                       SizedBox(height: scale.getScaledHeight(28)),
                       Align(
@@ -65,10 +65,20 @@ class Login extends GetView<LoginController> {
                           hintText: "sharybro@gmail.com",
                           width: double.infinity),
                       SizedBox(height: scale.getScaledHeight(26)),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text("Username:",
+                              style: AppStyle.txtNunitoRegular12)),
+                      SizedBox(height: scale.getScaledHeight(12)),
+                      CustomTextFormField(
+                          controller: controller.userNameController,
+                          hintText: "Username",
+                          width: double.infinity),
+                      SizedBox(height: scale.getScaledHeight(26)),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Password", style: AppStyle.txtNunitoRegular12),
+                          Text("Password:", style: AppStyle.txtNunitoRegular12),
                           InkWell(
                               onTap: () {},
                               child: Text("Forget Password?",
@@ -88,7 +98,7 @@ class Login extends GetView<LoginController> {
                             onTap: () {},
                           ),
                           SizedBox(width: scale.getScaledWidth(8)),
-                          Text("Remember Password",
+                          Text("I accept terms and conditions",
                               style: AppStyle.txtNunitoRegular12),
                         ],
                       ),
@@ -99,20 +109,20 @@ class Login extends GetView<LoginController> {
                         decoration: BoxDecoration(
                             color: LightTheme.yellowBG,
                             borderRadius: BorderRadius.circular(8)),
-                        child: Center(child: Text("Sign in", style: AppStyle.txtNunitoRegular14White,),),
+                        child: Center(child: Text("Sign up", style: AppStyle.txtNunitoRegular14White,),),
                       ),
                       SizedBox(height: scale.getScaledHeight(16)),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Don’t have an account?",
+                          Text("Already have an account?",
                               style: AppStyle.txtNunitoRegular12),
                           SizedBox(width: scale.getScaledWidth(3)),
                           InkWell(
                             onTap: () {
-                              Get.toNamed(AppRoutes.createNewAccount);
+                              Get.toNamed(AppRoutes.login);
                             },
-                            child: Text("Create Account",
+                            child: Text("Login",
                                 style: AppStyle.txtNunitoRegular12UnderlinedBlue),
                           ),
                         ],
