@@ -37,7 +37,7 @@ class AppRoutes {
       //bindings: [CreateNewAccountControllerBinding()],
     ),
     GetPage(
-      name: product,
+      name: adminDashboard,
       page: () => adminScreen(),
       bindings: [adminBinding()],
     ),
