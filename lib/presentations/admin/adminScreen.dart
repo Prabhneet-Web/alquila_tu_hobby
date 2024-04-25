@@ -245,7 +245,7 @@ class adminScreen extends GetView<adminContrroller> {
                 width: scale.getScaledWidth(170),
                 child: Center(
                   child: Text(
-                    "Add user",
+                    "Add Categori",
                     style: AppStyle.txtNunitoRegular12,
                     textScaleFactor: ScaleSize.textScaleFactor(context),
                   ),
