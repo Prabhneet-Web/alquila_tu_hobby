@@ -25,7 +25,7 @@ class adminScreen extends GetView<adminContrroller> {
             children: [
               if (controller.showDrawer.value)
                 Container(
-                  padding: scale.getPadding(top: 10),
+                  padding: scale.getPadding(top: 10, left: 20),
                   color: LightTheme.white,
                   width: scale.getScaledWidth(250),
                   height: scale.fh,
@@ -43,6 +43,55 @@ class adminScreen extends GetView<adminContrroller> {
                       ),
                       SizedBox(
                         height: scale.getScaledHeight(50),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          controller.mainIndx.value = 2;
+                        },
+                        child: Container(
+                          child: Row(
+                            children: [
+                              Icon(Icons.favorite_border),
+                              SizedBox(
+                                width: scale.getScaledWidth(15),
+                              ),
+                              Text(
+                                "User",
+                                style: AppStyle.txtNunitoRegular12.copyWith(
+                                    color: LightTheme.darkBlack,
+                                    fontSize: scale.getScaledFont(12)),
+                                textScaleFactor:
+                                    ScaleSize.textScaleFactor(context),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: scale.getScaledHeight(10),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          controller.mainIndx.value = 3;
+                        },
+                        child: Container(
+                          child: Row(
+                            children: [
+                              Icon(Icons.category),
+                              SizedBox(
+                                width: scale.getScaledWidth(15),
+                              ),
+                              Text(
+                                "Categories",
+                                style: AppStyle.txtNunitoRegular12.copyWith(
+                                    color: LightTheme.darkBlack,
+                                    fontSize: scale.getScaledFont(12)),
+                                textScaleFactor:
+                                    ScaleSize.textScaleFactor(context),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -66,11 +115,15 @@ class adminScreen extends GetView<adminContrroller> {
                         ),
                       ),
                       Expanded(
-                        child: Container(
-                            padding:
-                                scale.getPadding(horizontal: 20, vertical: 20),
-                            color: LightTheme.adminbg,
-                            child: userScreen(context, scale)),
+                        child: Obx(
+                          () => Container(
+                              padding: scale.getPadding(
+                                  horizontal: 20, vertical: 20),
+                              color: LightTheme.adminbg,
+                              child: controller.mainIndx.value == 2
+                                  ? userScreen(context, scale)
+                                  : catScreen(context, scale)),
+                        ),
                       ),
                     ],
                   ),
