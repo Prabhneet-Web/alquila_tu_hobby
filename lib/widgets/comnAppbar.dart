@@ -87,7 +87,7 @@ class Appbar extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(AppRoutes.adminDashboard);
+                          Get.toNamed(AppRoutes.adminDashboard);
                         },
                         child: Container(
                           child: Row(
