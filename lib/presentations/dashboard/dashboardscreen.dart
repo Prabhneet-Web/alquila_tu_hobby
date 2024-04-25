@@ -319,6 +319,121 @@ class dashBoardscreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
+                                  "Colors",
+                                  style: TextStyle(
+                                      color: LightTheme.bluetext,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: scale.getScaledFont(8)),
+                                  textScaleFactor:
+                                      ScaleSize.textScaleFactor(context),
+                                ),
+                                SizedBox(
+                                  height: scale.getScaledHeight(8),
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "0 Selected",
+                                      style: TextStyle(
+                                          color: LightTheme.greytext,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: scale.getScaledFont(8)),
+                                      textScaleFactor:
+                                          ScaleSize.textScaleFactor(context),
+                                    ),
+                                    Text(
+                                      "Reset",
+                                      style: TextStyle(
+                                          color: LightTheme.greytext,
+                                          fontSize: scale.getScaledFont(8)),
+                                      textScaleFactor:
+                                          ScaleSize.textScaleFactor(context),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: scale.getScaledHeight(10),
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      margin: scale.getMargin(right: 10),
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(20),
+                                      decoration: BoxDecoration(
+                                          color: Colors.red,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    Container(
+                                      margin: scale.getMargin(right: 10),
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(20),
+                                      decoration: BoxDecoration(
+                                          color: Colors.green,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    Container(
+                                      margin: scale.getMargin(right: 10),
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(20),
+                                      decoration: BoxDecoration(
+                                          color: Colors.amber,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    Container(
+                                      margin: scale.getMargin(right: 10),
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(20),
+                                      decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    Container(
+                                      margin: scale.getMargin(right: 10),
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(20),
+                                      decoration: BoxDecoration(
+                                          color: Colors.pink,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    Container(
+                                      margin: scale.getMargin(right: 10),
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(20),
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    Container(
+                                      margin: scale.getMargin(right: 10),
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(20),
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    Container(
+                                      margin: scale.getMargin(right: 10),
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(20),
+                                      decoration: BoxDecoration(
+                                          color: Colors.grey,
+                                          shape: BoxShape.circle),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Padding(
+                              padding: scale.getPadding(vertical: 15),
+                              child: Divider(),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
                                   "Size",
                                   style: TextStyle(
                                       color: LightTheme.bluetext,
@@ -537,19 +652,103 @@ class dashBoardscreen extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           return GridTile(
                             child: Container(
-                              child: Text(
-                                "data",
-                                style: TextStyle(fontSize: 30),
-                                textAlign: TextAlign.center,
-                                textScaleFactor:
-                                    ScaleSize.textScaleFactor(context),
-                              ),
+                              padding: scale.getPadding(all: 10),
                               decoration: BoxDecoration(
                                   border:
                                       Border.all(color: LightTheme.borderColor),
                                   borderRadius: BorderRadius.all(
                                       Radius.circular(
                                           scale.getScaledHeight(17)))),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  index % 2 == 0
+                                      ? Image(
+                                          image: AssetImage(
+                                              "assets/images/sh1.png"))
+                                      : Image(
+                                          image: AssetImage(
+                                              "assets/images/sh2.png")),
+                                  Expanded(
+                                    child: Padding(
+                                      padding:
+                                          scale.getPadding(top: 20, bottom: 10),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          index % 2 == 0
+                                              ? Text(
+                                                  "Hoka Sneakers",
+                                                  style: TextStyle(
+                                                      color:
+                                                          LightTheme.bluetext,
+                                                      fontSize: scale
+                                                          .getScaledFont(9)),
+                                                  textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context),
+                                                )
+                                              : Text(
+                                                  "Blue Shoes",
+                                                  style: TextStyle(
+                                                      color:
+                                                          LightTheme.bluetext,
+                                                      fontSize: scale
+                                                          .getScaledFont(9)),
+                                                  textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context),
+                                                ),
+                                          Expanded(
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  "&11 /",
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: scale
+                                                          .getScaledFont(9)),
+                                                  textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context),
+                                                ),
+                                                Text(
+                                                  " Per day",
+                                                  style: TextStyle(
+                                                      color:
+                                                          LightTheme.greytext,
+                                                      fontSize: scale
+                                                          .getScaledFont(8)),
+                                                  textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          Row(
+                                            children: [
+                                              for (int i = 0; i < 5; i++)
+                                                Container(
+                                                  height: 20,
+                                                  width: 20,
+                                                  decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                          image: AssetImage(
+                                                              "assets/logos/fav.png"))),
+                                                )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },

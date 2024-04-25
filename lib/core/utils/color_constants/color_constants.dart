@@ -15,5 +15,10 @@ class LightTheme {
   static const blueColor = ColorRef(Color(0xFF5A8CFF));
   static const bluetext = Color.fromRGBO(0, 63, 98, 1);
   static const greytext = Color.fromRGBO(89, 89, 89, 1);
+  static const greylight = Color.fromRGBO(175, 175, 175, 1);
+  static const greylight10 = Color.fromRGBO(228, 227, 227, 1);
   static const chkBox = Color.fromRGBO(179, 212, 229, 1);
+  static const green = Color.fromRGBO(48, 189, 87, 1);
+  static const adminbg = Color.fromRGBO(245, 246, 250, 1);
+  static const tblehead = Color.fromRGBO(213, 213, 213, 1);
 }
