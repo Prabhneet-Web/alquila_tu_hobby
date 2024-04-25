@@ -215,7 +215,7 @@ class productScreen extends StatelessWidget {
                                             Icon(Icons.calendar_month_outlined),
                                         content: Container(
                                           margin: scale.getMargin(all: 8),
-                                          height: scale.getScaledHeight(250),
+                                          height: scale.getScaledHeight(286),
                                           width: scale.getScaledWidth(300),
                                           child: CleanCalendar(
                                             leadingTrailingDatesProperties:
