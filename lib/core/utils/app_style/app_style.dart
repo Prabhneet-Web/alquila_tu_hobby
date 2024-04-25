@@ -40,6 +40,15 @@ class AppStyle {
     fontWeight: FontWeight.w400,
     fontFeatures: const [FontFeature.proportionalFigures()],
   );
+  static TextStyle txtNunitobold14White = TextStyle(
+    color: LightTheme.white,
+    fontSize: getFontSize(
+      14,
+    ),
+    fontFamily: 'NunitoSansRegular',
+    fontWeight: FontWeight.bold,
+    fontFeatures: const [FontFeature.proportionalFigures()],
+  );
   static TextStyle txtNunitoRegular12Red = TextStyle(
     color: LightTheme.errorColor,
     fontSize: getFontSize(
@@ -49,5 +58,4 @@ class AppStyle {
     fontWeight: FontWeight.w400,
     fontFeatures: const [FontFeature.proportionalFigures()],
   );
-
 }

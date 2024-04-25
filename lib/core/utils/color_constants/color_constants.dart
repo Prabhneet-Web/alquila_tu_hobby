@@ -13,4 +13,7 @@ class LightTheme {
   static const borderColor = ColorRef(Color(0xFFD8D8D8));
   static const borderFillColor = ColorRef(Color(0xFFF1F4F9));
   static const blueColor = ColorRef(Color(0xFF5A8CFF));
+  static const bluetext = Color.fromRGBO(0, 63, 98, 1);
+  static const greytext = Color.fromRGBO(89, 89, 89, 1);
+  static const chkBox = Color.fromRGBO(179, 212, 229, 1);
 }

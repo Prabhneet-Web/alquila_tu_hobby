@@ -37,7 +37,7 @@ class CreateNewAccount extends GetView<CreateNewAccountController> {
           ),
           Container(
             height: (scale.fullHeight - scale.getScaledHeight(64.76)),
-            color: LightTheme.yellowBG,
+            color: LightTheme.white,
             child: Center(
               child: Container(
                 height: scale.getScaledHeight(630),
@@ -50,7 +50,8 @@ class CreateNewAccount extends GetView<CreateNewAccountController> {
                   child: Column(
                     children: [
                       SizedBox(height: scale.getScaledHeight(10)),
-                      Text("Create an Account", style: AppStyle.txtNunitoBold20),
+                      Text("Create an Account",
+                          style: AppStyle.txtNunitoBold20),
                       SizedBox(height: scale.getScaledHeight(10)),
                       Text("Create a account to continue",
                           style: AppStyle.txtNunitoRegular12),
@@ -109,7 +110,12 @@ class CreateNewAccount extends GetView<CreateNewAccountController> {
                         decoration: BoxDecoration(
                             color: LightTheme.yellowBG,
                             borderRadius: BorderRadius.circular(8)),
-                        child: Center(child: Text("Sign up", style: AppStyle.txtNunitoRegular14White,),),
+                        child: Center(
+                          child: Text(
+                            "Sign up",
+                            style: AppStyle.txtNunitoRegular14White,
+                          ),
+                        ),
                       ),
                       SizedBox(height: scale.getScaledHeight(16)),
                       Row(
@@ -123,7 +129,8 @@ class CreateNewAccount extends GetView<CreateNewAccountController> {
                               Get.toNamed(AppRoutes.login);
                             },
                             child: Text("Login",
-                                style: AppStyle.txtNunitoRegular12UnderlinedBlue),
+                                style:
+                                    AppStyle.txtNunitoRegular12UnderlinedBlue),
                           ),
                         ],
                       )
