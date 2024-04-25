@@ -347,7 +347,7 @@ class adminScreen extends GetView<adminContrroller> {
             //height: scale.fh * .8,
             width: scale.fw,
             child: DataTable(
-              dataRowHeight: scale.getScaledHeight(70),
+              dataRowHeight: scale.getScaledHeight(62),
               columns: [
                 DataColumn(
                     label: Text(
@@ -468,7 +468,7 @@ class adminScreen extends GetView<adminContrroller> {
                 width: scale.getScaledWidth(170),
                 child: Center(
                   child: Text(
-                    "Add Categori",
+                    "Add Categorie",
                     style: AppStyle.txtNunitoRegular12,
                     textScaleFactor: ScaleSize.textScaleFactor(context),
                   ),
@@ -486,7 +486,7 @@ class adminScreen extends GetView<adminContrroller> {
             //height: scale.fh * .8,
             width: scale.fw,
             child: DataTable(
-              dataRowHeight: scale.getScaledHeight(70),
+              dataRowHeight: scale.getScaledHeight(62),
               columns: [
                 DataColumn(
                     label: Text(
@@ -587,6 +587,9 @@ class adminScreen extends GetView<adminContrroller> {
   Widget productScreen(ScalingUtility scale, BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: scale.getScaledHeight(15),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -597,8 +600,11 @@ class adminScreen extends GetView<adminContrroller> {
                   fontSize: scale.getScaledFont(18)),
               textScaleFactor: ScaleSize.textScaleFactor(context),
             ),
-            SizedBox()
+            const SizedBox()
           ],
+        ),
+        SizedBox(
+          height: scale.getScaledHeight(10),
         ),
         Expanded(
           child: GridView.builder(
@@ -606,12 +612,13 @@ class adminScreen extends GetView<adminContrroller> {
             itemCount: 20, // Number of items in the grid
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 350,
+
               // Maximum width of each item
               mainAxisSpacing: scale.getScaledWidth(
                   18), // Spacing between items along the main axis
               crossAxisSpacing: scale.getScaledWidth(
                   18), //  // Spacing between items along the cross axis
-              childAspectRatio: 1, // Aspect ratio of each item (width/height)
+              childAspectRatio: .7, // Aspect ratio of each item (width/height)
             ),
             itemBuilder: (BuildContext context, int index) {
               return GridTile(
@@ -622,74 +629,121 @@ class adminScreen extends GetView<adminContrroller> {
                   child: Container(
                     padding: scale.getPadding(all: 10),
                     decoration: BoxDecoration(
-                        border: Border.all(color: LightTheme.borderColor),
+                        color: Colors.white,
                         borderRadius: BorderRadius.all(
-                            Radius.circular(scale.getScaledHeight(17)))),
+                            Radius.circular(scale.getScaledHeight(12)))),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        index % 2 == 0
-                            ? Image(image: AssetImage("assets/images/sh1.png"))
-                            : Image(image: AssetImage("assets/images/sh2.png")),
                         Expanded(
+                            flex: 3,
+                            child: Container(
+                                child: Image(
+                                    image:
+                                        AssetImage("assets/images/sh1.png")))),
+                        Expanded(
+                          flex: 2,
                           child: Padding(
-                            padding: scale.getPadding(top: 20, bottom: 10),
+                            padding:
+                                scale.getPadding(top: 20, bottom: 10, left: 15),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                index % 2 == 0
-                                    ? Text(
-                                        "Hoka Sneakers",
-                                        style: TextStyle(
-                                            color: LightTheme.bluetext,
-                                            fontSize: scale.getScaledFont(9)),
-                                        textScaleFactor:
-                                            ScaleSize.textScaleFactor(context),
-                                      )
-                                    : Text(
-                                        "Blue Shoes",
-                                        style: TextStyle(
-                                            color: LightTheme.bluetext,
-                                            fontSize: scale.getScaledFont(9)),
-                                        textScaleFactor:
-                                            ScaleSize.textScaleFactor(context),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Shoes Sneekers",
+                                          style: AppStyle.txtNunitoBold20
+                                              .copyWith(
+                                                  color: LightTheme.darkBlack,
+                                                  fontSize:
+                                                      scale.getScaledFont(8)),
+                                          textScaleFactor:
+                                              ScaleSize.textScaleFactor(
+                                                  context),
+                                        ),
+                                        SizedBox(
+                                          height: scale.getScaledHeight(5),
+                                        ),
+                                        Text(
+                                          "\$ 50.00",
+                                          style: AppStyle.txtNunitoBold20
+                                              .copyWith(
+                                                  color: LightTheme.blueColor,
+                                                  fontSize:
+                                                      scale.getScaledFont(8)),
+                                          textScaleFactor:
+                                              ScaleSize.textScaleFactor(
+                                                  context),
+                                        ),
+                                      ],
+                                    ),
+                                    Container(
+                                      height: scale.getScaledHeight(40),
+                                      width: scale.getScaledHeight(40),
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: LightTheme.adminbg),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.favorite_outline,
+                                          color: Colors.red,
+                                          size: scale.getScaledFont(24),
+                                        ),
                                       ),
-                                Expanded(
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "&11 /",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: scale.getScaledFont(9)),
-                                        textScaleFactor:
-                                            ScaleSize.textScaleFactor(context),
-                                      ),
-                                      Text(
-                                        " Per day",
-                                        style: TextStyle(
-                                            color: LightTheme.greytext,
-                                            fontSize: scale.getScaledFont(8)),
-                                        textScaleFactor:
-                                            ScaleSize.textScaleFactor(context),
-                                      )
-                                    ],
-                                  ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: scale.getScaledHeight(5),
                                 ),
                                 Row(
                                   children: [
                                     for (int i = 0; i < 5; i++)
-                                      Container(
-                                        height: 20,
-                                        width: 20,
-                                        decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    "assets/logos/fav.png"))),
-                                      )
+                                      Image(
+                                          image: AssetImage(
+                                              "assets/logos/star1.png")),
+                                    Text(
+                                      "(131)",
+                                      style: AppStyle.txtNunitoRegular12
+                                          .copyWith(
+                                              color: LightTheme.greylight,
+                                              fontSize: 6,
+                                              fontWeight: FontWeight.bold),
+                                      textScaleFactor:
+                                          ScaleSize.textScaleFactor(context),
+                                    )
                                   ],
-                                )
+                                ),
+                                SizedBox(
+                                  height: scale.getScaledHeight(5),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      color: LightTheme.greylight10,
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(
+                                              scale.getScaledHeight(7)))),
+                                  child: Padding(
+                                    padding: scale.getPadding(
+                                        horizontal: 10, vertical: 9),
+                                    child: Text(
+                                      "Edit Product",
+                                      style: AppStyle.txtNunitobold14White
+                                          .copyWith(
+                                              fontSize: 7, color: Colors.black),
+                                      textScaleFactor:
+                                          ScaleSize.textScaleFactor(context),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),

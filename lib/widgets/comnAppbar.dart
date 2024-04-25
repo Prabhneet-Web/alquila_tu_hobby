@@ -35,13 +35,13 @@ class Appbar extends StatelessWidget {
               width: scale.getScaledWidth(100),
             ),
             Expanded(
-                flex: 3,
+                flex: 4,
                 child: Container(
                   decoration: BoxDecoration(
                       color: LightTheme.white,
                       borderRadius: BorderRadius.all(
-                          Radius.circular(scale.getScaledHeight(10)))),
-                  margin: scale.getMargin(vertical: 15),
+                          Radius.circular(scale.getScaledHeight(13)))),
+                  margin: scale.getMargin(vertical: 20),
                   child: Row(
                     children: [
                       SizedBox(
@@ -50,23 +50,28 @@ class Appbar extends StatelessWidget {
                       Expanded(
                           flex: 8,
                           child: Center(
-                            child: TextField(
-                              decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.zero,
-                                  hintStyle: TextStyle(
-                                      color: LightTheme.bluetext,
-                                      fontSize: scale.getScaledFont(14)),
-                                  hintText: "What are you looking for?",
-                                  border: InputBorder.none),
+                            child: Container(
+                              height: scale.getScaledHeight(60),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    labelStyle: TextStyle(
+                                        fontSize: scale.getScaledFont(15)),
+                                    contentPadding: EdgeInsets.zero,
+                                    hintStyle: TextStyle(
+                                        color: LightTheme.bluetext,
+                                        fontSize: scale.getScaledFont(14)),
+                                    hintText: "What are you looking for?",
+                                    border: InputBorder.none),
+                              ),
                             ),
                           )),
                       Expanded(
-                          flex: 3,
+                          flex: 4,
                           child: Container(
                             decoration: BoxDecoration(
                                 color: LightTheme.yellowBG,
                                 borderRadius: BorderRadius.all(Radius.circular(
-                                    scale.getScaledHeight(10)))),
+                                    scale.getScaledHeight(13)))),
                             child: Center(
                               child: Text(
                                 "Search",

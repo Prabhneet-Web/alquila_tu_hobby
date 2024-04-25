@@ -41,596 +41,609 @@ class dashBoardscreen extends StatelessWidget {
                       flex: 3,
                       child: Container(
                         margin: scale.getPadding(right: 20, left: 40, top: 40),
-                        padding: scale.getPadding(horizontal: 20),
-                        child: Column(
-                          children: [
-                            Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Categories",
-                                      style: TextStyle(
-                                          color: LightTheme.bluetext,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    ),
-                                    Text(
-                                      "Reset",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "All Categories",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "Shoes",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "Shirt",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "Polo",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "T-shirt",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "Joggers",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            Padding(
-                              padding: scale.getPadding(vertical: 15),
-                              child: Divider(),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Colors",
-                                  style: TextStyle(
-                                      color: LightTheme.bluetext,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: scale.getScaledFont(8)),
-                                  textScaleFactor:
-                                      ScaleSize.textScaleFactor(context),
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(8),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "0 Selected",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    ),
-                                    Text(
-                                      "Reset",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(10),
-                                ),
-                                Row(
-                                  children: [
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.amber,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.blue,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.pink,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.grey,
-                                          shape: BoxShape.circle),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                            Padding(
-                              padding: scale.getPadding(vertical: 15),
-                              child: Divider(),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Size",
-                                  style: TextStyle(
-                                      color: LightTheme.bluetext,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: scale.getScaledFont(8)),
-                                  textScaleFactor:
-                                      ScaleSize.textScaleFactor(context),
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(8),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "0 Selected",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    ),
-                                    Text(
-                                      "Reset",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "M",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "S",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "L",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "XL",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
+                        padding:
+                            scale.getPadding(left: 20, right: 20, bottom: 10),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Categories",
+                                        style: TextStyle(
+                                            color: LightTheme.bluetext,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      ),
+                                      Text(
+                                        "Reset",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "All Categories",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "Shoes",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "Shirt",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "Polo",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "T-shirt",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "Joggers",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Padding(
+                                padding: scale.getPadding(vertical: 15),
+                                child: Divider(),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Colors",
+                                    style: TextStyle(
+                                        color: LightTheme.bluetext,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: scale.getScaledFont(8)),
+                                    textScaleFactor:
+                                        ScaleSize.textScaleFactor(context),
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(8),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "0 Selected",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      ),
+                                      Text(
+                                        "Reset",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(10),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: scale.getMargin(right: 10),
+                                        height: scale.getScaledHeight(20),
+                                        width: scale.getScaledWidth(20),
+                                        decoration: BoxDecoration(
+                                            color: Colors.red,
+                                            shape: BoxShape.circle),
+                                      ),
+                                      Container(
+                                        margin: scale.getMargin(right: 10),
+                                        height: scale.getScaledHeight(20),
+                                        width: scale.getScaledWidth(20),
+                                        decoration: BoxDecoration(
+                                            color: Colors.green,
+                                            shape: BoxShape.circle),
+                                      ),
+                                      Container(
+                                        margin: scale.getMargin(right: 10),
+                                        height: scale.getScaledHeight(20),
+                                        width: scale.getScaledWidth(20),
+                                        decoration: BoxDecoration(
+                                            color: Colors.amber,
+                                            shape: BoxShape.circle),
+                                      ),
+                                      Container(
+                                        margin: scale.getMargin(right: 10),
+                                        height: scale.getScaledHeight(20),
+                                        width: scale.getScaledWidth(20),
+                                        decoration: BoxDecoration(
+                                            color: Colors.blue,
+                                            shape: BoxShape.circle),
+                                      ),
+                                      Container(
+                                        margin: scale.getMargin(right: 10),
+                                        height: scale.getScaledHeight(20),
+                                        width: scale.getScaledWidth(20),
+                                        decoration: BoxDecoration(
+                                            color: Colors.pink,
+                                            shape: BoxShape.circle),
+                                      ),
+                                      Container(
+                                        margin: scale.getMargin(right: 10),
+                                        height: scale.getScaledHeight(20),
+                                        width: scale.getScaledWidth(20),
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            shape: BoxShape.circle),
+                                      ),
+                                      Container(
+                                        margin: scale.getMargin(right: 10),
+                                        height: scale.getScaledHeight(20),
+                                        width: scale.getScaledWidth(20),
+                                        decoration: BoxDecoration(
+                                            color: Colors.black,
+                                            shape: BoxShape.circle),
+                                      ),
+                                      Container(
+                                        margin: scale.getMargin(right: 10),
+                                        height: scale.getScaledHeight(20),
+                                        width: scale.getScaledWidth(20),
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            shape: BoxShape.circle),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Padding(
+                                padding: scale.getPadding(vertical: 15),
+                                child: Divider(),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Size",
+                                    style: TextStyle(
+                                        color: LightTheme.bluetext,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: scale.getScaledFont(8)),
+                                    textScaleFactor:
+                                        ScaleSize.textScaleFactor(context),
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(8),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "0 Selected",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      ),
+                                      Text(
+                                        "Reset",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "M",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "S",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "L",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: scale.getScaledHeight(15),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: scale.getMargin(right: 9),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color: LightTheme.chkBox,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(scale
+                                                        .getScaledHeight(3)))),
+                                          ),
+                                          Text(
+                                            "XL",
+                                            style: TextStyle(
+                                                color: LightTheme.darkBlack,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "5",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       )),
                   Expanded(
@@ -710,7 +723,7 @@ class dashBoardscreen extends StatelessWidget {
                                               child: Row(
                                                 children: [
                                                   Text(
-                                                    "&11 /",
+                                                    "\$ 11 /",
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.bold,
