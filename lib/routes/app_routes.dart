@@ -2,7 +2,8 @@ import 'package:alquila_tu_hobby/presentations/admin/adminBinding.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminScreen.dart';
 import 'package:alquila_tu_hobby/presentations/create_new_account/bindings/create_new_account_controller_bindings.dart';
 import 'package:alquila_tu_hobby/presentations/create_new_account/screens/create_new_account.dart';
-import 'package:alquila_tu_hobby/presentations/dashboard/dashboardscreen.dart';
+import 'package:alquila_tu_hobby/presentations/dashboard/bindings/dashboard_controller_bindings.dart';
+import 'package:alquila_tu_hobby/presentations/dashboard/screens/dashboard_screen.dart';
 import 'package:alquila_tu_hobby/presentations/login/bindings/login_controller_bindings.dart';
 import 'package:alquila_tu_hobby/presentations/login/screens/login_screen.dart';
 import 'package:alquila_tu_hobby/presentations/product/productScreen.dart';
@@ -18,23 +19,22 @@ class AppRoutes {
   static List<GetPage> pages = [
     GetPage(
       name: login,
-      page: () => Login(),
+      page: () => const Login(),
       bindings: [LoginControllerBinding()],
     ),
     GetPage(
       name: createNewAccount,
-      page: () => CreateNewAccount(),
+      page: () => const CreateNewAccount(),
       bindings: [CreateNewAccountControllerBinding()],
     ),
     GetPage(
       name: dashboard,
-      page: () => dashBoardscreen(),
-      //bindings: [CreateNewAccountControllerBinding()],
+      page: () => const DashBoardScreen(),
+      bindings: [DashboardControllerBindings()]
     ),
     GetPage(
       name: product,
-      page: () => productScreen(),
-      //bindings: [CreateNewAccountControllerBinding()],
+      page: () => const ProductsScreen(),
     ),
     GetPage(
       name: adminDashboard,

@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-class Appbar extends StatelessWidget {
-  const Appbar({super.key});
+class CommonAppBar extends StatelessWidget {
+  const CommonAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +46,9 @@ class Appbar extends StatelessWidget {
                     width: scale.getScaledWidth(10),
                   ),
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       width: scale.fw/6,
                       height: scale.getScaledHeight(90),
-                      // child: Expanded(
                         child: TextField(
                           decoration: InputDecoration(
                               labelStyle: TextStyle(
@@ -61,28 +60,31 @@ class Appbar extends StatelessWidget {
                               hintText: "What are you looking for?",
                               border: InputBorder.none),
                         ),
-                      // ),
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        color: LightTheme.yellowBG,
-                        borderRadius: BorderRadius.all(Radius.circular(
-                            scale.getScaledHeight(13)))),
-                    child: Center(
-                      child: Padding(
-                        padding:scale.getPadding(horizontal: 16),
-                        child: Text(
-                          "Search",
-                          style: AppStyle.txtNunitoRegular14White
-                              .copyWith(fontWeight: FontWeight.bold),
+                  InkWell(
+                    onTap: (){},
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: LightTheme.yellowBG,
+                          borderRadius: BorderRadius.all(Radius.circular(
+                              scale.getScaledHeight(13)))),
+                      child: Center(
+                        child: Padding(
+                          padding:scale.getPadding(horizontal: 16),
+                          child: Text(
+                            "Search",
+                            style: AppStyle.txtNunitoRegular14White
+                                .copyWith(fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
                   )
                 ],
               ),
-            ),Spacer(),
+            ),
+            const Spacer(),
             Container(
               margin: scale.getMargin(vertical: 10),
               child: Row(
@@ -92,83 +94,75 @@ class Appbar extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(AppRoutes.adminDashboard);
                     },
-                    child: Container(
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.person,
-                            color: LightTheme.white,
-                          ),
-                          SizedBox(
-                            width: scale.getScaledWidth(10),
-                          ),
-                          Text(
-                            "Profile",
-                            style: AppStyle.txtNunitobold14White,
-                          )
-                        ],
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.person,
+                          color: LightTheme.white,
+                        ),
+                        SizedBox(
+                          width: scale.getScaledWidth(10),
+                        ),
+                        Text(
+                          "Profile",
+                          style: AppStyle.txtNunitobold14White,
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: scale.getScaledWidth(35),
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.favorite_border_outlined,
+                        color: LightTheme.white,
                       ),
-                    ),
+                      SizedBox(
+                        width: scale.getScaledWidth(10),
+                      ),
+                      Text(
+                        "Favorite",
+                        style: AppStyle.txtNunitobold14White,
+                      )
+                    ],
                   ),
                   SizedBox(
                     width: scale.getScaledWidth(35),
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.favorite_border_outlined,
-                          color: LightTheme.white,
-                        ),
-                        SizedBox(
-                          width: scale.getScaledWidth(10),
-                        ),
-                        Text(
-                          "Favorite",
-                          style: AppStyle.txtNunitobold14White,
-                        )
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.chat,
+                        color: LightTheme.white,
+                      ),
+                      SizedBox(
+                        width: scale.getScaledWidth(10),
+                      ),
+                      Text(
+                        "Chat",
+                        style: AppStyle.txtNunitobold14White,
+                      )
+                    ],
                   ),
                   SizedBox(
                     width: scale.getScaledWidth(35),
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.chat,
-                          color: LightTheme.white,
-                        ),
-                        SizedBox(
-                          width: scale.getScaledWidth(10),
-                        ),
-                        Text(
-                          "Chat",
-                          style: AppStyle.txtNunitobold14White,
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: scale.getScaledWidth(35),
-                  ),
-                  Container(
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.shopping_cart,
-                          color: LightTheme.white,
-                        ),
-                        SizedBox(
-                          width: scale.getScaledWidth(10),
-                        ),
-                        Text(
-                          "Cart",
-                          style: AppStyle.txtNunitobold14White,
-                        )
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.shopping_cart,
+                        color: LightTheme.white,
+                      ),
+                      SizedBox(
+                        width: scale.getScaledWidth(10),
+                      ),
+                      Text(
+                        "Cart",
+                        style: AppStyle.txtNunitobold14White,
+                      )
+                    ],
                   ),
                   SizedBox(
                     width: scale.getScaledWidth(45),

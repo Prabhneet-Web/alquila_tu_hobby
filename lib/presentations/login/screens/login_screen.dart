@@ -6,7 +6,6 @@ import 'package:alquila_tu_hobby/presentations/login/controller/login_controller
 import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:alquila_tu_hobby/widgets/check_box.dart';
 import 'package:alquila_tu_hobby/widgets/custom_text_formfield.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -83,9 +82,16 @@ class Login extends GetView<LoginController> {
                       SizedBox(height: scale.getScaledHeight(16)),
                       Row(
                         children: [
-                          TriStateCheckbox(
-                            boxState: CheckboxState.CHECKED,
-                            onTap: () {},
+                          Obx(() => TriStateCheckbox(
+                              boxState: (controller.boxState?.value ?? CheckboxState.UNCHECKED),
+                              onTap: () {
+                                if(controller.boxState?.value == CheckboxState.UNCHECKED){
+                                  controller.boxState?.value = CheckboxState.CHECKED;
+                                } else {
+                                  controller.boxState?.value = CheckboxState.UNCHECKED;
+                                }
+                              },
+                            ),
                           ),
                           SizedBox(width: scale.getScaledWidth(8)),
                           Text("Remember Password",

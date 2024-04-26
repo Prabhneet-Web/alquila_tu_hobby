@@ -3,7 +3,7 @@ import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart
 import 'package:alquila_tu_hobby/core/utils/image_constants/image_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminConntroller.dart';
-import 'package:alquila_tu_hobby/presentations/dashboard/dashboardscreen.dart';
+import 'package:alquila_tu_hobby/presentations/dashboard/screens/dashboard_screen.dart';
 import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

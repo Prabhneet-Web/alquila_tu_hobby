@@ -40,13 +40,13 @@ class _TriStateCheckboxState extends State<TriStateCheckbox> {
         child: AnimatedContainer(
             height: widget.height ?? 22,
             width: widget.width ?? 22,
-            duration: Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 500),
             curve: Curves.fastLinearToSlowEaseIn,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
                 color: LightTheme.white,
                 border: Border.all(color: LightTheme.borderColor)),
-            child: Icon(
+            child: const Icon(
               Icons.horizontal_rule,
               color: LightTheme.borderColor,
               size: 14,
@@ -58,13 +58,13 @@ class _TriStateCheckboxState extends State<TriStateCheckbox> {
         child: AnimatedContainer(
             height: widget.height ?? 22,
             width: widget.width ?? 22,
-            duration: Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 500),
             curve: Curves.fastLinearToSlowEaseIn,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
                 color: LightTheme.white,
                 border: Border.all(color: LightTheme.borderColor)),
-            child: Icon(
+            child: const Icon(
               Icons.check,
               color: LightTheme.borderColor,
               size: 14,
@@ -76,13 +76,13 @@ class _TriStateCheckboxState extends State<TriStateCheckbox> {
         child: AnimatedContainer(
             height: widget.height ?? 22,
             width: widget.width ?? 22,
-            duration: Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 500),
             curve: Curves.fastLinearToSlowEaseIn,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
                 color: LightTheme.white,
                 border: Border.all(color: LightTheme.borderColor)),
-            child: Icon(
+            child: const Icon(
               Icons.check,
               color: LightTheme.borderColor,
               size: 14,
