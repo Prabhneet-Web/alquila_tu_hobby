@@ -1,3 +1,5 @@
+import 'package:alquila_tu_hobby/presentations/Massage/cahtBinding.dart';
+import 'package:alquila_tu_hobby/presentations/Massage/chatScreenn.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminBinding.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminScreen.dart';
 import 'package:alquila_tu_hobby/presentations/create_new_account/bindings/create_new_account_controller_bindings.dart';
@@ -15,6 +17,7 @@ class AppRoutes {
   static const String dashboard = '/dashboard';
   static const String product = '/product';
   static const String adminDashboard = '/adminDashboard';
+  static const String chatscreen = '/chatscreen';
 
   static List<GetPage> pages = [
     GetPage(
@@ -40,6 +43,11 @@ class AppRoutes {
       name: adminDashboard,
       page: () => adminScreen(),
       bindings: [adminBinding()],
+    ),
+    GetPage(
+      name: adminDashboard,
+      page: () => chatScreen(),
+      bindings: [cahtBinding()],
     ),
   ];
 }
