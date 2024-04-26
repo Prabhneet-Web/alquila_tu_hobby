@@ -34,150 +34,148 @@ class Appbar extends StatelessWidget {
             SizedBox(
               width: scale.getScaledWidth(100),
             ),
-            Expanded(
-                flex: 4,
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: LightTheme.white,
-                      borderRadius: BorderRadius.all(
-                          Radius.circular(scale.getScaledHeight(13)))),
-                  margin: scale.getMargin(vertical: 20),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: scale.getScaledWidth(10),
-                      ),
-                      Expanded(
-                          flex: 8,
-                          child: Center(
-                            child: Container(
-                              height: scale.getScaledHeight(60),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                    labelStyle: TextStyle(
-                                        fontSize: scale.getScaledFont(15)),
-                                    contentPadding: EdgeInsets.zero,
-                                    hintStyle: TextStyle(
-                                        color: LightTheme.bluetext,
-                                        fontSize: scale.getScaledFont(14)),
-                                    hintText: "What are you looking for?",
-                                    border: InputBorder.none),
-                              ),
-                            ),
-                          )),
-                      Expanded(
-                          flex: 4,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: LightTheme.yellowBG,
-                                borderRadius: BorderRadius.all(Radius.circular(
-                                    scale.getScaledHeight(13)))),
-                            child: Center(
-                              child: Text(
-                                "Search",
-                                style: AppStyle.txtNunitoRegular14White
-                                    .copyWith(fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ))
-                    ],
+            Container(
+              decoration: BoxDecoration(
+                  color: LightTheme.white,
+                  borderRadius: BorderRadius.all(
+                      Radius.circular(scale.getScaledHeight(13)))),
+              margin: scale.getMargin(vertical: 15),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: scale.getScaledWidth(10),
                   ),
-                )),
-            Expanded(
-                flex: 8,
-                child: Container(
-                  margin: scale.getMargin(vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.adminDashboard);
-                        },
-                        child: Container(
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.person,
-                                color: LightTheme.white,
-                              ),
-                              SizedBox(
-                                width: scale.getScaledWidth(10),
-                              ),
-                              Text(
-                                "Profile",
-                                style: AppStyle.txtNunitobold14White,
-                              )
-                            ],
+                  Center(
+                    child: Container(
+                      width: scale.fw/6,
+                      height: scale.getScaledHeight(90),
+                      // child: Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                              labelStyle: TextStyle(
+                                  fontSize: scale.getScaledFont(15)),
+                             contentPadding: scale.getPadding(bottom: 5),
+                              hintStyle: TextStyle(
+                                  color: LightTheme.bluetext,
+                                  fontSize: scale.getScaledFont(14)),
+                              hintText: "What are you looking for?",
+                              border: InputBorder.none),
+                        ),
+                      // ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: LightTheme.yellowBG,
+                        borderRadius: BorderRadius.all(Radius.circular(
+                            scale.getScaledHeight(13)))),
+                    child: Center(
+                      child: Padding(
+                        padding:scale.getPadding(horizontal: 16),
+                        child: Text(
+                          "Search",
+                          style: AppStyle.txtNunitoRegular14White
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),Spacer(),
+            Container(
+              margin: scale.getMargin(vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(AppRoutes.adminDashboard);
+                    },
+                    child: Container(
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.person,
+                            color: LightTheme.white,
                           ),
-                        ),
+                          SizedBox(
+                            width: scale.getScaledWidth(10),
+                          ),
+                          Text(
+                            "Profile",
+                            style: AppStyle.txtNunitobold14White,
+                          )
+                        ],
                       ),
-                      SizedBox(
-                        width: scale.getScaledWidth(35),
-                      ),
-                      Container(
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.favorite_border_outlined,
-                              color: LightTheme.white,
-                            ),
-                            SizedBox(
-                              width: scale.getScaledWidth(10),
-                            ),
-                            Text(
-                              "Favorite",
-                              style: AppStyle.txtNunitobold14White,
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: scale.getScaledWidth(35),
-                      ),
-                      Container(
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.chat,
-                              color: LightTheme.white,
-                            ),
-                            SizedBox(
-                              width: scale.getScaledWidth(10),
-                            ),
-                            Text(
-                              "Chat",
-                              style: AppStyle.txtNunitobold14White,
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: scale.getScaledWidth(35),
-                      ),
-                      Container(
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.shopping_cart,
-                              color: LightTheme.white,
-                            ),
-                            SizedBox(
-                              width: scale.getScaledWidth(10),
-                            ),
-                            Text(
-                              "Cart",
-                              style: AppStyle.txtNunitobold14White,
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: scale.getScaledWidth(45),
-                      )
-                    ],
+                    ),
                   ),
-                ))
+                  SizedBox(
+                    width: scale.getScaledWidth(35),
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.favorite_border_outlined,
+                          color: LightTheme.white,
+                        ),
+                        SizedBox(
+                          width: scale.getScaledWidth(10),
+                        ),
+                        Text(
+                          "Favorite",
+                          style: AppStyle.txtNunitobold14White,
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: scale.getScaledWidth(35),
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.chat,
+                          color: LightTheme.white,
+                        ),
+                        SizedBox(
+                          width: scale.getScaledWidth(10),
+                        ),
+                        Text(
+                          "Chat",
+                          style: AppStyle.txtNunitobold14White,
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: scale.getScaledWidth(35),
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.shopping_cart,
+                          color: LightTheme.white,
+                        ),
+                        SizedBox(
+                          width: scale.getScaledWidth(10),
+                        ),
+                        Text(
+                          "Cart",
+                          style: AppStyle.txtNunitobold14White,
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: scale.getScaledWidth(45),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

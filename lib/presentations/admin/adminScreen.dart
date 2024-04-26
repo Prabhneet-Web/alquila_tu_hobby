@@ -3,6 +3,7 @@ import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart
 import 'package:alquila_tu_hobby/core/utils/image_constants/image_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminConntroller.dart';
+import 'package:alquila_tu_hobby/presentations/dashboard/dashboardscreen.dart';
 import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+//import 'package:syncfusion_flutter_charts/charts.dart';
 
 class adminScreen extends GetView<adminContrroller> {
   const adminScreen({super.key});
@@ -289,7 +291,8 @@ class adminScreen extends GetView<adminContrroller> {
                                   horizontal: 20, vertical: 20),
                               color: LightTheme.adminbg,
                               child: controller.mainIndx.value == 1
-                                  ? productScreen(scale, context)
+                                  ?adashboardScreen(scale,context)
+                                  // productScreen(scale, context)
                                   : controller.mainIndx.value == 2
                                       ? userScreen(context, scale)
                                       : catScreen(context, scale)),
@@ -534,7 +537,8 @@ class adminScreen extends GetView<adminContrroller> {
               rows: controller.data.map((element) {
                 return DataRow(
                   cells: [
-                    DataCell(Text(
+                    DataCell(
+                      Text(
                       element["id"],
                       style: AppStyle.txtNunitoRegular12
                           .copyWith(fontSize: 6, fontWeight: FontWeight.bold),
@@ -759,4 +763,132 @@ class adminScreen extends GetView<adminContrroller> {
       ],
     );
   }
+  adashboardScreen(ScalingUtility scale,BuildContext context){
+    return Center(
+      child: Padding(
+        padding: scale.getPadding(left: 14,right: 14),
+        child: Column(
+          
+          children: [
+            Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: scale.getPadding(left: 4),
+                child: Text(
+                  "Dashboard",
+                  style: AppStyle.txtNunitoBold20.copyWith(
+                      color: LightTheme.darkBlack,
+                      fontSize: scale.getScaledFont(15)),
+                  textScaleFactor: ScaleSize.textScaleFactor(context),
+                ),
+              ),
+              const SizedBox()
+            ],
+          ),
+          Container(height: scale.getScaledHeight(155),child: Row(children: [userContainer(scale,context),userContainer(scale,context),userContainer(scale,context),userContainer(scale,context)],),),
+            Container(
+              padding: scale.getPadding(all: 14),
+              decoration: BoxDecoration(color: LightTheme.white,borderRadius: BorderRadius.all(Radius.circular(scale.getScaledFont(18)))),
+                
+               
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Padding(
+                     padding: scale.getPadding(left: 10,bottom: 18,top: 10),
+                     child: Text(
+                                     "Sales details",
+                                     style: AppStyle.txtNunitoBold20.copyWith(
+                      color: LightTheme.darkBlack,
+                      fontSize: scale.getScaledFont(12)),
+                                     textScaleFactor: ScaleSize.textScaleFactor(context),
+                                   ),
+                   ),
+                  // SfCartesianChart(
+                    
+                  //         // Initialize category axis
+                  //         primaryXAxis: CategoryAxis(),
+                  //         primaryYAxis: NumericAxis(
+                  //           minimum: 20, // Minimum value for y-axis
+                  //           maximum: 100, // Maximum value for y-axis
+                  //           interval: 20,
+                  //         ),
+                         
+                          
+                  
+                  //         series: <LineSeries<SalesData, String>>[
+                  //           LineSeries<SalesData, String>(
+                  //             // Bind data source
+                  //             dataSource:  <SalesData>[
+                  //               SalesData('5k', 20),
+                  //                SalesData('10k', 30),
+                  //                 SalesData('15k', 35),
+                  //                  SalesData('20k', 50),
+                  //                   SalesData('25k', 20),
+                  //                    SalesData('30k', 35),
+                  //                     SalesData('35k', 50),
+                  //                      SalesData('40k', 60),
+                  //                       SalesData('45k', 50),
+                  //                        SalesData('50k', 20),
+                  //                         SalesData('55k', 70)
+                  //                         , SalesData('60k', 85),
+                                          
+                  //             ],
+                  //             xValueMapper: (SalesData sales, _) => sales.year,
+                  //             yValueMapper: (SalesData sales, _) => sales.sales,
+                  //              markerSettings: MarkerSettings(
+                  //               color: Colors.blue,
+                  //               isVisible: true, // Show markers
+                  //               shape: DataMarkerType.circle, // Set marker shape
+                  //             ),
+                  //           )
+                  //         ]
+                  //       ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    )
+        ;
+  }
+  userContainer(ScalingUtility scale,BuildContext context){
+    return Expanded(child: Container(
+      margin: scale.getMargin(horizontal: 7,vertical: 14),
+      padding: scale.getPadding(all: 10),
+      decoration: BoxDecoration(
+        color: LightTheme.white,
+        borderRadius: BorderRadius.all(Radius.circular(scale.getScaledFont(15)))
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        children: [Expanded(child: Container(
+          child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start, children: [Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(
+                  "Total user",
+                  style: AppStyle.txtNunitoRegular12.copyWith(
+                      color: LightTheme.darkBlack,
+                      fontSize: scale.getScaledFont(8)),
+                  textScaleFactor: ScaleSize.textScaleFactor(context),
+                ),
+                SizedBox(height: scale.getScaledHeight(10),),
+                Text(
+                  "50,000",
+                  style: TextStyle(fontSize: scale.getScaledFont(14),fontWeight: FontWeight.bold),
+                  textScaleFactor: ScaleSize.textScaleFactor(context),
+                )],),Spacer(),Container(margin: scale.getMargin(bottom: 15), padding: scale.getPadding(all: 10), decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(scale.getScaledFont(20))), color: LightTheme.yellowBG.withOpacity(.4)), child: Icon(Icons.people),)],),
+        )),Container(child:  Text(
+                      "8.5% up from yesterday",
+                      style: AppStyle.txtNunitoBold20
+                          .copyWith(color: LightTheme.darkBlack, fontSize: 7, fontWeight: FontWeight.bold),
+                      textScaleFactor: ScaleSize.textScaleFactor(context),
+                    ),)],),
+    ));
+  }
+}
+class SalesData {
+  SalesData(this.year, this.sales);
+  final String year;
+  final double sales;
 }
