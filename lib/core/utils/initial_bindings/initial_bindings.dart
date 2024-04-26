@@ -1,4 +1,5 @@
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
+import 'package:alquila_tu_hobby/presentations/Massage/cahtBinding.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminBinding.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminConntroller.dart';
 import 'package:get/get.dart';
@@ -9,5 +10,6 @@ class InitialBindings extends Bindings {
   Future<void> dependencies() async {
     Get.put(ScalingUtility(), permanent: true);
     Get.put(adminContrroller(), permanent: true);
+    Get.put(cahtBinding(), permanent: true);
   }
 }
