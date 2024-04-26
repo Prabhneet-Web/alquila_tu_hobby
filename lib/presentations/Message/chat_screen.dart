@@ -425,12 +425,16 @@ class chatScreen extends GetView<chatScreeenController> {
                                                                       Radius.circular(
                                                                           scale.getScaledFont(
                                                                               10))),
-                                                                  color:
-                                                                      LightTheme
-                                                                          .grey1),
-                                                              child: Text(controller
-                                                                      .messageedata[
-                                                                  i]['time'][j]),
+                                                                  color: LightTheme
+                                                                      .mychat),
+                                                              child: Text(
+                                                                controller
+                                                                        .messageedata[i]
+                                                                    ['time'][j],
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .white),
+                                                              ),
                                                             )
                                                         ],
                                                       ),
