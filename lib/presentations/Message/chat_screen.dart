@@ -1,13 +1,14 @@
 import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
-import 'package:alquila_tu_hobby/presentations/Massage/chatScreenController.dart';
 import 'package:alquila_tu_hobby/widgets/common_appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+
+import 'chatScreenController.dart';
 
 class chatScreen extends GetView<chatScreeenController> {
   const chatScreen({super.key});

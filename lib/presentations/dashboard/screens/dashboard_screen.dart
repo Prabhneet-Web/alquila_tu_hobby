@@ -340,7 +340,7 @@ class DashBoardScreen extends GetView<DashboardController> {
                                       Radius.circular(
                                           scale.getScaledHeight(17)))),
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   index % 2 == 0
                                       ? const Image(

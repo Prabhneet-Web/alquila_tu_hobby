@@ -1,5 +1,5 @@
-import 'package:alquila_tu_hobby/presentations/Massage/cahtBinding.dart';
-import 'package:alquila_tu_hobby/presentations/Massage/chatScreenn.dart';
+import 'package:alquila_tu_hobby/presentations/Message/cahtBinding.dart';
+import 'package:alquila_tu_hobby/presentations/Message/chat_screen.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminBinding.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminScreen.dart';
 import 'package:alquila_tu_hobby/presentations/create_new_account/bindings/create_new_account_controller_bindings.dart';
