@@ -1,30 +1,29 @@
 import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
+import 'package:alquila_tu_hobby/presentations/product/controller/product_screen_controller.dart';
 import 'package:alquila_tu_hobby/widgets/common_appbar.dart';
 import 'package:alquila_tu_hobby/widgets/custom_text_formfield.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:clean_calendar/clean_calendar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:just_the_tooltip/just_the_tooltip.dart';
 
-class ProductsScreen extends StatelessWidget {
+class ProductsScreen extends GetView<ProductScreenController> {
   const ProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final scale = Get.find<ScalingUtility>()..setCurrentDeviceSize(context);
     return Scaffold(
-        body: Container(
+        body: SizedBox(
             height: scale.fh,
             width: scale.fw,
             child: Column(children: [
-              CommonAppBar(),
-              Container(
+              const CommonAppBar(),
+              SizedBox(
                 height: scale.getScaledHeight(50),
                 width: scale.fw,
                 //color: const Color.fromARGB(255, 103, 75, 73),
@@ -53,7 +52,7 @@ class ProductsScreen extends StatelessWidget {
                                                 scale.getScaledHeight(10))),
                                         border: Border.all(
                                             color: LightTheme.greylight),
-                                        image: DecorationImage(
+                                        image: const DecorationImage(
                                             image: AssetImage(
                                                 "assets/images/sh1.png"),
                                             fit: BoxFit.fill)),
@@ -74,7 +73,7 @@ class ProductsScreen extends StatelessWidget {
                                                       .getScaledHeight(10))),
                                               border: Border.all(
                                                   color: LightTheme.greylight),
-                                              image: DecorationImage(
+                                              image: const DecorationImage(
                                                   image: AssetImage(
                                                       "assets/images/sh1.png"))),
                                         ),
@@ -93,7 +92,7 @@ class ProductsScreen extends StatelessWidget {
                                                       .getScaledHeight(10))),
                                               border: Border.all(
                                                   color: LightTheme.greylight),
-                                              image: DecorationImage(
+                                              image: const DecorationImage(
                                                   image: AssetImage(
                                                       "assets/images/sh1.png"))),
                                         ),
@@ -104,14 +103,14 @@ class ProductsScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             height: scale.fh / 1.4,
                             width: scale.fh / 1.6,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Hoka Sneakers",
+                                  controller.productName?.value ?? "",
                                   style: AppStyle.txtNunitoBold20.copyWith(
                                       color: LightTheme.bluetext,
                                       fontSize: scale.getScaledFont(18)),
@@ -124,7 +123,7 @@ class ProductsScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      "&11 /",
+                                      "\$${controller.productPrice?.value ?? 0.0} /",
                                       style: AppStyle.txtNunitoBold20.copyWith(
                                           color: LightTheme.greytext,
                                           fontSize: scale.getScaledFont(17)),
@@ -147,31 +146,48 @@ class ProductsScreen extends StatelessWidget {
                                 ),
                                 Row(
                                   children: [
-                                    Row(
-                                      children: [
-                                        for (int i = 0; i < 5; i++)
-                                          Container(
-                                            margin: scale.getMargin(right: 3),
-                                            height: scale.getScaledHeight(20),
-                                            width: scale.getScaledHeight(20),
-                                            decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                    image: AssetImage(
-                                                        "assets/logos/star.png"))),
-                                          )
-                                      ],
+                                    Obx(
+                                          () => RatingStars(
+                                        axis: Axis.horizontal,
+                                        value: controller.productRatings?.value ?? 0.0,
+                                        onValueChanged: (v) {
+                                          controller.productRatings?.value = v;
+                                        },
+                                        starCount: 5,
+                                        starSize: 20,
+                                        valueLabelRadius: 10,
+                                        maxValue: 5,
+                                        starSpacing: 2,
+                                        maxValueVisibility: false,
+                                        valueLabelVisibility: false,
+                                        animationDuration: const Duration(
+                                            milliseconds: 500),
+                                        valueLabelPadding:
+                                        const EdgeInsets.symmetric(
+                                            vertical: 1,
+                                            horizontal: 8),
+                                        valueLabelMargin:
+                                        const EdgeInsets.only(
+                                            right: 8),
+                                        starOffColor:
+                                        LightTheme.borderColor,
+                                        starColor: LightTheme.yellowBG,
+                                      ),
                                     ),
                                     SizedBox(
                                       width: scale.getScaledWidth(16),
                                     ),
-                                    Text(
-                                      "No review yet",
-                                      style: AppStyle.txtNunitoBold20.copyWith(
-                                          fontWeight: FontWeight.w400,
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
+                                    Obx(() =>
+                                        Text(
+                                          controller.productRatings?.value == 0.0 ?
+                                          "No review yet" : "${controller.productRatings?.value}",
+                                        style: AppStyle.txtNunitoBold20.copyWith(
+                                            fontWeight: FontWeight.w400,
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      ) ,
                                     )
                                   ],
                                 ),
@@ -212,8 +228,6 @@ class ProductsScreen extends StatelessWidget {
                                         margin: scale.getMargin(
                                             left: 1100, top: 10),
                                         isModal: true,
-                                        child:
-                                            Icon(Icons.calendar_month_outlined),
                                         content: Container(
                                           margin: scale.getMargin(all: 8),
                                           height: scale.getScaledHeight(286),
@@ -258,13 +272,8 @@ class ProductsScreen extends StatelessWidget {
                                               DateTime(2022, 8, 24),
                                             ],
                                           ),
-                                        )),
-                                    // IconButton(
-                                    //     onPressed: () {
-
-                                    //     },
-                                    //     icon:
-                                    //         Icon(Icons.calendar_month_outlined))
+                                        ),
+                                        child: const Icon(Icons.calendar_month_outlined)),
                                   ],
                                 ),
                                 SizedBox(
@@ -303,7 +312,7 @@ class ProductsScreen extends StatelessWidget {
                                           border: Border.all()),
                                       child: Container(
                                         margin: scale.getMargin(all: 3),
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                             shape: BoxShape.circle,
                                             color: LightTheme.yellowBG),
                                       ),
@@ -326,18 +335,27 @@ class ProductsScreen extends StatelessWidget {
                                     SizedBox(
                                       width: scale.getScaledWidth(10),
                                     ),
-                                    for (int i = 0; i < 4; i++)
-                                      Container(
-                                        margin: scale.getMargin(right: 10),
-                                        height: scale.getScaledHeight(25),
-                                        width: scale.getScaledWidth(37),
-                                        decoration:
-                                            BoxDecoration(border: Border.all()),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.greylight10),
-                                        ),
-                                      )
+                                    SizedBox(
+                                      height: scale.getScaledHeight(20),
+                                      width: scale.getScaledWidth(300),
+                                      child: ListView.builder(
+                                        scrollDirection: Axis.horizontal,
+                                        itemCount: (controller.productSize?.length) ?? 0,
+                                          itemBuilder: (BuildContext context, int index) {
+                                        return Container(
+                                          margin: scale.getMargin(right: 10),
+                                          height: scale.getScaledHeight(25),
+                                          width: scale.getScaledWidth(37),
+                                          decoration:
+                                          BoxDecoration(border: Border.all()),
+                                          child: Container(
+                                            decoration: const BoxDecoration(
+                                                color: LightTheme.greylight10),
+                                            child: Center(child: Text("${controller.productSize?[index] ?? ""}")),
+                                          ),
+                                        );
+                                      }),
+                                    )
                                   ],
                                 ),
                                 SizedBox(
@@ -360,19 +378,21 @@ class ProductsScreen extends StatelessWidget {
                                       margin: scale.getMargin(right: 10),
                                       height: scale.getScaledHeight(30),
                                       width: scale.getScaledWidth(130),
-                                      decoration: BoxDecoration(),
                                       child: Row(
                                         children: [
                                           Expanded(
                                             flex: 2,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                  color: LightTheme.greylight10,
-                                                  border: Border.all(
-                                                      color: LightTheme
-                                                          .greylight)),
-                                              child: Center(
-                                                child: Icon(Icons.add),
+                                            child: InkWell(
+                                              onTap: () {},
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    color: LightTheme.greylight10,
+                                                    border: Border.all(
+                                                        color: LightTheme
+                                                            .greylight)),
+                                                child: const Center(
+                                                  child: Icon(Icons.add),
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -394,7 +414,7 @@ class ProductsScreen extends StatelessWidget {
                                                   border: Border.all(
                                                       color: LightTheme
                                                           .greylight)),
-                                              child: Center(
+                                              child: const Center(
                                                 child: Icon(Icons.remove),
                                               ),
                                             ),
@@ -549,7 +569,7 @@ class ProductsScreen extends StatelessWidget {
                                     ),
                                     Container(
                                       margin: scale.getMargin(left: 20),
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         image: DecorationImage(
                                             image: AssetImage(
                                                 "assets/logos/heart.png")),

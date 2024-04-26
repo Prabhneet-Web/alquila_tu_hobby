@@ -9,7 +9,8 @@ import 'package:alquila_tu_hobby/presentations/dashboard/screens/dashboard_scree
 import 'package:alquila_tu_hobby/presentations/favourite/favProductScreen.dart';
 import 'package:alquila_tu_hobby/presentations/login/bindings/login_controller_bindings.dart';
 import 'package:alquila_tu_hobby/presentations/login/screens/login_screen.dart';
-import 'package:alquila_tu_hobby/presentations/product/productScreen.dart';
+import 'package:alquila_tu_hobby/presentations/product/binding/product_screen_controller_binding.dart';
+import 'package:alquila_tu_hobby/presentations/product/screens/productScreen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoutes {
@@ -49,6 +50,9 @@ class AppRoutes {
     GetPage(
       name: product,
       page: () => const ProductsScreen(),
+      bindings: [
+        ProductScreenControllerBindings()
+      ]
     ),
     GetPage(
       name: adminDashboard,
