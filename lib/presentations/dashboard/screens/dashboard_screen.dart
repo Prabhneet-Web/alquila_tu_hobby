@@ -5,6 +5,7 @@ import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:alquila_tu_hobby/widgets/check_box.dart';
 import 'package:alquila_tu_hobby/widgets/common_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:get/get.dart';
 
 class DashBoardScreen extends GetView<DashboardController> {
@@ -65,34 +66,42 @@ class DashBoardScreen extends GetView<DashboardController> {
                             SizedBox(
                               height: scale.getScaledHeight(200),
                               child: ListView.separated(
-                                  itemBuilder: (BuildContext context, int index) {
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
                                     return Row(
                                       children: [
                                         Obx(
                                           () => TriStateCheckbox(
-                                            boxState:
-                                                (controller.boxStateOfCategories?[index] ??
-                                                    CheckboxState.UNCHECKED),
+                                            boxState: (controller
+                                                        .boxStateOfCategories?[
+                                                    index] ??
+                                                CheckboxState.UNCHECKED),
                                             onTap: () {
-                                              if (controller.boxStateOfCategories?[index] ==
+                                              if (controller
+                                                          .boxStateOfCategories?[
+                                                      index] ==
                                                   CheckboxState.UNCHECKED) {
-                                                controller.boxStateOfCategories?[index] =
+                                                controller.boxStateOfCategories?[
+                                                        index] =
                                                     CheckboxState.CHECKED;
                                               } else {
-                                                controller.boxStateOfCategories?[index] =
+                                                controller.boxStateOfCategories?[
+                                                        index] =
                                                     CheckboxState.UNCHECKED;
                                               }
                                             },
                                           ),
                                         ),
-                                        SizedBox(width: scale.getScaledWidth(6)),
+                                        SizedBox(
+                                            width: scale.getScaledWidth(6)),
                                         Text(
                                           (controller.categories?[index] ?? ""),
                                           style: TextStyle(
                                               color: LightTheme.darkBlack,
                                               fontSize: scale.getScaledFont(8)),
                                           textScaleFactor:
-                                              ScaleSize.textScaleFactor(context),
+                                              ScaleSize.textScaleFactor(
+                                                  context),
                                         ),
                                         const Spacer(),
                                         Text(
@@ -101,14 +110,19 @@ class DashBoardScreen extends GetView<DashboardController> {
                                               color: LightTheme.darkBlack,
                                               fontSize: scale.getScaledFont(8)),
                                           textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
+                                              ScaleSize.textScaleFactor(
+                                                  context),
                                         ),
                                       ],
                                     );
                                   },
                                   itemCount:
                                       (controller.categories?.length ?? 0),
-                                separatorBuilder: (BuildContext context, int index) => SizedBox(height: scale.getScaledHeight(15),)),
+                                  separatorBuilder:
+                                      (BuildContext context, int index) =>
+                                          SizedBox(
+                                            height: scale.getScaledHeight(15),
+                                          )),
                             ),
                             Padding(
                               padding: scale.getPadding(vertical: 15),
@@ -161,15 +175,28 @@ class DashBoardScreen extends GetView<DashboardController> {
                                 SizedBox(
                                   height: scale.getScaledHeight(20),
                                   child: ListView.separated(
-                                    scrollDirection : Axis.horizontal,
-                                    itemBuilder: (BuildContext context, int index) => Container(
-                                    margin: scale.getMargin(right: 10),
-                                    height: scale.getScaledHeight(20),
-                                    width: scale.getScaledWidth(20),
-                                    decoration: BoxDecoration(
-                                        color: (controller.colorsToSelect?[index] ?? Colors.white),
-                                        shape: BoxShape.circle),
-                                  ), separatorBuilder: (BuildContext context, int index) => SizedBox(width: scale.getScaledWidth(1),), itemCount: (controller.colorsToSelect?.length ?? 0)),
+                                      scrollDirection: Axis.horizontal,
+                                      itemBuilder: (BuildContext context,
+                                              int index) =>
+                                          Container(
+                                            margin: scale.getMargin(right: 10),
+                                            height: scale.getScaledHeight(20),
+                                            width: scale.getScaledWidth(20),
+                                            decoration: BoxDecoration(
+                                                color:
+                                                    (controller.colorsToSelect?[
+                                                            index] ??
+                                                        Colors.white),
+                                                shape: BoxShape.circle),
+                                          ),
+                                      separatorBuilder:
+                                          (BuildContext context, int index) =>
+                                              SizedBox(
+                                                width: scale.getScaledWidth(1),
+                                              ),
+                                      itemCount:
+                                          (controller.colorsToSelect?.length ??
+                                              0)),
                                 ),
                               ],
                             ),
@@ -224,52 +251,65 @@ class DashBoardScreen extends GetView<DashboardController> {
                                 SizedBox(
                                   height: scale.getScaledHeight(130),
                                   child: ListView.separated(
-                                      itemBuilder: (BuildContext context, int index) {
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
                                         return Row(
                                           children: [
                                             Obx(
-                                                  () => TriStateCheckbox(
-                                                boxState:
-                                                (controller.boxStateOfSizes?[index] ??
+                                              () => TriStateCheckbox(
+                                                boxState: (controller
+                                                            .boxStateOfSizes?[
+                                                        index] ??
                                                     CheckboxState.UNCHECKED),
                                                 onTap: () {
-                                                  if (controller.boxStateOfSizes?[index] ==
+                                                  if (controller
+                                                              .boxStateOfSizes?[
+                                                          index] ==
                                                       CheckboxState.UNCHECKED) {
-                                                    controller.boxStateOfSizes?[index] =
+                                                    controller.boxStateOfSizes?[
+                                                            index] =
                                                         CheckboxState.CHECKED;
                                                   } else {
-                                                    controller.boxStateOfSizes?[index] =
+                                                    controller.boxStateOfSizes?[
+                                                            index] =
                                                         CheckboxState.UNCHECKED;
                                                   }
                                                 },
                                               ),
                                             ),
-                                            SizedBox(width: scale.getScaledWidth(6)),
+                                            SizedBox(
+                                                width: scale.getScaledWidth(6)),
                                             Text(
                                               (controller.size?[index] ?? ""),
                                               style: TextStyle(
                                                   color: LightTheme.darkBlack,
-                                                  fontSize: scale.getScaledFont(8)),
+                                                  fontSize:
+                                                      scale.getScaledFont(8)),
                                               textScaleFactor:
-                                              ScaleSize.textScaleFactor(context),
+                                                  ScaleSize.textScaleFactor(
+                                                      context),
                                             ),
                                             const Spacer(),
                                             Text(
                                               "${controller.quantityOfEachSize?[index] ?? 0}",
                                               style: TextStyle(
                                                   color: LightTheme.darkBlack,
-                                                  fontSize: scale.getScaledFont(8)),
+                                                  fontSize:
+                                                      scale.getScaledFont(8)),
                                               textScaleFactor:
-                                              ScaleSize.textScaleFactor(context),
+                                                  ScaleSize.textScaleFactor(
+                                                      context),
                                             ),
                                           ],
                                         );
                                       },
-                                      itemCount:
-                                      (controller.size?.length ?? 0),
-                                      separatorBuilder: (BuildContext context, int index) => SizedBox(height: scale.getScaledHeight(15),)),
+                                      itemCount: (controller.size?.length ?? 0),
+                                      separatorBuilder: (BuildContext context,
+                                              int index) =>
+                                          SizedBox(
+                                            height: scale.getScaledHeight(15),
+                                          )),
                                 ),
-
                               ],
                             )
                           ],
@@ -281,20 +321,13 @@ class DashBoardScreen extends GetView<DashboardController> {
                   child: Container(
                     padding: scale.getPadding(right: 40, top: 40),
                     child: GridView.builder(
-                      itemCount: 20, // Number of items in the grid
-                      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                        maxCrossAxisExtent: 350,
-                        // Maximum width of each item
-                        mainAxisSpacing: scale.getScaledWidth(18),
-                        // Spacing between items along the main axis
-                        crossAxisSpacing: scale.getScaledWidth(18),
-                        //  // Spacing between items along the cross axis
-                        childAspectRatio:
-                            1, // Aspect ratio of each item (width/height)
-                      ),
+                      itemCount: controller.nameOfItems?.length ?? 0,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          mainAxisSpacing: scale.getScaledWidth(18),
+                          crossAxisSpacing: scale.getScaledWidth(18),
+                          childAspectRatio: 1, crossAxisCount: 3, mainAxisExtent: scale.getScaledHeight(280)),
                       itemBuilder: (BuildContext context, int index) {
-                        return GridTile(
-                          child: InkWell(
+                        return InkWell(
                             onTap: () {
                               Get.toNamed(AppRoutes.product);
                             },
@@ -326,34 +359,22 @@ class DashBoardScreen extends GetView<DashboardController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          index % 2 == 0
-                                              ? Text(
-                                                  "Hoka Sneakers",
-                                                  style: TextStyle(
-                                                      color:
-                                                          LightTheme.bluetext,
-                                                      fontSize: scale
-                                                          .getScaledFont(9)),
-                                                  textScaleFactor:
-                                                      ScaleSize.textScaleFactor(
-                                                          context),
-                                                )
-                                              : Text(
-                                                  "Blue Shoes",
-                                                  style: TextStyle(
-                                                      color:
-                                                          LightTheme.bluetext,
-                                                      fontSize: scale
-                                                          .getScaledFont(9)),
-                                                  textScaleFactor:
-                                                      ScaleSize.textScaleFactor(
-                                                          context),
-                                                ),
+                                          Text(
+                                            controller.nameOfItems?[index] ??
+                                                "",
+                                            style: TextStyle(
+                                                color: LightTheme.bluetext,
+                                                fontSize:
+                                                    scale.getScaledFont(9)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          ),
                                           Expanded(
                                             child: Row(
                                               children: [
                                                 Text(
-                                                  "\$ 11 /",
+                                                  "\$${controller.priceOfItems?[index] ?? 0}/",
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -364,7 +385,7 @@ class DashBoardScreen extends GetView<DashboardController> {
                                                           context),
                                                 ),
                                                 Text(
-                                                  " Per day",
+                                                  "Per day",
                                                   style: TextStyle(
                                                       color:
                                                           LightTheme.greytext,
@@ -377,19 +398,37 @@ class DashBoardScreen extends GetView<DashboardController> {
                                               ],
                                             ),
                                           ),
-                                          Row(
-                                            children: [
-                                              for (int i = 0; i < 5; i++)
-                                                Container(
-                                                  height: 20,
-                                                  width: 20,
-                                                  decoration: const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: AssetImage(
-                                                              "assets/logos/fav.png"))),
-                                                )
-                                            ],
-                                          )
+                                          Obx(
+                                            () => RatingStars(
+                                              axis: Axis.horizontal,
+                                              value: controller
+                                                      .ratingOfItems?[index] ??
+                                                  0.0,
+                                              onValueChanged: (v) {
+                                                controller
+                                                    .ratingOfItems?[index] = v;
+                                              },
+                                              starCount: 5,
+                                              starSize: 20,
+                                              valueLabelRadius: 10,
+                                              maxValue: 5,
+                                              starSpacing: 2,
+                                              maxValueVisibility: false,
+                                              valueLabelVisibility: false,
+                                              animationDuration: const Duration(
+                                                  milliseconds: 500),
+                                              valueLabelPadding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 1,
+                                                      horizontal: 8),
+                                              valueLabelMargin:
+                                                  const EdgeInsets.only(
+                                                      right: 8),
+                                              starOffColor:
+                                                  LightTheme.borderColor,
+                                              starColor: LightTheme.yellowBG,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -397,8 +436,7 @@ class DashBoardScreen extends GetView<DashboardController> {
                                 ],
                               ),
                             ),
-                          ),
-                        );
+                          );
                       },
                     ),
                   ),
