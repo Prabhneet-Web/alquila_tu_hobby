@@ -1,4 +1,5 @@
 import 'package:alquila_tu_hobby/core/utils/initial_bindings/initial_bindings.dart';
+import 'package:alquila_tu_hobby/presentations/Massage/chatScreenn.dart';
 import 'package:alquila_tu_hobby/presentations/addProduct/addProductScreen.dart';
 import 'package:alquila_tu_hobby/presentations/dashboard/dashboardscreen.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: Get.key,
       debugShowCheckedModeBanner: false,
       title: 'alquila tu hobby',
-      home: addProductScreen(),
+      home: chatScreen(),
       // initialRoute: AppRoutes.login,
       defaultTransition: Transition.native,
       getPages: AppRoutes.pages,
