@@ -555,7 +555,7 @@ class adminScreen extends GetView<adminContrroller> {
                   padding: scale.getPadding(horizontal: 15, vertical: 5),
                   child: Center(
                     child: Text(
-                      "Add Categorie",
+                      "Add Category",
                       style: AppStyle.txtNunitoRegular12,
                       textScaleFactor: ScaleSize.textScaleFactor(context),
                     ),

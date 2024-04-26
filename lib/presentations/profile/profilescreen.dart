@@ -271,7 +271,7 @@ class _profileScreenState extends State<profileScreen> {
                                       Radius.circular(
                                           scale.getScaledHeight(10)))),
                               child: Text(
-                                "Add Categorie",
+                                "Add Category",
                                 style: AppStyle.txtNunitoBold20
                                     .copyWith(fontSize: scale.getScaledFont(7)),
                                 textScaleFactor:
