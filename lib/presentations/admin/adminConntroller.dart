@@ -76,5 +76,5 @@ class adminContrroller extends GetxController {
     },
   ];
   RxBool showDrawer = false.obs;
-  RxInt mainIndx = 1.obs;
+  RxInt mainIndx = 0.obs;
 }

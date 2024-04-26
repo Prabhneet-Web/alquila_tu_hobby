@@ -50,6 +50,78 @@ class adminScreen extends GetView<adminContrroller> {
                       ),
                       InkWell(
                         onTap: () {
+                          controller.mainIndx.value = 0;
+                        },
+                        child: Obx(
+                          () => Row(
+                            children: [
+                              Container(
+                                width: scale.getScaledWidth(8),
+                                height: scale.getScaledHeight(50),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(
+                                            scale.getScaledFont(15)),
+                                        bottomRight: Radius.circular(
+                                            scale.getScaledFont(15))),
+                                    color: controller.mainIndx.value == 0
+                                        ? LightTheme.yellowBG
+                                        : Colors.transparent),
+                              ),
+                              SizedBox(
+                                width: scale.getScaledWidth(15),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: scale.getScaledHeight(50),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(
+                                              scale.getScaledFont(15))),
+                                      color: controller.mainIndx.value == 0
+                                          ? LightTheme.yellowBG
+                                          : Colors.transparent),
+                                  child: Padding(
+                                    padding: scale.getPadding(all: 10),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.category,
+                                            color:
+                                                controller.mainIndx.value == 0
+                                                    ? LightTheme.white
+                                                    : LightTheme.darkBlack),
+                                        SizedBox(
+                                          width: scale.getScaledWidth(15),
+                                        ),
+                                        Text(
+                                          "Dashboard",
+                                          style: AppStyle.txtNunitoRegular12
+                                              .copyWith(
+                                                  color: controller
+                                                              .mainIndx.value ==
+                                                          0
+                                                      ? LightTheme.white
+                                                      : LightTheme.darkBlack,
+                                                  fontSize:
+                                                      scale.getScaledFont(12)),
+                                          textScaleFactor:
+                                              ScaleSize.textScaleFactor(
+                                                  context),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: scale.getScaledHeight(10),
+                      ),
+                      InkWell(
+                        onTap: () {
                           controller.mainIndx.value = 1;
                         },
                         child: Obx(
@@ -291,12 +363,13 @@ class adminScreen extends GetView<adminContrroller> {
                               padding: scale.getPadding(
                                   horizontal: 20, vertical: 20),
                               color: LightTheme.adminbg,
-                              child: controller.mainIndx.value == 1
+                              child: controller.mainIndx.value == 0
                                   ? adashboardScreen(scale, context)
-                                  // productScreen(scale, context)
-                                  : controller.mainIndx.value == 2
-                                      ? userScreen(context, scale)
-                                      : catScreen(context, scale)),
+                                  : controller.mainIndx.value == 1
+                                      ? productScreen(scale, context)
+                                      : controller.mainIndx.value == 2
+                                          ? userScreen(context, scale)
+                                          : catScreen(context, scale)),
                         ),
                       ),
                     ],
@@ -622,7 +695,7 @@ class adminScreen extends GetView<adminContrroller> {
                   18), // Spacing between items along the main axis
               crossAxisSpacing: scale.getScaledWidth(
                   18), //  // Spacing between items along the cross axis
-              childAspectRatio: .7, // Aspect ratio of each item (width/height)
+              childAspectRatio: .69, // Aspect ratio of each item (width/height)
             ),
             itemBuilder: (BuildContext context, int index) {
               return GridTile(
@@ -742,7 +815,7 @@ class adminScreen extends GetView<adminContrroller> {
                                       "Edit Product",
                                       style: AppStyle.txtNunitobold14White
                                           .copyWith(
-                                              fontSize: 7, color: Colors.black),
+                                              fontSize: 6, color: Colors.black),
                                       textScaleFactor:
                                           ScaleSize.textScaleFactor(context),
                                     ),
