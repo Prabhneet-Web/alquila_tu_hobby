@@ -21,6 +21,15 @@ class AppStyle {
     fontWeight: FontWeight.w400,
     fontFeatures: const [FontFeature.proportionalFigures()],
   );
+  static TextStyle txtNunitoRegular18 = TextStyle(
+    color: LightTheme.fontColor,
+    fontSize: getFontSize(
+      12,
+    ),
+    fontFamily: 'NunitoSansRegular',
+    fontWeight: FontWeight.w400,
+    fontFeatures: const [FontFeature.proportionalFigures()],
+  );
   static TextStyle txtNunitoRegular12UnderlinedBlue = TextStyle(
     color: LightTheme.blueColor,
     decoration: TextDecoration.underline,

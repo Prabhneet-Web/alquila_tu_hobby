@@ -2,6 +2,7 @@ import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
 import 'package:alquila_tu_hobby/widgets/common_appbar.dart';
+import 'package:alquila_tu_hobby/widgets/custom_text_formfield.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:clean_calendar/clean_calendar.dart';
 import 'package:flutter/cupertino.dart';
@@ -415,9 +416,10 @@ class ProductsScreen extends StatelessWidget {
                                           context: context,
                                           dialogType: DialogType.noHeader,
                                           animType: AnimType.rightSlide,
-                                          body: Container(
+                                          body: SizedBox(
                                             height: scale.fh / 1.2,
                                             child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
                                                   padding: scale.getPadding(
@@ -433,7 +435,7 @@ class ProductsScreen extends StatelessWidget {
                                                             .getScaledFont(40),
                                                       ),
                                                       Text(
-                                                        "Rent it now !",
+                                                        "Rent it now!",
                                                         style: AppStyle
                                                             .txtNunitoBold20
                                                             .copyWith(
@@ -451,6 +453,75 @@ class ProductsScreen extends StatelessWidget {
                                                     ],
                                                   ),
                                                 ),
+                                                Padding(
+                                                  padding: scale.getPadding(left: 100, right: 100, top: 60, bottom:30),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("Name:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)),
+                                                        textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context)),
+                                                      SizedBox(height: scale.getScaledHeight(5)),
+                                                      CustomTextFormField(width: double.infinity,hintText: "Ehtesham Aman"),
+                                                      SizedBox(height: scale.getScaledHeight(10)),
+                                                      Text("Phone:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)),
+                                                        textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context)),
+                                                      SizedBox(height: scale.getScaledHeight(5)),
+                                                      CustomTextFormField(width: double.infinity, hintText: "+1 (765) 544-2276",),
+                                                      SizedBox(height: scale.getScaledHeight(10)),
+                                                      Text("Please choose your date:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)),
+                                                        textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context)),
+                                                      SizedBox(height: scale.getScaledHeight(5)),
+                                                      CustomTextFormField(width: double.infinity, hintText: "7",),
+                                                      SizedBox(height: scale.getScaledHeight(10)),
+                                                      Text("Price:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)),
+                                                        textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context)),
+                                                      SizedBox(height: scale.getScaledHeight(5)),
+                                                      CustomTextFormField(width: double.infinity, hintText: "\$11/ day",),
+                                                      SizedBox(height: scale.getScaledHeight(10)),
+                                                      Text("Name:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)),
+                                                        textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context)),
+                                                      SizedBox(height: scale.getScaledHeight(5)),
+                                                      CustomTextFormField(width: double.infinity, hintText: "Ehtesham Aman"),
+                                                      SizedBox(height: scale.getScaledHeight(10)),
+                                                      Text("Additional Comment:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)),
+                                                        textScaleFactor:
+                                                      ScaleSize.textScaleFactor(
+                                                          context)),
+                                                      SizedBox(height: scale.getScaledHeight(5)),
+                                                      CustomTextFormField(width: double.infinity, maxLines: 3, hintText: "Comment"),
+                                                      SizedBox(height: scale.getScaledHeight(25)),
+                                                      Center(
+                                                        child: InkWell(
+                                                          onTap: () {
+                                                          },
+                                                          child: Container(
+                                                            height: scale.getScaledHeight(46),
+                                                            width: scale.getScaledWidth(300),
+                                                            decoration: BoxDecoration(
+                                                                color: LightTheme.yellowBG,
+                                                                borderRadius: BorderRadius.circular(8)),
+                                                            child: Center(
+                                                              child: Text(
+                                                                "Confirm",
+                                                                style: AppStyle.txtNunitoRegular14White,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
                                               ],
                                             ),
                                           ),
