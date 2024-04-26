@@ -1,6 +1,36 @@
 import 'package:get/get.dart';
 
 class adminContrroller extends GetxController {
+  final List<Map<String, dynamic>> products = [
+    {
+      'image': 'assets/apple_watch.png',
+      'name': 'Apple Watch',
+      'location': '6096 Marjolaine Land',
+      'dateTime': '12.09.2019 - 12:53 PM',
+      'piece': 423,
+      'amount': '\$34,295',
+      'status': 'Delivered',
+    },
+    {
+      'image': 'assets/apple_watch.png',
+      'name': 'Apple Watch',
+      'location': '6096 Marjolaine Land',
+      'dateTime': '12.09.2019 - 12:53 PM',
+      'piece': 423,
+      'amount': '\$34,295',
+      'status': 'Delivered',
+    },
+    {
+      'image': 'assets/apple_watch.png',
+      'name': 'Apple Watch',
+      'location': '6096 Marjolaine Land',
+      'dateTime': '12.09.2019 - 12:53 PM',
+      'piece': 423,
+      'amount': '\$34,295',
+      'status': 'Delivered',
+    },
+    // Add more products here...
+  ];
   final List<Map<String, dynamic>> data = [
     {
       "id": "00001",
@@ -46,5 +76,5 @@ class adminContrroller extends GetxController {
     },
   ];
   RxBool showDrawer = false.obs;
-  RxInt mainIndx = 1.obs;
+  RxInt mainIndx = 0.obs;
 }
