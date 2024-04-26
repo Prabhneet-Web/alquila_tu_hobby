@@ -1,4 +1,5 @@
 import 'package:alquila_tu_hobby/widgets/check_box.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
@@ -10,6 +11,17 @@ class DashboardController extends GetxController {
   RxList<bool>? isCategorySelected = [false,false,false,false,false,false].obs;
 
   RxList<int>? quantityOfEachCategory = [2,5,8,22,5,5].obs;
-  RxList<CheckboxState>? boxState = [CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED].obs;
+  RxList<int>? quantityOfEachSize = [2,5,8,9].obs;
+  RxList<CheckboxState>? boxStateOfCategories = [CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED].obs;
+  RxList<CheckboxState>? boxStateOfSizes = [CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED,CheckboxState.UNCHECKED].obs;
 
+  Rx<int>? numberOfColorsSelected = 0.obs;
+
+  RxList<Color>? colorsToSelect = [Colors.red, Colors.green, Colors.yellow, Colors.blue, Colors.orange, Colors.white, Colors.black, Colors.grey].obs;
+
+  Rx<int>? sizeToSelect = 0.obs;
+
+  RxList<String>? size = [
+    "M", "S", "X", "XX"
+  ].obs;
 }

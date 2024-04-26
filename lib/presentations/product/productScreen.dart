@@ -1,7 +1,7 @@
 import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
-import 'package:alquila_tu_hobby/widgets/comnAppbar.dart';
+import 'package:alquila_tu_hobby/widgets/common_appbar.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:clean_calendar/clean_calendar.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,8 +11,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:just_the_tooltip/just_the_tooltip.dart';
 
-class productScreen extends StatelessWidget {
-  const productScreen({super.key});
+class ProductsScreen extends StatelessWidget {
+  const ProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class productScreen extends StatelessWidget {
             height: scale.fh,
             width: scale.fw,
             child: Column(children: [
-              Appbar(),
+              CommonAppBar(),
               Container(
                 height: scale.getScaledHeight(50),
                 width: scale.fw,

@@ -1,17 +1,11 @@
-import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
-import 'package:alquila_tu_hobby/core/utils/image_constants/image_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
 import 'package:alquila_tu_hobby/presentations/dashboard/controller/dashboard_controller.dart';
 import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:alquila_tu_hobby/widgets/check_box.dart';
 import 'package:alquila_tu_hobby/widgets/common_appbar.dart';
-import 'package:alquila_tu_hobby/widgets/custom_text_formfield.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class DashBoardScreen extends GetView<DashboardController> {
   const DashBoardScreen({super.key});
@@ -77,15 +71,15 @@ class DashBoardScreen extends GetView<DashboardController> {
                                         Obx(
                                           () => TriStateCheckbox(
                                             boxState:
-                                                (controller.boxState?[index] ??
+                                                (controller.boxStateOfCategories?[index] ??
                                                     CheckboxState.UNCHECKED),
                                             onTap: () {
-                                              if (controller.boxState?[index] ==
+                                              if (controller.boxStateOfCategories?[index] ==
                                                   CheckboxState.UNCHECKED) {
-                                                controller.boxState?[index] =
+                                                controller.boxStateOfCategories?[index] =
                                                     CheckboxState.CHECKED;
                                               } else {
-                                                controller.boxState?[index] =
+                                                controller.boxStateOfCategories?[index] =
                                                     CheckboxState.UNCHECKED;
                                               }
                                             },
@@ -118,7 +112,7 @@ class DashBoardScreen extends GetView<DashboardController> {
                             ),
                             Padding(
                               padding: scale.getPadding(vertical: 15),
-                              child: Divider(),
+                              child: const Divider(),
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +134,7 @@ class DashBoardScreen extends GetView<DashboardController> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      "0 Selected",
+                                      "${controller.numberOfColorsSelected?.value ?? 0} Selected",
                                       style: TextStyle(
                                           color: LightTheme.greytext,
                                           fontWeight: FontWeight.bold,
@@ -148,92 +142,40 @@ class DashBoardScreen extends GetView<DashboardController> {
                                       textScaleFactor:
                                           ScaleSize.textScaleFactor(context),
                                     ),
-                                    Text(
-                                      "Reset",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
+                                    InkWell(
+                                      onTap: () {},
+                                      child: Text(
+                                        "Reset",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      ),
                                     )
                                   ],
                                 ),
                                 SizedBox(
                                   height: scale.getScaledHeight(10),
                                 ),
-                                Row(
-                                  children: [
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.amber,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.blue,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.pink,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          shape: BoxShape.circle),
-                                    ),
-                                    Container(
-                                      margin: scale.getMargin(right: 10),
-                                      height: scale.getScaledHeight(20),
-                                      width: scale.getScaledWidth(20),
-                                      decoration: BoxDecoration(
-                                          color: Colors.grey,
-                                          shape: BoxShape.circle),
-                                    ),
-                                  ],
-                                )
+                                SizedBox(
+                                  height: scale.getScaledHeight(20),
+                                  child: ListView.separated(
+                                    scrollDirection : Axis.horizontal,
+                                    itemBuilder: (BuildContext context, int index) => Container(
+                                    margin: scale.getMargin(right: 10),
+                                    height: scale.getScaledHeight(20),
+                                    width: scale.getScaledWidth(20),
+                                    decoration: BoxDecoration(
+                                        color: (controller.colorsToSelect?[index] ?? Colors.white),
+                                        shape: BoxShape.circle),
+                                  ), separatorBuilder: (BuildContext context, int index) => SizedBox(width: scale.getScaledWidth(1),), itemCount: (controller.colorsToSelect?.length ?? 0)),
+                                ),
                               ],
                             ),
                             Padding(
                               padding: scale.getPadding(vertical: 15),
-                              child: Divider(),
+                              child: const Divider(),
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -255,7 +197,7 @@ class DashBoardScreen extends GetView<DashboardController> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      "0 Selected",
+                                      "${controller.sizeToSelect?.value ?? 0} Selected",
                                       style: TextStyle(
                                           color: LightTheme.greytext,
                                           fontWeight: FontWeight.bold,
@@ -263,176 +205,71 @@ class DashBoardScreen extends GetView<DashboardController> {
                                       textScaleFactor:
                                           ScaleSize.textScaleFactor(context),
                                     ),
-                                    Text(
-                                      "Reset",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
+                                    InkWell(
+                                      onTap: () {},
+                                      child: Text(
+                                        "Reset",
+                                        style: TextStyle(
+                                            color: LightTheme.greytext,
+                                            fontSize: scale.getScaledFont(8)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      ),
                                     )
                                   ],
                                 ),
                                 SizedBox(
                                   height: scale.getScaledHeight(15),
                                 ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "M",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
                                 SizedBox(
-                                  height: scale.getScaledHeight(15),
+                                  height: scale.getScaledHeight(130),
+                                  child: ListView.separated(
+                                      itemBuilder: (BuildContext context, int index) {
+                                        return Row(
+                                          children: [
+                                            Obx(
+                                                  () => TriStateCheckbox(
+                                                boxState:
+                                                (controller.boxStateOfSizes?[index] ??
+                                                    CheckboxState.UNCHECKED),
+                                                onTap: () {
+                                                  if (controller.boxStateOfSizes?[index] ==
+                                                      CheckboxState.UNCHECKED) {
+                                                    controller.boxStateOfSizes?[index] =
+                                                        CheckboxState.CHECKED;
+                                                  } else {
+                                                    controller.boxStateOfSizes?[index] =
+                                                        CheckboxState.UNCHECKED;
+                                                  }
+                                                },
+                                              ),
+                                            ),
+                                            SizedBox(width: scale.getScaledWidth(6)),
+                                            Text(
+                                              (controller.size?[index] ?? ""),
+                                              style: TextStyle(
+                                                  color: LightTheme.darkBlack,
+                                                  fontSize: scale.getScaledFont(8)),
+                                              textScaleFactor:
+                                              ScaleSize.textScaleFactor(context),
+                                            ),
+                                            const Spacer(),
+                                            Text(
+                                              "${controller.quantityOfEachSize?[index] ?? 0}",
+                                              style: TextStyle(
+                                                  color: LightTheme.darkBlack,
+                                                  fontSize: scale.getScaledFont(8)),
+                                              textScaleFactor:
+                                              ScaleSize.textScaleFactor(context),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                      itemCount:
+                                      (controller.size?.length ?? 0),
+                                      separatorBuilder: (BuildContext context, int index) => SizedBox(height: scale.getScaledHeight(15),)),
                                 ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "S",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "L",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: scale.getScaledHeight(15),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          margin: scale.getMargin(right: 9),
-                                          height: scale.getScaledHeight(20),
-                                          width: scale.getScaledWidth(20),
-                                          decoration: BoxDecoration(
-                                              color: LightTheme.chkBox,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(scale
-                                                      .getScaledHeight(3)))),
-                                        ),
-                                        Text(
-                                          "XL",
-                                          style: TextStyle(
-                                              color: LightTheme.darkBlack,
-                                              fontSize: scale.getScaledFont(8)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      "5",
-                                      style: TextStyle(
-                                          color: LightTheme.greytext,
-                                          fontSize: scale.getScaledFont(8)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
-                                    )
-                                  ],
-                                ),
+
                               ],
                             )
                           ],
@@ -473,10 +310,10 @@ class DashBoardScreen extends GetView<DashboardController> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   index % 2 == 0
-                                      ? Image(
+                                      ? const Image(
                                           image: AssetImage(
                                               "assets/images/sh1.png"))
-                                      : Image(
+                                      : const Image(
                                           image: AssetImage(
                                               "assets/images/sh2.png")),
                                   Expanded(
@@ -546,7 +383,7 @@ class DashBoardScreen extends GetView<DashboardController> {
                                                 Container(
                                                   height: 20,
                                                   width: 20,
-                                                  decoration: BoxDecoration(
+                                                  decoration: const BoxDecoration(
                                                       image: DecorationImage(
                                                           image: AssetImage(
                                                               "assets/logos/fav.png"))),
@@ -572,9 +409,5 @@ class DashBoardScreen extends GetView<DashboardController> {
         ),
       ),
     );
-  }
-
-  Widget cstmBtn() {
-    return Container();
   }
 }
