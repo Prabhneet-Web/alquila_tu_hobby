@@ -113,56 +113,65 @@ class CommonAppBar extends StatelessWidget {
                   SizedBox(
                     width: scale.getScaledWidth(35),
                   ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.favorite_border_outlined,
-                        color: LightTheme.white,
-                      ),
-                      SizedBox(
-                        width: scale.getScaledWidth(10),
-                      ),
-                      Text(
-                        "Favorite",
-                        style: AppStyle.txtNunitobold14White,
-                      )
-                    ],
+                  InkWell(
+                    onTap: () => Get.toNamed(AppRoutes.favourite),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.favorite_border_outlined,
+                          color: LightTheme.white,
+                        ),
+                        SizedBox(
+                          width: scale.getScaledWidth(10),
+                        ),
+                        Text(
+                          "Favourite",
+                          style: AppStyle.txtNunitobold14White,
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     width: scale.getScaledWidth(35),
                   ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.chat,
-                        color: LightTheme.white,
-                      ),
-                      SizedBox(
-                        width: scale.getScaledWidth(10),
-                      ),
-                      Text(
-                        "Chat",
-                        style: AppStyle.txtNunitobold14White,
-                      )
-                    ],
+                  InkWell(
+                    onTap: () => Get.toNamed(AppRoutes.chat),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.chat,
+                          color: LightTheme.white,
+                        ),
+                        SizedBox(
+                          width: scale.getScaledWidth(10),
+                        ),
+                        Text(
+                          "Chat",
+                          style: AppStyle.txtNunitobold14White,
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     width: scale.getScaledWidth(35),
                   ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.shopping_cart,
-                        color: LightTheme.white,
-                      ),
-                      SizedBox(
-                        width: scale.getScaledWidth(10),
-                      ),
-                      Text(
-                        "Cart",
-                        style: AppStyle.txtNunitobold14White,
-                      )
-                    ],
+                  InkWell(
+                    onTap: () => Get.toNamed(AppRoutes.cart),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.shopping_cart,
+                          color: LightTheme.white,
+                        ),
+                        SizedBox(
+                          width: scale.getScaledWidth(10),
+                        ),
+                        Text(
+                          "Cart",
+                          style: AppStyle.txtNunitobold14White,
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     width: scale.getScaledWidth(45),

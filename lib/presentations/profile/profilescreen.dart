@@ -21,16 +21,15 @@ class _profileScreenState extends State<profileScreen> {
   Widget build(BuildContext context) {
     final scale = Get.find<ScalingUtility>()..setCurrentDeviceSize(context);
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: scale.fh,
         width: scale.fw,
         child: Column(
           children: [
-            CommonAppBar(),
-            Container(
+            const CommonAppBar(),
+            SizedBox(
               height: scale.getScaledHeight(50),
               width: scale.fw,
-              //color: const Color.fromARGB(255, 103, 75, 73),
             ),
             Expanded(
                 child: Row(
@@ -59,7 +58,7 @@ class _profileScreenState extends State<profileScreen> {
                                   height: scale.getScaledHeight(260),
                                   width: scale.getScaledWidth(220),
                                   decoration: BoxDecoration(
-                                      image: DecorationImage(
+                                      image: const DecorationImage(
                                           image: AssetImage(
                                               "assets/images/dd.jpeg"),
                                           fit: BoxFit.fill),
