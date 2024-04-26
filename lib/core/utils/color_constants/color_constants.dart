@@ -21,4 +21,6 @@ class LightTheme {
   static const green = Color.fromRGBO(48, 189, 87, 1);
   static const adminbg = Color.fromRGBO(245, 246, 250, 1);
   static const tblehead = Color.fromRGBO(213, 213, 213, 1);
+  static const grey1 = Color.fromRGBO(236, 236, 238, 1);
+  static const grey2 = Color.fromRGBO(245, 246, 250, 1);
 }

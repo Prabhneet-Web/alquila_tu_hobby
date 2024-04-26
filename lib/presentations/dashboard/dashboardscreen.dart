@@ -17,7 +17,6 @@ class dashBoardscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var h = MediaQuery.of(context).size.aspectRatio;
     final scale = Get.find<ScalingUtility>()..setCurrentDeviceSize(context);
     return Scaffold(
       body: Container(
