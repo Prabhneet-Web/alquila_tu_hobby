@@ -26,10 +26,10 @@ class ChatScreen extends GetView<ChatScreenController> {
               Expanded(
                 child: Row(
                   children: [
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        decoration: BoxDecoration(
+                    Container(
+                      width: scale.fullWidth * 0.24,
+                      constraints: const BoxConstraints(minWidth: 130),
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                           border: Border(
                             right: BorderSide(
@@ -65,7 +65,7 @@ class ChatScreen extends GetView<ChatScreenController> {
                                     width: scale.getScaledHeight(10),
                                     child: Image.asset("assets/logos/dd.png"),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   Container(
                                     margin: scale.getMargin(right: 10),
                                     height: scale.getScaledHeight(20),
@@ -75,7 +75,7 @@ class ChatScreen extends GetView<ChatScreenController> {
                                 ],
                               ),
                             ),
-                            Divider(
+                            const Divider(
                               color: LightTheme.grey1,
                             ),
                             Container(
@@ -215,7 +215,6 @@ class ChatScreen extends GetView<ChatScreenController> {
                           ],
                         ),
                       ),
-                    ),
                     Expanded(
                       flex: 6,
                       child: Container(

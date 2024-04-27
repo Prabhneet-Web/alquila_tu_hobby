@@ -23,14 +23,17 @@ class CommonAppBar extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Row(
-              children: [
-                Image.asset(ImageConstants.logo,
-                    height: scale.getScaledHeight(34.51)),
-                SizedBox(width: scale.getScaledWidth(10)),
-                Image.asset(ImageConstants.logoText,
-                    height: scale.getScaledHeight(34.51))
-              ],
+            InkWell(
+              onTap: () => Get.toNamed(AppRoutes.dashboard),
+              child: Row(
+                children: [
+                  Image.asset(ImageConstants.logo,
+                      height: scale.getScaledHeight(34.51)),
+                  SizedBox(width: scale.getScaledWidth(10)),
+                  Image.asset(ImageConstants.logoText,
+                      height: scale.getScaledHeight(34.51))
+                ],
+              ),
             ),
             SizedBox(
               width: scale.getScaledWidth(100),
