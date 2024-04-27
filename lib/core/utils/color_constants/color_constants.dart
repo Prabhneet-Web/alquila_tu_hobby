@@ -12,6 +12,7 @@ class LightTheme {
   static const hintTextColor = ColorRef(Color(0xFFA6A6A6));
   static const borderColor = ColorRef(Color(0xFFD8D8D8));
   static const borderFillColor = ColorRef(Color(0xFFF1F4F9));
+  static const cartab = ColorRef(Color(0xFFE2F4FF));
   static const blueColor = ColorRef(Color(0xFF5A8CFF));
   static const bluetext = Color.fromRGBO(0, 63, 98, 1);
   static const greytext = Color.fromRGBO(89, 89, 89, 1);

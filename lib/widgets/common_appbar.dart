@@ -170,7 +170,7 @@ class CommonAppBar extends StatelessWidget {
                     width: scale.getScaledWidth(35),
                   ),
                   InkWell(
-                    onTap: () => Get.toNamed(AppRoutes.cart),
+                    onTap: () => Get.toNamed(AppRoutes.cartScreen),
                     child: Row(
                       children: [
                         SizedBox(

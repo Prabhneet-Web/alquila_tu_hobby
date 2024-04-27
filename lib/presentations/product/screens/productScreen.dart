@@ -452,7 +452,7 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                       Icon(
                                                         Icons.close,
                                                         size: scale
-                                                            .getScaledFont(40),
+                                                            .getScaledFont(20),
                                                       ),
                                                       Text(
                                                         "Rent it now!",
@@ -522,8 +522,7 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                       SizedBox(height: scale.getScaledHeight(25)),
                                                       Center(
                                                         child: InkWell(
-                                                          onTap: () {
-                                                          },
+                                                          onTap: () {Get.back();},
                                                           child: Container(
                                                             height: scale.getScaledHeight(46),
                                                             width: scale.getScaledWidth(300),
