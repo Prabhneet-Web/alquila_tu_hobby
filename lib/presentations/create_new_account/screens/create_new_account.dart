@@ -37,7 +37,7 @@ class CreateNewAccount extends GetView<CreateNewAccountController> {
           ),
           Container(
             height: (scale.fullHeight - scale.getScaledHeight(64.76)),
-            color: LightTheme.white,
+            color: LightTheme.yellowBG,
             child: Center(
               child: Container(
                 height: scale.getScaledHeight(630),

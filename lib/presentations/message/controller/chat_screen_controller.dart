@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class chatScreeenController extends GetxController {
+class ChatScreenController extends GetxController {
   RxInt selectedCahat = (-1).obs;
   final List<Map<String, dynamic>> data = [
     {

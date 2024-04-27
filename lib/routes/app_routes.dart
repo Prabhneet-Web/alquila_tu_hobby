@@ -1,5 +1,3 @@
-import 'package:alquila_tu_hobby/presentations/Message/cahtBinding.dart';
-import 'package:alquila_tu_hobby/presentations/Message/chat_screen.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminBinding.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminScreen.dart';
 import 'package:alquila_tu_hobby/presentations/create_new_account/bindings/create_new_account_controller_bindings.dart';
@@ -9,8 +7,11 @@ import 'package:alquila_tu_hobby/presentations/dashboard/screens/dashboard_scree
 import 'package:alquila_tu_hobby/presentations/favourite/favProductScreen.dart';
 import 'package:alquila_tu_hobby/presentations/login/bindings/login_controller_bindings.dart';
 import 'package:alquila_tu_hobby/presentations/login/screens/login_screen.dart';
+import 'package:alquila_tu_hobby/presentations/message/bindings/chat_bindings.dart';
+import 'package:alquila_tu_hobby/presentations/message/screens/chat_screen.dart';
 import 'package:alquila_tu_hobby/presentations/product/binding/product_screen_controller_binding.dart';
 import 'package:alquila_tu_hobby/presentations/product/screens/productScreen.dart';
+import 'package:alquila_tu_hobby/presentations/profile/profile_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoutes {
@@ -21,7 +22,9 @@ class AppRoutes {
   static const String cart = '/cart';
   static const String product = '/product';
   static const String adminDashboard = '/adminDashboard';
-  static const String chat = '/chatscreen';
+  static const String chat = '/chatScreen';
+  static const String profile = '/profile';
+
 
   static List<GetPage> pages = [
     GetPage(
@@ -33,6 +36,10 @@ class AppRoutes {
       name: createNewAccount,
       page: () => const CreateNewAccount(),
       bindings: [CreateNewAccountControllerBinding()],
+    ),
+    GetPage(
+      name: profile,
+      page: () => const ProfileScreen(),
     ),
     GetPage(
       name: dashboard,
@@ -61,8 +68,8 @@ class AppRoutes {
     ),
     GetPage(
       name: chat,
-      page: () => chatScreen(),
-      bindings: [cahtBinding()],
+      page: () => const ChatScreen(),
+      bindings: [ChatControllerBinding()],
     ),
   ];
 }
