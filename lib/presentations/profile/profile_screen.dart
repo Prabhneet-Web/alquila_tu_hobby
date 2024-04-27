@@ -6,17 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/utils/scaling_util/scaling_utility.dart';
 
-class profileScreen extends StatefulWidget {
-  const profileScreen({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  State<profileScreen> createState() => _profileScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _profileScreenState extends State<profileScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final scale = Get.find<ScalingUtility>()..setCurrentDeviceSize(context);
@@ -42,13 +43,18 @@ class _profileScreenState extends State<profileScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Personal details",
-                              style: AppStyle.txtNunitobold14White.copyWith(
-                                  color: LightTheme.blueColor,
-                                  fontSize: scale.getScaledFont(12)),
-                              textScaleFactor:
-                                  ScaleSize.textScaleFactor(context),
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Personal Details",
+                                style: GoogleFonts.poppins(
+                                  textStyle: TextStyle(
+                                    color: LightTheme.blueColor,
+                                    fontSize: (scale.fullWidth)/1800 * 20,
+                                    fontWeight: FontWeight.w500
+                                  )
+                                )
+                              ),
                             ),
                             SizedBox(height: scale.getScaledHeight(15)),
                             Row(
@@ -72,12 +78,12 @@ class _profileScreenState extends State<profileScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    reUsablecolm(
-                                        scale, "Name", "Etrana araman"),
-                                    reUsablecolm(scale, "Gender", "Female"),
-                                    reUsablecolm(
-                                        scale, "Date of birth", "01-jan-2025"),
-                                    reUsablecolm(scale, "Nationality", "INDIAN")
+                                    reusableColumn(
+                                        scale, "Name", "Ehtesham Aman"),
+                                    reusableColumn(scale, "Gender", "Female"),
+                                    reusableColumn(
+                                        scale, "Date of birth", "August 27th, 1999"),
+                                    reusableColumn(scale, "Nationality", "USA")
                                   ],
                                 )
                               ],
@@ -88,7 +94,7 @@ class _profileScreenState extends State<profileScreen> {
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Container(
+                                SizedBox(
                                   width: scale.getScaledWidth(230),
                                   child: Column(
                                       crossAxisAlignment:
@@ -96,21 +102,20 @@ class _profileScreenState extends State<profileScreen> {
                                       children: [
                                         Text(
                                           "Address",
-                                          style: AppStyle.txtNunitobold14White
-                                              .copyWith(
+                                          style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
                                                   color: LightTheme.blueColor,
-                                                  fontSize:
-                                                      scale.getScaledFont(9)),
-                                          textScaleFactor:
-                                              ScaleSize.textScaleFactor(
-                                                  context),
+                                                  fontSize: (scale.fullWidth)/1800 * 20,
+                                                  fontWeight: FontWeight.w500
+                                              )
+                                          )
                                         ),
-                                        reUsablecolm(scale, "Address line",
-                                            "abc road efg apt. xzcity"),
-                                        reUsablecolm(
-                                            scale, "City", "Ahmedabad"),
-                                        reUsablecolm(scale, "State", "J&K"),
-                                        reUsablecolm(scale, "Country", "INDIA")
+                                        reusableColumn(scale, "Address line",
+                                            "No 35 Jimmy Ebi Street"),
+                                        reusableColumn(
+                                            scale, "City", "NY"),
+                                        reusableColumn(scale, "State", "NewYork"),
+                                        reusableColumn(scale, "Country", "USA")
                                       ]),
                                 ),
                                 SizedBox(
@@ -121,17 +126,18 @@ class _profileScreenState extends State<profileScreen> {
                                   children: [
                                     Text(
                                       "Contact Details",
-                                      style: AppStyle.txtNunitobold14White
-                                          .copyWith(
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
                                               color: LightTheme.blueColor,
-                                              fontSize: scale.getScaledFont(9)),
-                                      textScaleFactor:
-                                          ScaleSize.textScaleFactor(context),
+                                              fontSize: (scale.fullWidth)/1800 * 20,
+                                              fontWeight: FontWeight.w500
+                                          )
+                                      )
                                     ),
-                                    reUsablecolm(
-                                        scale, "Phone Number", "+90374627364"),
-                                    reUsablecolm(
-                                        scale, "Eamin", "abcd@gmail.com"),
+                                    reusableColumn(
+                                        scale, "Phone Number", "+9034867656"),
+                                    reusableColumn(
+                                        scale, "Email", "shery@me.com"),
                                   ],
                                 )
                               ],
@@ -154,7 +160,7 @@ class _profileScreenState extends State<profileScreen> {
     );
   }
 
-  Widget reUsablecolm(ScalingUtility scale, String lable, String text) {
+  Widget reusableColumn(ScalingUtility scale, String lable, String text) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -163,16 +169,24 @@ class _profileScreenState extends State<profileScreen> {
         ),
         Text(
           lable,
-          style: AppStyle.txtNunitobold14White.copyWith(
-              color: LightTheme.greytext, fontSize: scale.getScaledFont(6)),
-          textScaleFactor: ScaleSize.textScaleFactor(context),
+          style: GoogleFonts.poppins(
+              textStyle: TextStyle(
+                  color: LightTheme.greytext,
+                  fontSize: (scale.fullWidth)/1800 * 15,
+                  fontWeight: FontWeight.w600
+              )
+          )
         ),
         SizedBox(height: scale.getScaledHeight(3)),
         Text(
           text,
-          style: AppStyle.txtNunitobold14White.copyWith(
-              color: LightTheme.darkBlack, fontSize: scale.getScaledFont(8)),
-          textScaleFactor: ScaleSize.textScaleFactor(context),
+          style: GoogleFonts.poppins(
+              textStyle: TextStyle(
+                  color: LightTheme.darkBlack,
+                  fontSize: (scale.fullWidth)/1800 * 18,
+                  fontWeight: FontWeight.w500
+              )
+          )
         )
       ],
     );

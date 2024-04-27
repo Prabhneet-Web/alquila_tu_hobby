@@ -14,6 +14,7 @@ class CommonAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final scale = Get.find<ScalingUtility>()..setCurrentDeviceSize(context);
     return Container(
+      constraints: BoxConstraints(minHeight: 60),
       height: scale.getScaledHeight(64.76),
       color: LightTheme.darkBlack,
       child: Padding(
@@ -34,54 +35,44 @@ class CommonAppBar extends StatelessWidget {
             SizedBox(
               width: scale.getScaledWidth(100),
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: LightTheme.white,
-                  borderRadius: BorderRadius.all(
-                      Radius.circular(scale.getScaledHeight(13)))),
-              margin: scale.getMargin(vertical: 15),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: scale.getScaledWidth(10),
-                  ),
-                  Center(
-                    child: SizedBox(
-                      width: scale.fw/6,
-                      height: scale.getScaledHeight(90),
-                        child: TextField(
-                          decoration: InputDecoration(
-                              labelStyle: TextStyle(
-                                  fontSize: scale.getScaledFont(15)),
-                             contentPadding: scale.getPadding(bottom: 5),
-                              hintStyle: TextStyle(
-                                  color: LightTheme.bluetext,
-                                  fontSize: scale.getScaledFont(14)),
-                              hintText: "What are you looking for?",
-                              border: InputBorder.none),
-                        ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: (){},
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: LightTheme.yellowBG,
-                          borderRadius: BorderRadius.all(Radius.circular(
-                              scale.getScaledHeight(13)))),
-                      child: Center(
-                        child: Padding(
-                          padding:scale.getPadding(horizontal: 16),
+            Center(
+              child: Padding(
+                padding: scale.getPadding(vertical: 13),
+                child: Container(
+                  width: scale.getScaledWidth(290),
+                  constraints: BoxConstraints(minHeight: 40),
+                  child: AspectRatio(
+                    aspectRatio: 5,
+                    child: TextField(
+
+                      decoration: InputDecoration(
+
+                        suffixIcon: Container(margin: scale.getMargin(vertical: 1), width: scale.getScaledWidth(80),decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),color: Colors.amber),child: Center(
                           child: Text(
                             "Search",
-                            style: AppStyle.txtNunitoRegular14White
-                                .copyWith(fontWeight: FontWeight.bold),
+                            textScaleFactor:
+                            ScaleSize.textScaleFactor(
+                                context),
+                            style: AppStyle.txtNunitoBold20
+                                .copyWith(
+
+                                fontSize: 7,
+                                color: LightTheme.white),
                           ),
-                        ),
-                      ),
+                        ),),
+                        filled: true,
+                        fillColor: Colors.white,
+                        labelStyle: TextStyle(
+                            fontSize: scale.getScaledFont(14)),
+                        //  contentPadding: scale.getPadding(left: 5,bottom: 4),
+                        hintStyle: TextStyle(
+                            color: LightTheme.bluetext,
+                            fontSize: scale.getScaledFont(14)),
+                        hintText: "What are you looking for?",
+                        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)),borderSide: BorderSide(color: Colors.transparent)),),
                     ),
-                  )
-                ],
+                  ),
+                ),
               ),
             ),
             const Spacer(),

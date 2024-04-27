@@ -8,14 +8,14 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import 'chatScreenController.dart';
+import '../controller/chat_screen_controller.dart';
 
-class chatScreen extends GetView<chatScreeenController> {
-  const chatScreen({super.key});
+class ChatScreen extends GetView<ChatScreenController> {
+  const ChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Get.put(chatScreeenController());
+    Get.put(ChatScreenController());
     final scale = Get.find<ScalingUtility>()..setCurrentDeviceSize(context);
     return Scaffold(
         body: Container(
@@ -51,7 +51,7 @@ class chatScreen extends GetView<chatScreeenController> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Meessage",
+                                    "Message",
                                     style: AppStyle.txtNunitoBold20.copyWith(
                                       color: LightTheme.darkBlack,
                                       fontSize: 10,
@@ -87,9 +87,9 @@ class chatScreen extends GetView<chatScreeenController> {
                                       Radius.circular(scale.getScaledFont(17))),
                                   color: LightTheme.grey2),
                               child: TextFormField(
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: 'Search meessage',
+                                  hintText: 'Search Message',
                                 ),
                                 // Add onChanged to update product name variable
                               ),
@@ -157,7 +157,7 @@ class chatScreen extends GetView<chatScreeenController> {
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      "Meessage",
+                                                      "Message",
                                                       style: AppStyle
                                                           .txtNunitoBold20
                                                           .copyWith(
@@ -170,7 +170,7 @@ class chatScreen extends GetView<chatScreeenController> {
                                                               context),
                                                     ),
                                                     Text(
-                                                      "Meessage",
+                                                      "Message",
                                                       style: AppStyle
                                                           .txtNunitoBold20
                                                           .copyWith(
