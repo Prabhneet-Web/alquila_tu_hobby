@@ -1,3 +1,4 @@
+import 'package:alquila_tu_hobby/presentations/add_product/addProductScreen.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminBinding.dart';
 import 'package:alquila_tu_hobby/presentations/admin/adminScreen.dart';
 import 'package:alquila_tu_hobby/presentations/create_new_account/bindings/create_new_account_controller_bindings.dart';
@@ -24,6 +25,7 @@ class AppRoutes {
   static const String adminDashboard = '/adminDashboard';
   static const String chat = '/chatScreen';
   static const String profile = '/profile';
+  static const String addProduct = '/addProduct';
 
 
   static List<GetPage> pages = [
@@ -53,6 +55,10 @@ class AppRoutes {
     GetPage(
       name: cart,
       page: () => const favProductScreen(),
+    ),
+    GetPage(
+      name: addProduct,
+      page: () => const addProductScreen(),
     ),
     GetPage(
       name: product,

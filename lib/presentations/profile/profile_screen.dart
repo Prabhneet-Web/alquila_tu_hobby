@@ -1,5 +1,6 @@
 import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
+import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:alquila_tu_hobby/widgets/common_appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -119,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       ]),
                                 ),
                                 SizedBox(
-                                  width: scale.getScaledWidth(18),
+                                  width: scale.getScaledWidth(10),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -202,25 +203,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Product",
-              style: AppStyle.txtNunitoBold20.copyWith(
-                  color: LightTheme.darkBlack,
-                  fontSize: scale.getScaledFont(18)),
-              textScaleFactor: ScaleSize.textScaleFactor(context),
+              "My Rented Products",
+              style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                      color: LightTheme.blueColor,
+                      fontSize: (scale.fullWidth)/1800 * 20,
+                      fontWeight: FontWeight.w500
+                  )
+              )
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: LightTheme.yellowBG,
-                  borderRadius: BorderRadius.all(
-                      Radius.circular(scale.getScaledHeight(10)))),
-              height: scale.getScaledHeight(50),
-              width: scale.getScaledWidth(170),
-              child: Center(
-                child: Text(
-                  "Add Product",
-                  style: AppStyle.txtNunitoBold20.copyWith(
-                      fontSize: scale.getScaledFont(9), color: Colors.white),
-                  textScaleFactor: ScaleSize.textScaleFactor(context),
+            InkWell(
+              onTap: () => Get.toNamed(AppRoutes.addProduct),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: LightTheme.yellowBG,
+                    borderRadius: BorderRadius.all(
+                        Radius.circular(scale.getScaledHeight(10)))),
+                height: scale.getScaledHeight(50),
+                width: scale.getScaledWidth(170),
+                child: Center(
+                  child: Text(
+                    "Add Product",
+                    style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: LightTheme.white,
+                            fontSize: (scale.fullWidth)/1800 * 18,
+                            fontWeight: FontWeight.w700
+                        )
+                    )
+                  ),
                 ),
               ),
             ),
@@ -235,13 +246,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             itemCount: 20, // Number of items in the grid
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 350,
-
-              // Maximum width of each item
-              mainAxisSpacing: scale.getScaledWidth(
-                  22), // Spacing between items along the main axis
-              crossAxisSpacing: scale.getScaledWidth(
-                  22), //  // Spacing between items along the cross axis
-              childAspectRatio: .9, // Aspect ratio of each item (width/height)
+              mainAxisSpacing: scale.getScaledWidth(22),
+              crossAxisSpacing: scale.getScaledWidth(22),
+              childAspectRatio: (scale.fullWidth / scale.fullHeight) * 0.7, // Aspect ratio of each item (width/height)
             ),
             itemBuilder: (BuildContext context, int index) {
               return GridTile(
@@ -258,7 +265,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           boxShadow: [
                             BoxShadow(
                                 color: LightTheme.greylight10.withOpacity(0.5),
-                                offset: Offset(0, 25),
+                                offset: const Offset(0, 25),
                                 blurRadius: 3,
                                 spreadRadius: -10),
                           ],
@@ -266,7 +273,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           borderRadius: BorderRadius.all(
                               Radius.circular(scale.getScaledHeight(12)))),
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             image: DecorationImage(
                           image: AssetImage("assets/images/sh2.png"),
                           fit: BoxFit.fill,
@@ -276,7 +283,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             Container(
                               padding: scale.getPadding(
-                                  horizontal: 10, vertical: 10),
+                                  horizontal: 18, vertical: 10),
                               margin: scale.getMargin(bottom: 17),
                               decoration: BoxDecoration(
                                   color: LightTheme.greylight10.withOpacity(.5),
@@ -284,11 +291,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       Radius.circular(
                                           scale.getScaledHeight(10)))),
                               child: Text(
-                                "Add Category",
-                                style: AppStyle.txtNunitoBold20
-                                    .copyWith(fontSize: scale.getScaledFont(7)),
-                                textScaleFactor:
-                                    ScaleSize.textScaleFactor(context),
+                                "Edit Product",
+                                style: GoogleFonts.nunitoSans(
+                                    textStyle: TextStyle(
+                                        color: LightTheme.darkBlack,
+                                        fontSize: (scale.fullWidth)/1800 * 14,
+                                        fontWeight: FontWeight.w500
+                                    )
+                                )
                               ),
                             ),
                           ],
