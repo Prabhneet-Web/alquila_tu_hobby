@@ -6,7 +6,6 @@ import 'package:alquila_tu_hobby/presentations/create_new_account/controller/cre
 import 'package:alquila_tu_hobby/routes/app_routes.dart';
 import 'package:alquila_tu_hobby/widgets/check_box.dart';
 import 'package:alquila_tu_hobby/widgets/custom_text_formfield.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -104,16 +103,21 @@ class CreateNewAccount extends GetView<CreateNewAccountController> {
                         ],
                       ),
                       SizedBox(height: scale.getScaledHeight(40)),
-                      Container(
-                        height: scale.getScaledHeight(46),
-                        width: scale.getScaledWidth(300),
-                        decoration: BoxDecoration(
-                            color: LightTheme.yellowBG,
-                            borderRadius: BorderRadius.circular(8)),
-                        child: Center(
-                          child: Text(
-                            "Sign up",
-                            style: AppStyle.txtNunitoRegular14White,
+                      InkWell(
+                        onTap: () {
+                          controller.signUp();
+                        },
+                        child: Container(
+                          height: scale.getScaledHeight(46),
+                          width: scale.getScaledWidth(300),
+                          decoration: BoxDecoration(
+                              color: LightTheme.yellowBG,
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Center(
+                            child: Text(
+                              "Sign up",
+                              style: AppStyle.txtNunitoRegular14White,
+                            ),
                           ),
                         ),
                       ),

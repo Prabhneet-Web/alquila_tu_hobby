@@ -101,7 +101,7 @@ class Login extends GetView<LoginController> {
                       SizedBox(height: scale.getScaledHeight(40)),
                       InkWell(
                         onTap: () {
-                          Get.offAllNamed(AppRoutes.dashboard);
+                          controller.signIn();
                         },
                         child: Container(
                           height: scale.getScaledHeight(46),
