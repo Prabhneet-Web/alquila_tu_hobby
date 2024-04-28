@@ -30,7 +30,6 @@ class ProductsScreen extends GetView<ProductScreenController> {
                 //color: const Color.fromARGB(255, 103, 75, 73),
               ),
               Container(
-                width: scale.getScaledWidth(900),
                 child: Expanded(
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
@@ -38,7 +37,7 @@ class ProductsScreen extends GetView<ProductScreenController> {
                       children: [
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -923,8 +922,8 @@ class ProductsScreen extends GetView<ProductScreenController> {
                         Container(
                           padding:
                               scale.getPadding(horizontal: 30, vertical: 18),
-                          margin:
-                              scale.getMargin(left: 40, bottom: 40, top: 20),
+                          margin: scale.getMargin(
+                              left: 40, bottom: 40, top: 20, right: 400),
                           width: scale.fullWidth,
                           decoration: BoxDecoration(
                               border: Border.all(color: LightTheme.greylight),
