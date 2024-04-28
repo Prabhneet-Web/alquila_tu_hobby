@@ -69,7 +69,7 @@ class CartScreen extends StatelessWidget {
                                 children: [
                                   _buildTableCell('Product', scale, context,
                                       isHeader: true),
-                                  _buildTableCell('price', scale, context,
+                                  _buildTableCell('Price', scale, context,
                                       isHeader: true),
                                   _buildTableCell('Days', scale, context,
                                       isHeader: true),
