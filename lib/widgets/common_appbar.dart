@@ -90,6 +90,9 @@ class CommonAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   InkWell(
+                    onDoubleTap: () {
+                      Get.toNamed(AppRoutes.adminDashboard);
+                    },
                     onTap: () {
                       Get.toNamed(AppRoutes.profile);
                     },

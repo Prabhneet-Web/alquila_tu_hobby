@@ -342,87 +342,92 @@ class DashBoardScreen extends GetView<DashboardController> {
                             padding: scale.getPadding(all: 10),
                             decoration: BoxDecoration(
                                 border:
-                                Border.all(color: LightTheme.borderColor),
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(
-                                        scale.getScaledHeight(17)))),
+                                    Border.all(color: LightTheme.borderColor),
+                                borderRadius: BorderRadius.all(Radius.circular(
+                                    scale.getScaledHeight(17)))),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Expanded(
-                                  child: Container   ( child:  index % 2 == 0
-                                      ? const Image(
-                                    image: AssetImage(
-                                        "assets/images/sh1.png"),fit: BoxFit.fill,)
-                                      : const Image(
-                                      image: AssetImage(
-                                          "assets/images/sh2.png"),fit: BoxFit.fill),),
-                                ),
+                                index % 2 == 0
+                                    ? Expanded(
+                                        child: Container(
+                                          child: const Image(
+                                              image: AssetImage(
+                                                  "assets/images/sh1.png")),
+                                        ),
+                                      )
+                                    : Expanded(
+                                        child: Container(
+                                          child: const Image(
+                                              image: AssetImage(
+                                                  "assets/images/sh2.png")),
+                                        ),
+                                      ),
                                 Padding(
                                   padding:
-                                  scale.getPadding(top: 20, bottom: 10),
+                                      scale.getPadding(top: 20, bottom: 10),
                                   child: Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.center,
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        controller.nameOfItems?[index] ??
-                                            "",
-                                        style:AppStyle.txtNunitoBold20.copyWith(fontSize: 9,color: LightTheme.bluetext),
+                                        controller.nameOfItems?[index] ?? "",
+                                        style: TextStyle(
+                                            color: LightTheme.bluetext,
+                                            fontSize: scale.getScaledFont(9)),
                                         textScaleFactor:
-                                        ScaleSize.textScaleFactor(
-                                            context),
+                                            ScaleSize.textScaleFactor(context),
                                       ),
-                                      SizedBox(height: scale.getScaledHeight(10),),
                                       Row(
                                         children: [
                                           Text(
                                             "\$${controller.priceOfItems?[index] ?? 0}/",
-                                            style: AppStyle.txtNunitoBold20.copyWith(fontSize: 10,fontWeight: FontWeight.bold),
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize:
+                                                    scale.getScaledFont(9)),
                                             textScaleFactor:
-                                            ScaleSize.textScaleFactor(
-                                                context),
+                                                ScaleSize.textScaleFactor(
+                                                    context),
                                           ),
                                           Text(
                                             "Per day",
-                                            style:AppStyle.txtNunitoBold20.copyWith(fontSize: 10,fontWeight: FontWeight.bold),
+                                            style: TextStyle(
+                                                color: LightTheme.greytext,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
                                             textScaleFactor:
-                                            ScaleSize.textScaleFactor(
-                                                context),
+                                                ScaleSize.textScaleFactor(
+                                                    context),
                                           )
                                         ],
                                       ),
-                                      SizedBox(height: scale.getScaledHeight(10),),
                                       Obx(
-                                            () => RatingStars(
+                                        () => RatingStars(
                                           axis: Axis.horizontal,
                                           value: controller
-                                              .ratingOfItems?[index] ??
+                                                  .ratingOfItems?[index] ??
                                               0.0,
                                           onValueChanged: (v) {
-                                            controller
-                                                .ratingOfItems?[index] = v;
+                                            controller.ratingOfItems?[index] =
+                                                v;
                                           },
                                           starCount: 5,
-                                          starSize: (scale.fullWidth/scale.fullHeight) * 7,
+                                          starSize: 20,
                                           valueLabelRadius: 10,
                                           maxValue: 5,
                                           starSpacing: 2,
                                           maxValueVisibility: false,
                                           valueLabelVisibility: false,
-                                          animationDuration: const Duration(
-                                              milliseconds: 500),
+                                          animationDuration:
+                                              const Duration(milliseconds: 500),
                                           valueLabelPadding:
-                                          const EdgeInsets.symmetric(
-                                              vertical: 1,
-                                              horizontal: 8),
+                                              const EdgeInsets.symmetric(
+                                                  vertical: 1, horizontal: 8),
                                           valueLabelMargin:
-                                          const EdgeInsets.only(
-                                              right: 8),
-                                          starOffColor:
-                                          LightTheme.borderColor,
+                                              const EdgeInsets.only(right: 8),
+                                          starOffColor: LightTheme.borderColor,
                                           starColor: LightTheme.yellowBG,
                                         ),
                                       ),

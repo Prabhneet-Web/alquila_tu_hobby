@@ -34,127 +34,152 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: scale.fw,
             ),
             Expanded(
-                child: Row(
-              children: [
-                Expanded(
-                    flex: 3,
-                    child: Container(
-                      padding: scale.getPadding(left: 50),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                "Personal Details",
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    constraints: BoxConstraints(maxWidth: 800, minWidth: 300),
+                    width: scale.fw / 2.4,
+                    padding: scale.getPadding(left: 50),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text("Personal Details",
                                 style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                    color: LightTheme.blueColor,
-                                    fontSize: (scale.fullWidth)/1800 * 20,
-                                    fontWeight: FontWeight.w500
-                                  )
-                                )
-                              ),
-                            ),
-                            SizedBox(height: scale.getScaledHeight(15)),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                  height: scale.getScaledHeight(260),
-                                  width: scale.getScaledWidth(220),
-                                  decoration: BoxDecoration(
-                                      image: const DecorationImage(
-                                          image: AssetImage(
-                                              "assets/images/dd.jpeg"),
-                                          fit: BoxFit.fill),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(
-                                              scale.getScaledFont(15)))),
-                                ),
-                                SizedBox(
-                                  width: scale.getScaledWidth(18),
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    reusableColumn(
-                                        scale, "Name", "Ehtesham Aman"),
-                                    reusableColumn(scale, "Gender", "Female"),
-                                    reusableColumn(
-                                        scale, "Date of birth", "August 27th, 1999"),
-                                    reusableColumn(scale, "Nationality", "USA")
-                                  ],
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: scale.getScaledHeight(22),
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: scale.getScaledWidth(230),
-                                  child: Column(
+                                    textStyle: TextStyle(
+                                        color: LightTheme.blueColor,
+                                        fontSize: (scale.fullWidth) / 1800 * 20,
+                                        fontWeight: FontWeight.w500))),
+                          ),
+                          SizedBox(height: scale.getScaledHeight(15)),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    height: scale.getScaledHeight(230),
+                                    width: scale.getScaledHeight(200),
+                                    decoration: BoxDecoration(
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: LightTheme.blueColor
+                                                  .withOpacity(0.2),
+                                              offset: Offset(0, 10),
+                                              blurRadius: 10,
+                                              spreadRadius: -5),
+                                          BoxShadow(
+                                              color: LightTheme.blueColor
+                                                  .withOpacity(0.2),
+                                              offset: Offset(0, -10),
+                                              blurRadius: 10,
+                                              spreadRadius: -5),
+                                          BoxShadow(
+                                              color: LightTheme.blueColor
+                                                  .withOpacity(0.2),
+                                              offset: Offset(10, 0),
+                                              blurRadius: 10,
+                                              spreadRadius: -5),
+                                          BoxShadow(
+                                              color: LightTheme.blueColor
+                                                  .withOpacity(0.2),
+                                              offset: Offset(-10, 0),
+                                              blurRadius: 10,
+                                              spreadRadius: -5),
+                                        ],
+                                        image: const DecorationImage(
+                                            image: AssetImage(
+                                                "assets/images/dd.jpeg"),
+                                            fit: BoxFit.fill),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(
+                                                scale.getScaledFont(30)))),
+                                  ),
+                                  SizedBox(height: scale.getScaledHeight(35)),
+                                  Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          "Address",
+                                        Text("Address",
+                                            style: GoogleFonts.poppins(
+                                                textStyle: TextStyle(
+                                                    color: LightTheme.blueColor,
+                                                    fontSize:
+                                                        (scale.fullWidth) /
+                                                            1800 *
+                                                            20,
+                                                    fontWeight:
+                                                        FontWeight.w500))),
+                                        reusableColumn(scale, "Address line",
+                                            "No 35 Jimmy Ebi Street"),
+                                        reusableColumn(scale, "City", "NY"),
+                                        reusableColumn(
+                                            scale, "State", "NewYork"),
+                                        reusableColumn(scale, "Country", "USA")
+                                      ]),
+                                ],
+                              ),
+                              SizedBox(
+                                width: scale.getScaledWidth(10),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    height: scale.getScaledHeight(230),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        reusableColumn(
+                                            scale, "Name", "Ehtesham Aman"),
+                                        reusableColumn(
+                                            scale, "Gender", "Female"),
+                                        reusableColumn(scale, "Date of birth",
+                                            "August 27th, 1999"),
+                                        reusableColumn(
+                                            scale, "Nationality", "USA"),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: scale.getScaledHeight(35)),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Contact Details",
                                           style: GoogleFonts.poppins(
                                               textStyle: TextStyle(
                                                   color: LightTheme.blueColor,
-                                                  fontSize: (scale.fullWidth)/1800 * 20,
-                                                  fontWeight: FontWeight.w500
-                                              )
-                                          )
-                                        ),
-                                        reusableColumn(scale, "Address line",
-                                            "No 35 Jimmy Ebi Street"),
-                                        reusableColumn(
-                                            scale, "City", "NY"),
-                                        reusableColumn(scale, "State", "NewYork"),
-                                        reusableColumn(scale, "Country", "USA")
-                                      ]),
-                                ),
-                                SizedBox(
-                                  width: scale.getScaledWidth(10),
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Contact Details",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: TextStyle(
-                                              color: LightTheme.blueColor,
-                                              fontSize: (scale.fullWidth)/1800 * 20,
-                                              fontWeight: FontWeight.w500
-                                          )
-                                      )
-                                    ),
-                                    reusableColumn(
-                                        scale, "Phone Number", "+9034867656"),
-                                    reusableColumn(
-                                        scale, "Email", "shery@me.com"),
-                                  ],
-                                )
-                              ],
-                            )
-                          ],
-                        ),
+                                                  fontSize: (scale.fullWidth) /
+                                                      1800 *
+                                                      20,
+                                                  fontWeight:
+                                                      FontWeight.w500))),
+                                      reusableColumn(
+                                          scale, "Phone Number", "+9034867656"),
+                                      reusableColumn(
+                                          scale, "Email", "shery@me.com"),
+                                    ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
                       ),
-                    )),
-                Expanded(
-                    flex: 5,
-                    child: Container(
-                      padding: scale.getPadding(right: 70),
-                      child: productGrid(scale),
-                    ))
-              ],
-            ))
+                    ),
+                  ),
+                  Container(
+                      //  margin: scale.getMargin(right: 50),
+                      child: productGrid(scale))
+                ],
+              ),
+            )
           ],
         ),
       ),
@@ -168,43 +193,38 @@ class _ProfileScreenState extends State<ProfileScreen> {
         SizedBox(
           height: scale.getScaledHeight(17),
         ),
-        Text(
-          lable,
-          style: GoogleFonts.poppins(
-              textStyle: TextStyle(
-                  color: LightTheme.greytext,
-                  fontSize: (scale.fullWidth)/1800 * 15,
-                  fontWeight: FontWeight.w600
-              )
-          )
-        ),
+        Text(lable,
+            style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    color: LightTheme.greytext,
+                    fontSize: (scale.fullWidth) / 1800 * 12,
+                    fontWeight: FontWeight.w600))),
         SizedBox(height: scale.getScaledHeight(3)),
-        Text(
-          text,
-          style: GoogleFonts.poppins(
-              textStyle: TextStyle(
-                  color: LightTheme.darkBlack,
-                  fontSize: (scale.fullWidth)/1800 * 18,
-                  fontWeight: FontWeight.w500
-              )
-          )
-        )
+        Text(text,
+            style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    color: LightTheme.darkBlack,
+                    fontSize: (scale.fullWidth) / 1800 * 15,
+                    fontWeight: FontWeight.bold)))
       ],
     );
   }
 
   Widget productGrid(ScalingUtility scale) {
-    return Column(
-      children: [
-        SizedBox(
-          height: scale.getScaledHeight(15),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Expanded(
+      child: Container(
+        padding: scale.getPadding(right: 60),
+        child: Column(
           children: [
-            Text(
-              "My Rented Products",
-              style: GoogleFonts.poppins(
+            SizedBox(
+              height: scale.getScaledHeight(15),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "My Rented Products",
+                  style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                       color: LightTheme.blueColor,
                       fontSize: (scale.fullWidth)/1800 * 20,
@@ -248,24 +268,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
               maxCrossAxisExtent: 350,
               mainAxisSpacing: scale.getScaledWidth(22),
               crossAxisSpacing: scale.getScaledWidth(22),
-              childAspectRatio: (scale.fullWidth / scale.fullHeight) * 0.7, // Aspect ratio of each item (width/height)
-            ),
-            itemBuilder: (BuildContext context, int index) {
-              return GridTile(
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () {
-                    //  Get.toNamed(AppRoutes.product);
-                  },
-                  child: Container(
-                      decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: LightTheme.greylight10.withOpacity(0.5),
-                                offset: const Offset(0, 25),
+                  childAspectRatio:
+                      (scale.fullWidth / scale.fullHeight) * 0.7, // Aspect ratio of each item (width/height)
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return GridTile(
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () {
+                        //  Get.toNamed(AppRoutes.product);
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    color:
+                                        LightTheme.greylight10.withOpacity(0.5),
+                                    offset: const Offset(0, 25),
                                 blurRadius: 3,
                                 spreadRadius: -10),
                           ],
@@ -284,32 +306,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Container(
                               padding: scale.getPadding(
                                   horizontal: 18, vertical: 10),
-                              margin: scale.getMargin(bottom: 17),
-                              decoration: BoxDecoration(
-                                  color: LightTheme.greylight10.withOpacity(.5),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(
-                                          scale.getScaledHeight(10)))),
-                              child: Text(
-                                "Edit Product",
-                                style: GoogleFonts.nunitoSans(
+                                  margin: scale.getMargin(bottom: 17),
+                                  decoration: BoxDecoration(
+                                      color: LightTheme.greylight10
+                                          .withOpacity(.5),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(
+                                              scale.getScaledHeight(10)))),
+                                  child: Text(
+                                    "Edit Product",
+                                    style: GoogleFonts.nunitoSans(
                                     textStyle: TextStyle(
                                         color: LightTheme.darkBlack,
                                         fontSize: (scale.fullWidth)/1800 * 14,
                                         fontWeight: FontWeight.w500
-                                    )
+                                        )
                                 )
-                              ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      )),
-                ),
-              );
-            },
-          ),
+                          )),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
