@@ -201,7 +201,6 @@ class ChatScreen extends GetView<ChatScreenController> {
                 Container(
                   height: scale.fh,
                   width: scale.fw / 1.5,
-                  constraints: BoxConstraints(minWidth: 500),
                   padding: scale.getPadding(left: 40),
                   child: Column(
                     children: [
@@ -285,133 +284,139 @@ class ChatScreen extends GetView<ChatScreenController> {
                           ),
                         ],
                       ),
-                      Padding(
-                        padding: scale.getPadding(left: 25, right: 90),
-                        child: ListView.builder(
-                            reverse: true,
-                            shrinkWrap: true,
-                            itemCount: controller.messageedata.length,
-                            itemBuilder: (context, i) {
-                              return controller.messageedata[i]["id"] != "me"
-                                  ? Container(
-                                      margin: scale.getMargin(vertical: 20),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                      Expanded(
+                        child: Padding(
+                          padding: scale.getPadding(left: 25, right: 90),
+                          child: ListView.builder(
+                              reverse: true,
+                              shrinkWrap: true,
+                              itemCount: controller.messageedata.length,
+                              itemBuilder: (context, i) {
+                                return controller.messageedata[i]["id"] != "me"
+                                    ? Container(
+                                        margin: scale.getMargin(vertical: 20),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              height: scale.getScaledHeight(40),
+                                              width: scale.getScaledHeight(40),
+                                              decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius
+                                                      .all(Radius.circular(scale
+                                                          .getScaledFont(10))),
+                                                  image: DecorationImage(
+                                                      image: AssetImage(
+                                                          "assets/images/dd.jpeg"),
+                                                      fit: BoxFit.fill)),
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                for (int j = 0;
+                                                    j <
+                                                        controller
+                                                            .messageedata[i]
+                                                                ['time']
+                                                            .length;
+                                                    j++)
+                                                  Container(
+                                                    margin: scale.getMargin(
+                                                        bottom: 6, left: 10),
+                                                    padding: scale.getPadding(
+                                                        vertical: 7,
+                                                        horizontal: 10),
+                                                    decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius
+                                                            .all(Radius
+                                                                .circular(scale
+                                                                    .getScaledFont(
+                                                                        10))),
+                                                        color:
+                                                            LightTheme.grey1),
+                                                    child: Text(controller
+                                                            .messageedata[i]
+                                                        ['time'][j]),
+                                                  )
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    : Row(
                                         children: [
+                                          Spacer(),
                                           Container(
-                                            height: scale.getScaledHeight(40),
-                                            width: scale.getScaledHeight(40),
-                                            decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(scale
-                                                        .getScaledFont(10))),
-                                                image: DecorationImage(
-                                                    image: AssetImage(
-                                                        "assets/images/dd.jpeg"),
-                                                    fit: BoxFit.fill)),
-                                          ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              for (int j = 0;
-                                                  j <
-                                                      controller
-                                                          .messageedata[i]
-                                                              ['time']
-                                                          .length;
-                                                  j++)
+                                            margin:
+                                                scale.getMargin(vertical: 20),
+                                            child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
+                                                  children: [
+                                                    for (int j = 0;
+                                                        j <
+                                                            controller
+                                                                .messageedata[i]
+                                                                    ['time']
+                                                                .length;
+                                                        j++)
+                                                      Container(
+                                                        margin: scale.getMargin(
+                                                            bottom: 6,
+                                                            right: 10),
+                                                        padding:
+                                                            scale.getPadding(
+                                                                vertical: 7,
+                                                                horizontal: 10),
+                                                        decoration: BoxDecoration(
+                                                            borderRadius: BorderRadius
+                                                                .all(Radius
+                                                                    .circular(scale
+                                                                        .getScaledFont(
+                                                                            10))),
+                                                            color: LightTheme
+                                                                .mychat),
+                                                        child: Text(
+                                                          controller
+                                                                  .messageedata[
+                                                              i]['time'][j],
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.white),
+                                                        ),
+                                                      )
+                                                  ],
+                                                ),
                                                 Container(
-                                                  margin: scale.getMargin(
-                                                      bottom: 6, left: 10),
-                                                  padding: scale.getPadding(
-                                                      vertical: 7,
-                                                      horizontal: 10),
+                                                  height:
+                                                      scale.getScaledHeight(40),
+                                                  width:
+                                                      scale.getScaledHeight(40),
                                                   decoration: BoxDecoration(
                                                       borderRadius: BorderRadius
                                                           .all(Radius.circular(
                                                               scale
                                                                   .getScaledFont(
                                                                       10))),
-                                                      color: LightTheme.grey1),
-                                                  child: Text(
-                                                      controller.messageedata[i]
-                                                          ['time'][j]),
-                                                )
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  : Row(
-                                      children: [
-                                        Spacer(),
-                                        Container(
-                                          margin: scale.getMargin(vertical: 20),
-                                          child: Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  for (int j = 0;
-                                                      j <
-                                                          controller
-                                                              .messageedata[i]
-                                                                  ['time']
-                                                              .length;
-                                                      j++)
-                                                    Container(
-                                                      margin: scale.getMargin(
-                                                          bottom: 6, right: 10),
-                                                      padding: scale.getPadding(
-                                                          vertical: 7,
-                                                          horizontal: 10),
-                                                      decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius
-                                                              .all(Radius
-                                                                  .circular(scale
-                                                                      .getScaledFont(
-                                                                          10))),
-                                                          color: LightTheme
-                                                              .mychat),
-                                                      child: Text(
-                                                        controller
-                                                                .messageedata[i]
-                                                            ['time'][j],
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.white),
-                                                      ),
-                                                    )
-                                                ],
-                                              ),
-                                              Container(
-                                                height:
-                                                    scale.getScaledHeight(40),
-                                                width:
-                                                    scale.getScaledHeight(40),
-                                                decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius
-                                                        .all(Radius.circular(
-                                                            scale.getScaledFont(
-                                                                10))),
-                                                    image: DecorationImage(
-                                                        image: AssetImage(
-                                                            "assets/images/dd.jpeg"),
-                                                        fit: BoxFit.fill)),
-                                              ),
-                                            ],
+                                                      image: DecorationImage(
+                                                          image: AssetImage(
+                                                              "assets/images/dd.jpeg"),
+                                                          fit: BoxFit.fill)),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    );
-                            }),
+                                        ],
+                                      );
+                              }),
+                        ),
                       ),
-                      Expanded(child: SizedBox()),
                       Padding(
                         padding: scale.getPadding(right: 50, bottom: 20),
                         child: TextFormField(
@@ -422,7 +427,7 @@ class ChatScreen extends GetView<ChatScreenController> {
                                 children: [
                                   Container(
                                     padding: scale.getPadding(all: 9),
-                                    height: scale.getScaledHeight(40),
+                                    height: scale.getScaledHeight(30),
                                     child: Image.asset("assets/logos/send.png"),
                                   )
                                 ],

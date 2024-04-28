@@ -325,118 +325,114 @@ class DashBoardScreen extends GetView<DashboardController> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           mainAxisSpacing: scale.getScaledWidth(18),
                           crossAxisSpacing: scale.getScaledWidth(18),
-                          childAspectRatio: 1, crossAxisCount: 3, mainAxisExtent: scale.getScaledHeight(280)),
+                          childAspectRatio: 1,
+                          crossAxisCount: 3,
+                          mainAxisExtent: scale.getScaledHeight(280)),
                       itemBuilder: (BuildContext context, int index) {
                         return InkWell(
-                            onTap: () {
-                              Get.toNamed(AppRoutes.product);
-                            },
-                            child: Container(
-                              padding: scale.getPadding(all: 10),
-                              decoration: BoxDecoration(
-                                  border:
-                                      Border.all(color: LightTheme.borderColor),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(
-                                          scale.getScaledHeight(17)))),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  index % 2 == 0
-                                      ? const Image(
-                                          image: AssetImage(
-                                              "assets/images/sh1.png"))
-                                      : const Image(
-                                          image: AssetImage(
-                                              "assets/images/sh2.png")),
-                                  Expanded(
-                                    child: Padding(
-                                      padding:
-                                          scale.getPadding(top: 20, bottom: 10),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                          onTap: () {
+                            Get.toNamed(AppRoutes.product);
+                          },
+                          child: Container(
+                            padding: scale.getPadding(all: 10),
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: LightTheme.borderColor),
+                                borderRadius: BorderRadius.all(Radius.circular(
+                                    scale.getScaledHeight(17)))),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                index % 2 == 0
+                                    ? Expanded(
+                                        child: Container(
+                                          child: const Image(
+                                              image: AssetImage(
+                                                  "assets/images/sh1.png")),
+                                        ),
+                                      )
+                                    : Expanded(
+                                        child: Container(
+                                          child: const Image(
+                                              image: AssetImage(
+                                                  "assets/images/sh2.png")),
+                                        ),
+                                      ),
+                                Padding(
+                                  padding:
+                                      scale.getPadding(top: 20, bottom: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        controller.nameOfItems?[index] ?? "",
+                                        style: TextStyle(
+                                            color: LightTheme.bluetext,
+                                            fontSize: scale.getScaledFont(9)),
+                                        textScaleFactor:
+                                            ScaleSize.textScaleFactor(context),
+                                      ),
+                                      Row(
                                         children: [
                                           Text(
-                                            controller.nameOfItems?[index] ??
-                                                "",
+                                            "\$${controller.priceOfItems?[index] ?? 0}/",
                                             style: TextStyle(
-                                                color: LightTheme.bluetext,
+                                                fontWeight: FontWeight.bold,
                                                 fontSize:
                                                     scale.getScaledFont(9)),
                                             textScaleFactor:
                                                 ScaleSize.textScaleFactor(
                                                     context),
                                           ),
-                                          Expanded(
-                                            child: Row(
-                                              children: [
-                                                Text(
-                                                  "\$${controller.priceOfItems?[index] ?? 0}/",
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: scale
-                                                          .getScaledFont(9)),
-                                                  textScaleFactor:
-                                                      ScaleSize.textScaleFactor(
-                                                          context),
-                                                ),
-                                                Text(
-                                                  "Per day",
-                                                  style: TextStyle(
-                                                      color:
-                                                          LightTheme.greytext,
-                                                      fontSize: scale
-                                                          .getScaledFont(8)),
-                                                  textScaleFactor:
-                                                      ScaleSize.textScaleFactor(
-                                                          context),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                          Obx(
-                                            () => RatingStars(
-                                              axis: Axis.horizontal,
-                                              value: controller
-                                                      .ratingOfItems?[index] ??
-                                                  0.0,
-                                              onValueChanged: (v) {
-                                                controller
-                                                    .ratingOfItems?[index] = v;
-                                              },
-                                              starCount: 5,
-                                              starSize: 20,
-                                              valueLabelRadius: 10,
-                                              maxValue: 5,
-                                              starSpacing: 2,
-                                              maxValueVisibility: false,
-                                              valueLabelVisibility: false,
-                                              animationDuration: const Duration(
-                                                  milliseconds: 500),
-                                              valueLabelPadding:
-                                                  const EdgeInsets.symmetric(
-                                                      vertical: 1,
-                                                      horizontal: 8),
-                                              valueLabelMargin:
-                                                  const EdgeInsets.only(
-                                                      right: 8),
-                                              starOffColor:
-                                                  LightTheme.borderColor,
-                                              starColor: LightTheme.yellowBG,
-                                            ),
-                                          ),
+                                          Text(
+                                            "Per day",
+                                            style: TextStyle(
+                                                color: LightTheme.greytext,
+                                                fontSize:
+                                                    scale.getScaledFont(8)),
+                                            textScaleFactor:
+                                                ScaleSize.textScaleFactor(
+                                                    context),
+                                          )
                                         ],
                                       ),
-                                    ),
-                                  )
-                                ],
-                              ),
+                                      Obx(
+                                        () => RatingStars(
+                                          axis: Axis.horizontal,
+                                          value: controller
+                                                  .ratingOfItems?[index] ??
+                                              0.0,
+                                          onValueChanged: (v) {
+                                            controller.ratingOfItems?[index] =
+                                                v;
+                                          },
+                                          starCount: 5,
+                                          starSize: 20,
+                                          valueLabelRadius: 10,
+                                          maxValue: 5,
+                                          starSpacing: 2,
+                                          maxValueVisibility: false,
+                                          valueLabelVisibility: false,
+                                          animationDuration:
+                                              const Duration(milliseconds: 500),
+                                          valueLabelPadding:
+                                              const EdgeInsets.symmetric(
+                                                  vertical: 1, horizontal: 8),
+                                          valueLabelMargin:
+                                              const EdgeInsets.only(right: 8),
+                                          starOffColor: LightTheme.borderColor,
+                                          starColor: LightTheme.yellowBG,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
                             ),
-                          );
+                          ),
+                        );
                       },
                     ),
                   ),

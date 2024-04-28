@@ -44,32 +44,37 @@ class CommonAppBar extends StatelessWidget {
                   child: AspectRatio(
                     aspectRatio: 5,
                     child: TextField(
-
                       decoration: InputDecoration(
-
-                        suffixIcon: Container(margin: scale.getMargin(vertical: 1), width: scale.getScaledWidth(80),decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),color: Colors.amber),child: Center(
-                          child: Text(
-                            "Search",
-                            textScaleFactor:
-                            ScaleSize.textScaleFactor(
-                                context),
-                            style: AppStyle.txtNunitoBold20
-                                .copyWith(
-
-                                fontSize: 7,
-                                color: LightTheme.white),
+                        suffixIcon: Container(
+                          margin: scale.getMargin(vertical: 1),
+                          width: scale.getScaledWidth(80),
+                          decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                              color: Colors.amber),
+                          child: Center(
+                            child: Text(
+                              "Search",
+                              textScaleFactor:
+                                  ScaleSize.textScaleFactor(context),
+                              style: AppStyle.txtNunitoBold20.copyWith(
+                                  fontSize: 7, color: LightTheme.white),
+                            ),
                           ),
-                        ),),
+                        ),
                         filled: true,
                         fillColor: Colors.white,
-                        labelStyle: TextStyle(
-                            fontSize: scale.getScaledFont(14)),
+                        labelStyle:
+                            TextStyle(fontSize: scale.getScaledFont(14)),
                         //  contentPadding: scale.getPadding(left: 5,bottom: 4),
                         hintStyle: TextStyle(
                             color: LightTheme.bluetext,
                             fontSize: scale.getScaledFont(14)),
                         hintText: "What are you looking for?",
-                        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)),borderSide: BorderSide(color: Colors.transparent)),),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide(color: Colors.transparent)),
+                      ),
                     ),
                   ),
                 ),
@@ -82,8 +87,11 @@ class CommonAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   InkWell(
-                    onTap: () {
+                    onDoubleTap: () {
                       Get.toNamed(AppRoutes.adminDashboard);
+                    },
+                    onTap: () {
+                      Get.toNamed(AppRoutes.profile);
                     },
                     child: Row(
                       children: [
