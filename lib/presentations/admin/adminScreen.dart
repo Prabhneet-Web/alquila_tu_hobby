@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 //import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -1189,13 +1190,12 @@ class adminScreen extends GetView<adminContrroller> {
                     SizedBox(
                       height: scale.getScaledHeight(10),
                     ),
-                    Text(
-                      "50,000",
-                      style: TextStyle(
-                          fontSize: scale.getScaledFont(14),
-                          fontWeight: FontWeight.bold),
-                      textScaleFactor: ScaleSize.textScaleFactor(context),
-                    )
+                    Text("50,000",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                color: LightTheme.darkBlack,
+                                fontSize: (scale.fullWidth) / 1800 * 40,
+                                fontWeight: FontWeight.bold)))
                   ],
                 ),
                 Spacer(),
