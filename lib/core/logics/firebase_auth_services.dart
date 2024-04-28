@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FirebaseAuthService {
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -8,8 +10,14 @@ class FirebaseAuthService {
       UserCredential credential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       return credential.user;
     } catch (e){
-      print("An error occured");
-    }
+      Get.rawSnackbar(
+        messageText: Text(
+          "$e",
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      );    }
     return null;
   }
 
@@ -18,7 +26,14 @@ class FirebaseAuthService {
       UserCredential credential = await _auth.signInWithEmailAndPassword(email: email, password: password);
       return credential.user;
     } catch (e){
-      print("An error occured");
+      Get.rawSnackbar(
+        messageText: Text(
+          '$e',
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      );
     }
     return null;
   }

@@ -105,7 +105,18 @@ class CreateNewAccount extends GetView<CreateNewAccountController> {
                       SizedBox(height: scale.getScaledHeight(40)),
                       InkWell(
                         onTap: () {
-                          controller.signUp();
+                          if(controller.userNameController.text.isNotEmpty && controller.loginController.text.isNotEmpty && controller.passwordController.text.isNotEmpty) {
+                            controller.signUp();
+                          } else {
+                            Get.rawSnackbar(
+                              messageText: const Text(
+                                'Please enter all the fields',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            );
+                          }
                         },
                         child: Container(
                           height: scale.getScaledHeight(46),
