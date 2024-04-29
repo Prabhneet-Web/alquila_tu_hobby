@@ -561,7 +561,7 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                             constraints:
                                                                 BoxConstraints(
                                                                     minWidth:
-                                                                        160),
+                                                                        260),
                                                             margin:
                                                                 scale.getMargin(
                                                                     all: 10),
