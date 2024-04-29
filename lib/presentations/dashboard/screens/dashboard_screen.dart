@@ -31,8 +31,8 @@ class DashBoardScreen extends GetView<DashboardController> {
               child: Row(
                 children: [
                   Container(
-                    constraints: BoxConstraints(minWidth: 240, maxWidth: 330),
-                    width: scale.getScaledWidth(300),
+                    constraints: const BoxConstraints(minWidth: 240, maxWidth: 400),
+                    width: scale.getScaledWidth(330),
                     margin: scale.getPadding(right: 20, left: 20, top: 40),
                     padding: scale.getPadding(left: 20, right: 20, bottom: 10),
                     child: SingleChildScrollView(

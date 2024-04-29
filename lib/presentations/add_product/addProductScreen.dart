@@ -229,8 +229,8 @@ class addProductScreen extends StatelessWidget {
                                                 hintStyle: TextStyle(fontSize: (scale.fullWidth/scale.fullHeight) * 7)
                               
                                               ),
-                                              value:
-                                                  'Shoes', // Set initial value (replace with your data)
+                                              // value:
+                                              //     'Shoes', // Set initial value (replace with your data)
                                               items: [
                                                 'Shoes',
                                                 'Electronics',

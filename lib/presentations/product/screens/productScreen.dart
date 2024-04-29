@@ -559,7 +559,7 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                               .transparent,
                                                           child: Container(
                                                             constraints:
-                                                                BoxConstraints(
+                                                                const BoxConstraints(
                                                                     minWidth:
                                                                         260),
                                                             margin:
@@ -570,7 +570,7 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                                     650),
                                                             width: scale
                                                                 .getScaledHeight(
-                                                                    400),
+                                                                    500),
                                                             decoration: BoxDecoration(
                                                                 color: Colors
                                                                     .white,
@@ -602,9 +602,9 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                                               children: [
                                                                                 InkWell(
                                                                                   onTap: () => Get.back(),
-                                                                                  child: Container(
-                                                                                    height: scale.getScaledHeight(15),
-                                                                                    width: scale.getScaledHeight(15),
+                                                                                  child: SizedBox(
+                                                                                    height: scale.getScaledHeight(10),
+                                                                                    width: scale.getScaledHeight(10),
                                                                                     child: Image.asset("assets/logos/cls.png"),
                                                                                   ),
                                                                                 ),
@@ -623,8 +623,8 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                                           ),
                                                                           Padding(
                                                                             padding: scale.getPadding(
-                                                                                left: 100,
-                                                                                right: 100,
+                                                                                left: 80,
+                                                                                right: 80,
                                                                                 top: 60,
                                                                                 bottom: 30),
                                                                             child:
