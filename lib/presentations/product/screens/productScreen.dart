@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:alquila_tu_hobby/core/utils/app_style/app_style.dart';
 import 'package:alquila_tu_hobby/core/utils/color_constants/color_constants.dart';
 import 'package:alquila_tu_hobby/core/utils/scaling_util/scaling_utility.dart';
@@ -6,7 +8,9 @@ import 'package:alquila_tu_hobby/widgets/common_appbar.dart';
 import 'package:alquila_tu_hobby/widgets/custom_text_formfield.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:clean_calendar/clean_calendar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:get/get.dart';
 import 'package:just_the_tooltip/just_the_tooltip.dart';
@@ -535,248 +539,169 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                         children: [
                                           InkWell(
                                             onTap: () {
-                                              AwesomeDialog(
-                                                width: scale.fw / 2.3,
-                                                context: context,
-                                                dialogType: DialogType.noHeader,
-                                                animType: AnimType.rightSlide,
-                                                body: SizedBox(
-                                                  height: scale.fh / 1.2,
-                                                  child: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            scale.getPadding(
-                                                                horizontal: 18),
-                                                        child: Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Icon(
-                                                              Icons.close,
-                                                              size: scale
-                                                                  .getScaledFont(
-                                                                      40),
-                                                            ),
-                                                            Text(
-                                                              "Rent it now!",
-                                                              style: AppStyle
-                                                                  .txtNunitoBold20
-                                                                  .copyWith(
-                                                                fontSize: 14,
-                                                              ),
-                                                              textScaleFactor:
-                                                                  ScaleSize
-                                                                      .textScaleFactor(
-                                                                          context),
-                                                            ),
-                                                            SizedBox(
-                                                              width: scale
-                                                                  .getScaledWidth(
-                                                                      10),
-                                                            )
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            scale.getPadding(
-                                                                left: 100,
-                                                                right: 100,
-                                                                top: 60,
-                                                                bottom: 30),
-                                                        child: Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text("Name:",
-                                                                style: AppStyle
-                                                                    .txtNunitoRegular18
-                                                                    .copyWith(
-                                                                        fontSize:
-                                                                            scale.getScaledFont(
-                                                                                8)),
-                                                                textScaleFactor:
-                                                                    ScaleSize
-                                                                        .textScaleFactor(
-                                                                            context)),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        5)),
-                                                            CustomTextFormField(
-                                                                width: double
-                                                                    .infinity,
-                                                                hintText:
-                                                                    "Ehtesham Aman"),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        10)),
-                                                            Text("Phone:",
-                                                                style: AppStyle
-                                                                    .txtNunitoRegular18
-                                                                    .copyWith(
-                                                                        fontSize:
-                                                                            scale.getScaledFont(
-                                                                                8)),
-                                                                textScaleFactor:
-                                                                    ScaleSize
-                                                                        .textScaleFactor(
-                                                                            context)),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        5)),
-                                                            CustomTextFormField(
-                                                              width: double
-                                                                  .infinity,
-                                                              hintText:
-                                                                  "+1 (765) 544-2276",
-                                                            ),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        10)),
-                                                            Text(
-                                                                "Please choose your date:",
-                                                                style: AppStyle
-                                                                    .txtNunitoRegular18
-                                                                    .copyWith(
-                                                                        fontSize:
-                                                                            scale.getScaledFont(
-                                                                                8)),
-                                                                textScaleFactor:
-                                                                    ScaleSize
-                                                                        .textScaleFactor(
-                                                                            context)),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        5)),
-                                                            CustomTextFormField(
-                                                              width: double
-                                                                  .infinity,
-                                                              hintText: "7",
-                                                            ),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        10)),
-                                                            Text("Price:",
-                                                                style: AppStyle
-                                                                    .txtNunitoRegular18
-                                                                    .copyWith(
-                                                                        fontSize:
-                                                                            scale.getScaledFont(
-                                                                                8)),
-                                                                textScaleFactor:
-                                                                    ScaleSize
-                                                                        .textScaleFactor(
-                                                                            context)),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        5)),
-                                                            CustomTextFormField(
-                                                              width: double
-                                                                  .infinity,
-                                                              hintText:
-                                                                  "\$11/ day",
-                                                            ),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        10)),
-                                                            Text("Name:",
-                                                                style: AppStyle
-                                                                    .txtNunitoRegular18
-                                                                    .copyWith(
-                                                                        fontSize:
-                                                                            scale.getScaledFont(
-                                                                                8)),
-                                                                textScaleFactor:
-                                                                    ScaleSize
-                                                                        .textScaleFactor(
-                                                                            context)),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        5)),
-                                                            CustomTextFormField(
-                                                                width: double
-                                                                    .infinity,
-                                                                hintText:
-                                                                    "Ehtesham Aman"),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        10)),
-                                                            Text(
-                                                                "Additional Comment:",
-                                                                style: AppStyle
-                                                                    .txtNunitoRegular18
-                                                                    .copyWith(
-                                                                        fontSize:
-                                                                            scale.getScaledFont(
-                                                                                8)),
-                                                                textScaleFactor:
-                                                                    ScaleSize
-                                                                        .textScaleFactor(
-                                                                            context)),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        5)),
-                                                            CustomTextFormField(
-                                                                width: double
-                                                                    .infinity,
-                                                                maxLines: 3,
-                                                                hintText:
-                                                                    "Comment"),
-                                                            SizedBox(
-                                                                height: scale
-                                                                    .getScaledHeight(
-                                                                        25)),
-                                                            Center(
-                                                              child: InkWell(
-                                                                onTap: () {},
-                                                                child:
-                                                                    Container(
-                                                                  height: scale
-                                                                      .getScaledHeight(
-                                                                          46),
-                                                                  width: scale
-                                                                      .getScaledWidth(
-                                                                          300),
-                                                                  decoration: BoxDecoration(
-                                                                      color: LightTheme
-                                                                          .yellowBG,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8)),
-                                                                  child: Center(
-                                                                    child: Text(
-                                                                      "Confirm",
-                                                                      style: AppStyle
-                                                                          .txtNunitoRegular14White,
+                                              Get.dialog(Stack(
+                                                children: [
+                                                  BackdropFilter(
+                                                    filter: ImageFilter.blur(
+                                                        sigmaX: 3, sigmaY: 3),
+                                                    child: Container(
+                                                      color: Colors.transparent,
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    child: TapRegion(
+                                                      onTapOutside: (event) {
+                                                        Get.back();
+                                                      },
+                                                      child: Center(
+                                                        child: Container(
+                                                          constraints:
+                                                              BoxConstraints(
+                                                                  minWidth:
+                                                                      160),
+                                                          margin:
+                                                              scale.getMargin(
+                                                                  all: 10),
+                                                          height: scale
+                                                              .getScaledHeight(
+                                                                  650),
+                                                          width: scale
+                                                              .getScaledHeight(
+                                                                  400),
+                                                          decoration: BoxDecoration(
+                                                              color:
+                                                                  Colors.white,
+                                                              borderRadius: BorderRadius.all(
+                                                                  Radius.circular(
+                                                                      scale.getScaledFont(
+                                                                          60)))),
+                                                          child: Material(
+                                                            child: SizedBox(
+                                                              child: Column(
+                                                                children: [
+                                                                  Expanded(
+                                                                    child:
+                                                                        SingleChildScrollView(
+                                                                      child:
+                                                                          Column(
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: [
+                                                                          SizedBox(
+                                                                            height:
+                                                                                scale.getScaledHeight(17),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding:
+                                                                                scale.getPadding(horizontal: 18),
+                                                                            child:
+                                                                                Row(
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              children: [
+                                                                                InkWell(
+                                                                                  onTap: () => Get.back(),
+                                                                                  child: Container(
+                                                                                    height: scale.getScaledHeight(15),
+                                                                                    width: scale.getScaledHeight(15),
+                                                                                    child: Image.asset("assets/logos/cls.png"),
+                                                                                  ),
+                                                                                ),
+                                                                                Text(
+                                                                                  "Rent it now!",
+                                                                                  style: AppStyle.txtNunitoBold20.copyWith(
+                                                                                    fontSize: 14,
+                                                                                  ),
+                                                                                  textScaleFactor: ScaleSize.textScaleFactor(context),
+                                                                                ),
+                                                                                SizedBox(
+                                                                                  width: scale.getScaledWidth(10),
+                                                                                )
+                                                                              ],
+                                                                            ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: scale.getPadding(
+                                                                                left: 100,
+                                                                                right: 100,
+                                                                                top: 60,
+                                                                                bottom: 30),
+                                                                            child:
+                                                                                Column(
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                              children: [
+                                                                                Text("Name:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)), textScaleFactor: ScaleSize.textScaleFactor(context)),
+                                                                                SizedBox(height: scale.getScaledHeight(5)),
+                                                                                CustomTextFormField(width: double.infinity, hintText: "Ehtesham Aman"),
+                                                                                SizedBox(height: scale.getScaledHeight(10)),
+                                                                                Text("Phone:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)), textScaleFactor: ScaleSize.textScaleFactor(context)),
+                                                                                SizedBox(height: scale.getScaledHeight(5)),
+                                                                                CustomTextFormField(
+                                                                                  width: double.infinity,
+                                                                                  hintText: "+1 (765) 544-2276",
+                                                                                ),
+                                                                                SizedBox(height: scale.getScaledHeight(10)),
+                                                                                Text("Please choose your date:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)), textScaleFactor: ScaleSize.textScaleFactor(context)),
+                                                                                SizedBox(height: scale.getScaledHeight(5)),
+                                                                                CustomTextFormField(
+                                                                                  width: double.infinity,
+                                                                                  hintText: "7",
+                                                                                ),
+                                                                                SizedBox(height: scale.getScaledHeight(10)),
+                                                                                Text("Price:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)), textScaleFactor: ScaleSize.textScaleFactor(context)),
+                                                                                SizedBox(height: scale.getScaledHeight(5)),
+                                                                                CustomTextFormField(
+                                                                                  width: double.infinity,
+                                                                                  hintText: "\$11/ day",
+                                                                                ),
+                                                                                SizedBox(height: scale.getScaledHeight(10)),
+                                                                                Text("Name:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)), textScaleFactor: ScaleSize.textScaleFactor(context)),
+                                                                                SizedBox(height: scale.getScaledHeight(5)),
+                                                                                CustomTextFormField(width: double.infinity, hintText: "Ehtesham Aman"),
+                                                                                SizedBox(height: scale.getScaledHeight(10)),
+                                                                                Text("Additional Comment:", style: AppStyle.txtNunitoRegular18.copyWith(fontSize: scale.getScaledFont(8)), textScaleFactor: ScaleSize.textScaleFactor(context)),
+                                                                                SizedBox(height: scale.getScaledHeight(5)),
+                                                                                CustomTextFormField(width: double.infinity, maxLines: 3, hintText: "Comment"),
+                                                                                SizedBox(height: scale.getScaledHeight(25)),
+                                                                                Center(
+                                                                                  child: InkWell(
+                                                                                    onTap: () {},
+                                                                                    child: Container(
+                                                                                      height: scale.getScaledHeight(46),
+                                                                                      width: scale.getScaledWidth(300),
+                                                                                      decoration: BoxDecoration(color: LightTheme.yellowBG, borderRadius: BorderRadius.circular(8)),
+                                                                                      child: Center(
+                                                                                        child: Text(
+                                                                                          "Confirm",
+                                                                                          style: AppStyle.txtNunitoRegular14White,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          )
+                                                                        ],
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                ),
+                                                                ],
                                                               ),
                                                             ),
-                                                          ],
+                                                          ),
                                                         ),
-                                                      )
-                                                    ],
+                                                      ),
+                                                    ),
                                                   ),
-                                                ),
-                                              ).show();
+                                                ],
+                                              ));
+                                              // AwesomeDialog(
+                                              //   width: scale.fw / 2.3,
+                                              //   context: context,
+                                              //   dialogType: DialogType.noHeader,
+                                              //   animType: AnimType.rightSlide,
+                                              //   body:
+                                              // ).show();
                                             },
                                             child: Container(
                                               decoration: BoxDecoration(
@@ -978,145 +903,144 @@ class ProductsScreen extends GetView<ProductScreenController> {
             ])));
   }
 }
-              // Expanded(
-              //   child: Padding(
-              //     padding: scale.getPadding(left: 20),
-              //     child: Column(
-              //       children: [
-              //         Expanded(
-              //           flex: 6,
-              //           child: Column(
-              //             children: [
-              //               Expanded(
-              //                   child: Container(
-              //                       child: Row(
-              //                 crossAxisAlignment: CrossAxisAlignment.start,
-              //                 mainAxisAlignment: MainAxisAlignment.center,
-              //                 children: [
-              //                   Container(
-              //                     height: scale.fh,
-              //                     width: scale.fw / 2.5,
-              //                     margin: scale.getMargin(left: 40, right: 20),
-              //                     child: Column(
-              //                       children: [
-              //                         Expanded(
-              //                           flex: 3,
-              //                           child: Container(
-              //                             decoration: BoxDecoration(
-              //                                 borderRadius: BorderRadius.all(
-              //                                     Radius.circular(scale
-              //                                         .getScaledHeight(10))),
-              //                                 border: Border.all(
-              //                                     color: LightTheme.greylight),
-              //                                 image: DecorationImage(
-              //                                     image: AssetImage(
-              //                                         "assets/images/sh1.png"),
-              //                                     fit: BoxFit.fill)),
-              //                           ),
-              //                         ),
-              //                         Expanded(
-              //                           flex: 1,
-              //                           child: Row(
-              //                             children: [
-              //                               Expanded(
-              //                                 child: Container(
-              //                                   margin: scale.getMargin(
-              //                                     vertical: 10,
-              //                                   ),
-              //                                   decoration: BoxDecoration(
-              //                                       borderRadius: BorderRadius
-              //                                           .all(Radius.circular(
-              //                                               scale
-              //                                                   .getScaledHeight(
-              //                                                       10))),
-              //                                       border: Border.all(
-              //                                           color: LightTheme
-              //                                               .greylight),
-              //                                       image: DecorationImage(
-              //                                           image: AssetImage(
-              //                                               "assets/images/sh1.png"))),
-              //                                 ),
-              //                               ),
-              //                               SizedBox(
-              //                                 width: scale.getScaledHeight(15),
-              //                               ),
-              //                               Expanded(
-              //                                 child: Container(
-              //                                   margin: scale.getMargin(
-              //                                     vertical: 10,
-              //                                   ),
-              //                                   decoration: BoxDecoration(
-              //                                       borderRadius: BorderRadius
-              //                                           .all(Radius.circular(
-              //                                               scale
-              //                                                   .getScaledHeight(
-              //                                                       10))),
-              //                                       border: Border.all(
-              //                                           color: LightTheme
-              //                                               .greylight),
-              //                                       image: DecorationImage(
-              //                                           image: AssetImage(
-              //                                               "assets/images/sh1.png"))),
-              //                                 ),
-              //                               ),
-              //                             ],
-              //                           ),
-              //                         )
-              //                       ],
-              //                     ),
-              //                   ),
-              //                   Container(
-              //                     height: scale.fh / 2,
-              //                     width: scale.fh / 2,
-              //                     margin: scale.getMargin(left: 40, right: 20),
-              //                   )
-              //                 ],
-              //               )))
-              //             ],
-              //           ),
-              //         ),
-              //         // Expanded(
-              //         //   flex: 1,
-              //         //   child: Container(
-              //         //     child: Row(
-              //         //       mainAxisAlignment: MainAxisAlignment.center,
-              //         //       children: [
-              //         //         Container(
-              //         //           decoration: BoxDecoration(
-              //         //               border: Border.all(),
-              //         //               borderRadius: BorderRadius.all(
-              //         //                   Radius.circular(
-              //         //                       scale.getScaledHeight(10)))),
-              //         //           height: scale.getScaledHeight(40),
-              //         //           width: scale.getScaledWidth(160),
-              //         //         ),
-              //         //         SizedBox(
-              //         //           width: scale.getScaledWidth(20),
-              //         //         ),
-              //         //         Container(
-              //         //           decoration: BoxDecoration(
-              //         //               color: LightTheme.bluetext,
-              //         //               borderRadius: BorderRadius.all(
-              //         //                   Radius.circular(
-              //         //                       scale.getScaledHeight(10)))),
-              //         //           height: scale.getScaledHeight(40),
-              //         //           width: scale.getScaledWidth(160),
-              //         //         ),
-              //         //       ],
-              //         //     ),
-              //         //   ),
-              //         // ),
-              //         // Container(
-              //         //   height: scale.getScaledHeight(120),
-              //         //   width: scale.fw,
-              //         //   margin: scale.getMargin(all: 100),
-              //         //   decoration: BoxDecoration(
-              //         //       border: Border.all(),
-              //         //       borderRadius: BorderRadius.all(
-              //         //           Radius.circular(scale.getScaledHeight(20)))),
-              //         // )
-              //       ],
-              //     ),
-              //   ),
-              // ),
-           
+// Expanded(
+//   child: Padding(
+//     padding: scale.getPadding(left: 20),
+//     child: Column(
+//       children: [
+//         Expanded(
+//           flex: 6,
+//           child: Column(
+//             children: [
+//               Expanded(
+//                   child: Container(
+//                       child: Row(
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: [
+//                   Container(
+//                     height: scale.fh,
+//                     width: scale.fw / 2.5,
+//                     margin: scale.getMargin(left: 40, right: 20),
+//                     child: Column(
+//                       children: [
+//                         Expanded(
+//                           flex: 3,
+//                           child: Container(
+//                             decoration: BoxDecoration(
+//                                 borderRadius: BorderRadius.all(
+//                                     Radius.circular(scale
+//                                         .getScaledHeight(10))),
+//                                 border: Border.all(
+//                                     color: LightTheme.greylight),
+//                                 image: DecorationImage(
+//                                     image: AssetImage(
+//                                         "assets/images/sh1.png"),
+//                                     fit: BoxFit.fill)),
+//                           ),
+//                         ),
+//                         Expanded(
+//                           flex: 1,
+//                           child: Row(
+//                             children: [
+//                               Expanded(
+//                                 child: Container(
+//                                   margin: scale.getMargin(
+//                                     vertical: 10,
+//                                   ),
+//                                   decoration: BoxDecoration(
+//                                       borderRadius: BorderRadius
+//                                           .all(Radius.circular(
+//                                               scale
+//                                                   .getScaledHeight(
+//                                                       10))),
+//                                       border: Border.all(
+//                                           color: LightTheme
+//                                               .greylight),
+//                                       image: DecorationImage(
+//                                           image: AssetImage(
+//                                               "assets/images/sh1.png"))),
+//                                 ),
+//                               ),
+//                               SizedBox(
+//                                 width: scale.getScaledHeight(15),
+//                               ),
+//                               Expanded(
+//                                 child: Container(
+//                                   margin: scale.getMargin(
+//                                     vertical: 10,
+//                                   ),
+//                                   decoration: BoxDecoration(
+//                                       borderRadius: BorderRadius
+//                                           .all(Radius.circular(
+//                                               scale
+//                                                   .getScaledHeight(
+//                                                       10))),
+//                                       border: Border.all(
+//                                           color: LightTheme
+//                                               .greylight),
+//                                       image: DecorationImage(
+//                                           image: AssetImage(
+//                                               "assets/images/sh1.png"))),
+//                                 ),
+//                               ),
+//                             ],
+//                           ),
+//                         )
+//                       ],
+//                     ),
+//                   ),
+//                   Container(
+//                     height: scale.fh / 2,
+//                     width: scale.fh / 2,
+//                     margin: scale.getMargin(left: 40, right: 20),
+//                   )
+//                 ],
+//               )))
+//             ],
+//           ),
+//         ),
+//         // Expanded(
+//         //   flex: 1,
+//         //   child: Container(
+//         //     child: Row(
+//         //       mainAxisAlignment: MainAxisAlignment.center,
+//         //       children: [
+//         //         Container(
+//         //           decoration: BoxDecoration(
+//         //               border: Border.all(),
+//         //               borderRadius: BorderRadius.all(
+//         //                   Radius.circular(
+//         //                       scale.getScaledHeight(10)))),
+//         //           height: scale.getScaledHeight(40),
+//         //           width: scale.getScaledWidth(160),
+//         //         ),
+//         //         SizedBox(
+//         //           width: scale.getScaledWidth(20),
+//         //         ),
+//         //         Container(
+//         //           decoration: BoxDecoration(
+//         //               color: LightTheme.bluetext,
+//         //               borderRadius: BorderRadius.all(
+//         //                   Radius.circular(
+//         //                       scale.getScaledHeight(10)))),
+//         //           height: scale.getScaledHeight(40),
+//         //           width: scale.getScaledWidth(160),
+//         //         ),
+//         //       ],
+//         //     ),
+//         //   ),
+//         // ),
+//         // Container(
+//         //   height: scale.getScaledHeight(120),
+//         //   width: scale.fw,
+//         //   margin: scale.getMargin(all: 100),
+//         //   decoration: BoxDecoration(
+//         //       border: Border.all(),
+//         //       borderRadius: BorderRadius.all(
+//         //           Radius.circular(scale.getScaledHeight(20)))),
+//         // )
+//       ],
+//     ),
+//   ),
+// ),
