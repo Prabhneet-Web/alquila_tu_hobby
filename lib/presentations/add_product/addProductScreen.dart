@@ -230,7 +230,7 @@ class addProductScreen extends StatelessWidget {
                               
                                               ),
                                               // value:
-                                              //     'Shoes', // Set initial value (replace with your data)
+                                              //     'Shoes', // Se t initial value (replace with your data)
                                               items: [
                                                 'Shoes',
                                                 'Electronics',
