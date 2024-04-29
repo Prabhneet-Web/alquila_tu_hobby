@@ -554,28 +554,30 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                         Get.back();
                                                       },
                                                       child: Center(
-                                                        child: Container(
-                                                          constraints:
-                                                              BoxConstraints(
-                                                                  minWidth:
-                                                                      160),
-                                                          margin:
-                                                              scale.getMargin(
-                                                                  all: 10),
-                                                          height: scale
-                                                              .getScaledHeight(
-                                                                  650),
-                                                          width: scale
-                                                              .getScaledHeight(
-                                                                  400),
-                                                          decoration: BoxDecoration(
-                                                              color:
-                                                                  Colors.white,
-                                                              borderRadius: BorderRadius.all(
-                                                                  Radius.circular(
-                                                                      scale.getScaledFont(
-                                                                          60)))),
-                                                          child: Material(
+                                                        child: Material(
+                                                          color: Colors
+                                                              .transparent,
+                                                          child: Container(
+                                                            constraints:
+                                                                BoxConstraints(
+                                                                    minWidth:
+                                                                        160),
+                                                            margin:
+                                                                scale.getMargin(
+                                                                    all: 10),
+                                                            height: scale
+                                                                .getScaledHeight(
+                                                                    650),
+                                                            width: scale
+                                                                .getScaledHeight(
+                                                                    400),
+                                                            decoration: BoxDecoration(
+                                                                color: Colors
+                                                                    .white,
+                                                                borderRadius: BorderRadius.all(
+                                                                    Radius.circular(
+                                                                        scale.getScaledFont(
+                                                                            10)))),
                                                             child: SizedBox(
                                                               child: Column(
                                                                 children: [
