@@ -37,17 +37,14 @@ class ProductsScreen extends GetView<ProductScreenController> {
                       children: [
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Container(
-                                  height: scale.getScaledHeight(400),
-                                  width: scale.getScaledHeight(400),
-                                  margin: scale.getMargin(
-                                    left: 40,
-                                  ),
+                                  height: scale.getScaledHeight(380),
+                                  width: scale.getScaledHeight(320),
                                   child: Column(
                                     children: [
                                       Expanded(
@@ -143,7 +140,7 @@ class ProductsScreen extends GetView<ProductScreenController> {
                               children: [
                                 Container(
                                   margin: scale.getMargin(left: 30),
-                                  height: scale.getScaledHeight(400),
+                                  height: scale.getScaledHeight(380),
                                   //width: scale.fh / 1.6,
                                   child: Column(
                                     crossAxisAlignment:
@@ -807,9 +804,9 @@ class ProductsScreen extends GetView<ProductScreenController> {
                         Container(
                           padding:
                               scale.getPadding(horizontal: 30, vertical: 18),
-                          margin: scale.getMargin(
-                              left: 40, bottom: 40, top: 20, right: 400),
-                          width: scale.fullWidth,
+                          margin:
+                              scale.getMargin(left: 40, bottom: 40, top: 20),
+                          width: scale.fullWidth / 1.8,
                           decoration: BoxDecoration(
                               border: Border.all(color: LightTheme.greylight),
                               borderRadius: BorderRadius.all(

@@ -1190,12 +1190,6 @@ class adminScreen extends GetView<adminContrroller> {
                     SizedBox(
                       height: scale.getScaledHeight(10),
                     ),
-                    Text("50,000",
-                        style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                color: LightTheme.darkBlack,
-                                fontSize: (scale.fullWidth) / 1800 * 40,
-                                fontWeight: FontWeight.bold)))
                   ],
                 ),
                 Spacer(),
@@ -1206,7 +1200,11 @@ class adminScreen extends GetView<adminContrroller> {
                       borderRadius: BorderRadius.all(
                           Radius.circular(scale.getScaledFont(20))),
                       color: LightTheme.yellowBG.withOpacity(.4)),
-                  child: Icon(Icons.people),
+                  child: Container(
+                    height: scale.getScaledHeight(30),
+                    width: scale.getScaledHeight(30),
+                    child: Image.asset("assets/logos/star.png"),
+                  ),
                 )
               ],
             ),
