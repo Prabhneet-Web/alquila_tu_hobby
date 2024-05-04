@@ -560,6 +560,8 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                           child: Container(
                                                             constraints:
                                                                 BoxConstraints(
+                                                                    maxHeight:
+                                                                        850,
                                                                     minWidth:
                                                                         260),
                                                             margin:
@@ -603,6 +605,7 @@ class ProductsScreen extends GetView<ProductScreenController> {
                                                                                 InkWell(
                                                                                   onTap: () => Get.back(),
                                                                                   child: Container(
+                                                                                    margin: scale.getMargin(left: 15),
                                                                                     height: scale.getScaledHeight(15),
                                                                                     width: scale.getScaledHeight(15),
                                                                                     child: Image.asset("assets/logos/cls.png"),

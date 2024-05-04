@@ -18,6 +18,10 @@ class ChatScreen extends GetView<ChatScreenController> {
     Get.put(ChatScreenController());
     final scale = Get.find<ScalingUtility>()..setCurrentDeviceSize(context);
     return Scaffold(
+        appBar: AppBar(
+          titleSpacing: 0,
+          title: CommonAppBar(),
+        ),
         body: Container(
             height: scale.fh,
             width: scale.fw,
@@ -207,7 +211,7 @@ class ChatScreen extends GetView<ChatScreenController> {
                 Container(
                   height: scale.fh,
                   width: scale.fw / 1.5,
-                  constraints: BoxConstraints(maxWidth: 1000),
+                  constraints: BoxConstraints(maxWidth: 1200),
                   padding: scale.getPadding(left: 40),
                   child: Column(
                     children: [
@@ -283,15 +287,13 @@ class ChatScreen extends GetView<ChatScreenController> {
                           ],
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 1,
-                            width: scale.getScaledWidth(700),
-                            color: LightTheme.greylight10,
-                          ),
-                        ],
+                      Center(
+                        child: Container(
+                          margin: scale.getMargin(right: 200),
+                          height: 1,
+                          // width: scale.getScaledWidth(700),
+                          color: LightTheme.greylight10,
+                        ),
                       ),
                       Expanded(
                         child: Padding(
@@ -438,7 +440,7 @@ class ChatScreen extends GetView<ChatScreenController> {
                       Container(
                         margin: scale.getMargin(bottom: 17, right: 100),
                         width: scale.fw / 1.5,
-                        constraints: BoxConstraints(maxWidth: 800),
+                        constraints: BoxConstraints(maxWidth: 1000),
                         child: TextFormField(
                           decoration: InputDecoration(
                             suffixIcon: Container(
